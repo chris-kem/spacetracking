@@ -8,6 +8,8 @@ def on_connect(client, userdata, flags, rc):
 	client.subscribe("track")
 	client.subscribe("lasers")
 
+#loloolololo
+
 def on_message(client, userdata, msg):
 	tpc = msg.topic
 	if tpc.endswith("track") or tpc.endswith("lasers"):
