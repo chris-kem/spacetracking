@@ -130,7 +130,7 @@ client.on('message', function(topic, msg) {
     var c = ctx.getImageData(point.x,point.y,1,1).data;
     tracked[el.id] = (c[3]/255.) - (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
     //tracked[el.id] = (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
-    tracked[el.id] = (c[3]/255.);
+    //tracked[el.id] = (c[3]/255.);
   }
 
   var o = new Object();
