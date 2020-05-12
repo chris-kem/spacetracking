@@ -1,0 +1,6 @@
+#!/bin/bash
+# Kommentar
+echo „Hallo $USER!“
+python seriell-mqtt.py &
+python mqtt-binary.py &
+echo "Fertig"

@@ -13,27 +13,28 @@ ser.write("start reading")
 
 mqttClient = mqtt.Client()
 mqttClient.on_connect = on_connect
-mqttClient.connect("localhost", 9001, 60)
+mqttClient.connect("localhost", 1883, 60)
 
 ser.flushInput()
 try:
     while True:
         response = ser.readline()
-	print(response)
+#	print(response)
         i = 0
         for word in response.split():
             zahl = float(word)
-            print(zahl)
-            message_out = {"/Sensor%d" % (i) : zahl}
+            #print(zahl)
+            message_out = {"Sensor%d" % (i) : zahl}
             parsedMsg = json.dumps(message_out)
+#            print(parsedMsg)
 	    if i == 0:
-	    	mqttClient.publish("lasers/laser0", parsedMsg)
+	    	mqttClient.publish("lasers/raw/laser0", parsedMsg)
 	    elif i == 1:
-	    	mqttClient.publish("lasers/laser1", parsedMsg)
+	    	mqttClient.publish("lasers/raw/laser1", parsedMsg)
 	    elif i == 2:
-	    	mqttClient.publish("lasers/laser2", parsedMsg)
+	    	mqttClient.publish("lasers/raw/laser2", parsedMsg)
 	    elif i == 3:
-	    	mqttClient.publish("lasers/laser3", parsedMsg)
+	    	mqttClient.publish("lasers/raw/laser3", parsedMsg)
 	    else:
 		mqttClient.publish("errors", "Fehler bei seriell zu mqtt")
 
