@@ -5,7 +5,7 @@ import time
 def on_connect(client, userdata, flags, rc):
 	print("Connected with result code "+str(rc))
 	mqttClient.subscribe("lasers/raw/#")
-
+# test
 TRESH = 50
 count_laser1 = 0
 count_laser0 = 0
