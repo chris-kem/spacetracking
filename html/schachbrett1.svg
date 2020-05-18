@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="300mm"
-   height="150mm"
-   viewBox="-50 -50 350 350"
+   width="1600mm"
+   height="1400mm"
+   viewBox="-50 -50 1650 1450"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
@@ -54,7 +54,7 @@
      id="layer1"
      transform="translate(0,0)">
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackA1"
        width="50"
        height="50"
@@ -70,7 +70,7 @@
        y="0"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackC1"
        width="50"
        height="50"
@@ -86,7 +86,7 @@
        y="0"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackE1"
        width="50"
        height="50"
@@ -112,7 +112,7 @@
        y="50"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackB2"
        width="50"
        height="50"
@@ -128,7 +128,7 @@
        y="50"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackD2"
        width="50"
        height="50"
@@ -144,7 +144,7 @@
        y="50"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackF2"
        width="50"
        height="50"
@@ -170,7 +170,7 @@
        y="100"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackC3"
        width="50"
        height="50"
@@ -186,7 +186,7 @@
        y="100"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackE3"
        width="50"
        height="50"
@@ -212,7 +212,7 @@
        y="150"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackB4"
        width="50"
        height="50"
@@ -228,7 +228,7 @@
        y="150"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackD4"
        width="50"
        height="50"
@@ -244,7 +244,7 @@
        y="150"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackF4"
        width="50"
        height="50"
@@ -254,7 +254,7 @@
 
 
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackA5"
        width="50"
        height="50"
@@ -270,7 +270,7 @@
        y="200"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackC5"
        width="50"
        height="50"
@@ -286,7 +286,7 @@
        y="200"
        inkscape:label="#rect3719" />
     <rect
-       style="fill:#000000;stroke-width:0.26458332"
+       style="fill:#0000FF;stroke-width:0.26458332"
        id="trackE5"
        width="50"
        height="50"
