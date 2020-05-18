@@ -127,11 +127,12 @@ client.on('message', function(topic, msg) {
     // https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/
     //
     point.x = pos.x; point.y = pos.y;
+    //var ctx = tracked[el.id].getContext("2d");
     var c = ctx.getImageData(point.x,point.y,1,1).data;
     //tracked[el.id] = (c[3]/255.) - (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
     //tracked[el.id] = (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
     //tracked[el.id] = (c[3]/255.);
-    tracked[el.id] = 0.21*c[0] + 0.72*c[1] + 0.07*c[2];
+    tracked[el.id] = 1 - 0.21*c[0] + 0.72*c[1] + 0.07*c[2];
   }
 
   var o = new Object();
