@@ -26,8 +26,7 @@ else:
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe("lasers/binary/#")
-#    client.subscribe("lasers/raw/#")
+    client.subscribe("track")
 
 def on_message(client, userdata, msg):
 	bundle = OSC.OSCBundle()
@@ -36,10 +35,11 @@ def on_message(client, userdata, msg):
         parsedMsg = json.loads(msg.payload)
 #        print(parsedMsg)
 #        print(parsedMsg.values())
-        sensorName = str(parsedMsg.keys())
-	id = sensorName[9:10]
+#        print(parsedMsg.keys())
+        whichTrack = str(parsedMsg.keys())
+#	id = sensorName[9:10]
 #	print("test%d" % int(id))
-	oscmsg.setAddress('{"/Sensor%d"}' % int(id))
+	oscmsg.setAddress('{"/%s"}' % realTrack)
 	oscmsg.append(parsedMsg.values())
 	print(oscmsg)
 	osc_client.send(oscmsg)
