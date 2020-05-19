@@ -66,8 +66,8 @@ client.on('message', function(topic, msg) {
   // convert to SVG coordinate systems, SVGs coordinate systems are bottom left,
   // while the coordinate axis of the brower is rooted in the top left corner.
   //
-  pos.x = parseFloat(pos.x) * 100;
-  pos.y = can.height - parseFloat(pos.y) * 100;
+  pos.x = parseFloat(pos.x) * 1000;
+  pos.y = can.height - parseFloat(pos.y) * 1000;
   //pos.y = parseFloat(pos.y) * 100;
   console.log(pos.x + ", " + pos.y);
 

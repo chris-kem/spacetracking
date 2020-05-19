@@ -34,13 +34,11 @@ def on_message(client, userdata, msg):
 #        print(type(msg))
         parsedMsg = json.loads(msg.payload)
 #        print(parsedMsg)
-#        print(parsedMsg.values())
+#        print(parsedMsg["value"])
 #        print(parsedMsg.keys())
-        whichTrack = str(parsedMsg.keys())
-#	id = sensorName[9:10]
-#	print("test%d" % int(id))
-	oscmsg.setAddress('{"/%s"}' % realTrack)
-	oscmsg.append(parsedMsg.values())
+	if parsedMsg["elemid"] == "track1":
+	    oscmsg.setAddress('{"/%s"}' % parsedMsg["elemid"])
+	    oscmsg.append(parsedMsg["value"])
 	print(oscmsg)
 	osc_client.send(oscmsg)
 
