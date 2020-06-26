@@ -1,10 +1,38 @@
+<!-- To Do:
+
+-->
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Hello world!</title>
-    </head>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	
+	<title>Positionsdaten</title>
+	
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+	<script src="jquery/jquery.js"></script>
+	<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+	
+</head>
     <body>
-        <h1>Index page!</h1>
+		<h1>Sensordaten</h1>
+		
+		<form>
+			<fieldset>
+				<textarea cols="20" rows="5" id="textfeld" readonly></textarea>
+			</fieldset>	
+		</form>
+
+		  <script>
+			var client = mqtt.connect("192.168.178.48");
+  			client.subscribe("mqtt/demo");
+			client.on("message", function (topic, payload) {
+				window.alert(payload);
+				document.getElementById("textfeld").value = payload;
+			});
+			
+			
+		  </script>
     </body>
 </html>
