@@ -18,20 +18,31 @@
     <body>
 		<h1>Sensordaten</h1>
 		
-		<form name="myform">
+		<form>
 			<fieldset>
+				<label for="textfeld">Sensor 1</label>
+				
+				<label for="cars">Wählen Sie eine Funktion:</label>
+
+				<select name="cars" id="cars">
+				  <option value="volvo">Linear</option>
+				  <option value="saab">Binär</option>
+				  <option value="mercedes">Harfe</option>
+				</select> 
+
 				<textarea cols="20" rows="5" id="textfeld" readonly></textarea>
 			</fieldset>	
 		</form>
 
 		  <script>
+			var newtext = "";
 			// Create a client instance
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 			client.on('connect', function() { client.subscribe('demo/test'); });
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
 				//window.alert(msg);
-				var newtext = document.getElementById("textfeld").value;
+				newtext = document.getElementById("textfeld").value;
 				document.getElementById("textfeld").value = msg + "\n" + newtext;
 				//document.getElementById("textfeld").value = msg;
 			});
