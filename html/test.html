@@ -32,7 +32,7 @@
 			client.on('message', function(topic, msg) {
 				//window.alert(msg);
 				var newtext = document.getElementById("textfeld").value;
-				document.getElementById("textfeld").value += newtext;
+				document.getElementById("textfeld").value = msg + newtext;
 				//document.getElementById("textfeld").value = msg;
 			});
 		  </script>
