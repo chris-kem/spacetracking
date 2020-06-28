@@ -44,16 +44,20 @@
 		</form>
 
 		  <script>
-			var newtext = "";
+			var newtext1 = "";
+			var newtext2 = "";
 			// Create a client instance
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 			client.on('connect', function() { client.subscribe('lasers/#'); });
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
 				if (topic == 'lasers/raw/laser0') {
-					newtext = document.getElementById("textfeld1").value;
-					document.getElementById("textfeld1").value = msg + "\n" + newtext;
+					newtext1 = document.getElementById("textfeld1").value;
+					document.getElementById("textfeld1").value = msg + "\n" + newtext1;
 					//document.getElementById("textfeld").value = msg;
+				} else if (topic == 'lasers/raw/laser1') {
+					newtext2 = document.getElementById("textfeld2").value;
+					document.getElementById("textfeld2").value = msg + "\n" + newtext2;
 				}
 			});
 		  </script>
