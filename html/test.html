@@ -28,9 +28,12 @@
 			// Create a client instance
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 			client.on('connect', function() { client.subscribe('demo/test'); });
+			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
-				window.alert(msg);
-				document.getElementById("textfeld").value = msg;
+				//window.alert(msg);
+				var newtext = document.myform.inputtext.value;
+				document.myform.outputtext.value += newtext;
+				//document.getElementById("textfeld").value = msg;
 			});
 		  </script>
     </body>
