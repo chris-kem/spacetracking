@@ -31,8 +31,8 @@
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
 				//window.alert(msg);
-				var newtext = document.myform.inputtext.value;
-				document.myform.outputtext.value += newtext;
+				var newtext = document.getElementById("textfeld").value;
+				document.getElementById("textfeld").value += newtext;
 				//document.getElementById("textfeld").value = msg;
 			});
 		  </script>
