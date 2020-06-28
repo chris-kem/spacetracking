@@ -10,8 +10,6 @@
 	
 	<title>Positionsdaten</title>
 	
-	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
-	<script src="jquery/jquery.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script> 
 	<script src="js/mqtt.js"></script>
@@ -31,7 +29,6 @@
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 			client.on('connect', function() { client.subscribe('demo/test'); });
 			client.on('message', function(topic, msg) {
- 				var pos = JSON.parse(msg.toString());
 				window.alert(msg);
 				document.getElementById("textfeld").value = msg;
 			});
