@@ -20,17 +20,30 @@
 		
 		<form>
 			<fieldset>
-				<label for="textfeld">Sensor 1</label>
-				
-				<label for="cars">Wählen Sie eine Funktion:</label>
+				<div>
+					<label for="textfeld1">Sensor 1</label>
+					<textarea cols="20" rows="5" id="textfeld1" readonly></textarea>
+				</div>
+				<label for="cars">Choose a car:</label>
 
 				<select name="cars" id="cars">
-				  <option value="volvo">Linear</option>
-				  <option value="saab">Binär</option>
-				  <option value="mercedes">Harfe</option>
+				  <option value="volvo">Volvo</option>
+				  <option value="saab">Saab</option>
+				  <option value="mercedes">Mercedes</option>
+				  <option value="audi">Audi</option>
 				</select> 
+				<div>
+					<label for="textfeld2">Sensor 2</label>
+					<textarea cols="20" rows="5" id="textfeld2" readonly></textarea>
+					<label for="cars">Choose a car:</label>
 
-				<textarea cols="20" rows="5" id="textfeld" readonly></textarea>
+					<select name="cars" id="cars">
+					  <option value="volvo">Volvo</option>
+					  <option value="saab">Saab</option>
+					  <option value="mercedes">Mercedes</option>
+					  <option value="audi">Audi</option>
+					</select> 
+				</div>
 			</fieldset>	
 		</form>
 
