@@ -47,13 +47,14 @@
 			var newtext = "";
 			// Create a client instance
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
-			client.on('connect', function() { client.subscribe('demo/test'); });
+			client.on('connect', function() { client.subscribe('lasers/#'); });
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
-				//window.alert(msg);
-				newtext = document.getElementById("textfeld").value;
-				document.getElementById("textfeld").value = msg + "\n" + newtext;
-				//document.getElementById("textfeld").value = msg;
+				if (topic == 'lasers/raw/laser0') {
+					newtext = document.getElementById("textfeld1").value;
+					document.getElementById("textfeld1").value = msg + "\n" + newtext;
+					//document.getElementById("textfeld").value = msg;
+				}
 			});
 		  </script>
     </body>
