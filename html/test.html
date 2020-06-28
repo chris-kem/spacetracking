@@ -40,11 +40,36 @@
 					  <option value="harfe2">Harfe</option>
 					</select> 
 				</div>
+			</fieldset>
+			<fieldset>
+				<div>
+					<label for="textfeld1">Sensor 1</label>
+					<textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
+					<label for="dropdown1">Wählen Sie eine Funktion:</label>
+					<select name="dropdown1" id="dropdown1">
+					  <option value="linear1">Linear</option>
+					  <option value="binär1">Binär</option>
+					  <option value="harfe1">Harfe</option>
+					</select> 
+				</div>
+				<div>
+					<label for="textfeld2">Sensor 2</label>
+					<textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
+					<label for="dropdown2">Wählen Sie eine Funktion:</label>
+					<select name="dropdown2" id="dropdown2">
+					  <option value="linear2">Linear</option>
+					  <option value="binär2">Binär</option>
+					  <option value="harfe2">Harfe</option>
+					</select> 
+				</div>
 			</fieldset>	
 		</form>
 
 		  <script>
 			document.getElementById("textfeld1").value = "";
+			document.getElementById("textfeld2").value = "";
+			document.getElementById("textfeld3").value = "";
+			document.getElementById("textfeld4").value = "";
 			var newtext1 = "";
 			var newtext2 = "";
 
