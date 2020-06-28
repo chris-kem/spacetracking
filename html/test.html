@@ -28,7 +28,8 @@
 					  <option value="binär1">Binär</option>
 					  <option value="harfe1">Harfe</option>
 					</select> 
-
+				</div>
+				<div>
 					<label for="textfeld2">Sensor 2</label>
 					<textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
 					<label for="dropdown2">Wählen Sie eine Funktion:</label>
@@ -39,23 +40,23 @@
 					</select> 
 				</div>
 				<div>
-					<label for="textfeld1">Sensor 1</label>
-					<textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
-					<label for="dropdown1">Wählen Sie eine Funktion:</label>
-					<select name="dropdown1" id="dropdown1">
-					  <option value="linear1">Linear</option>
-					  <option value="binär1">Binär</option>
-					  <option value="harfe1">Harfe</option>
+					<label for="textfeld3">Sensor 3</label>
+					<textarea cols="20" rows="5" id="textfeld3" readonly>Werte für Sensor 3</textarea>
+					<label for="dropdown3">Wählen Sie eine Funktion:</label>
+					<select name="dropdown3" id="dropdown3">
+					  <option value="linear3">Linear</option>
+					  <option value="binär3">Binär</option>
+					  <option value="harfe3">Harfe</option>
 					</select> 
 				</div>
 				<div>
-					<label for="textfeld2">Sensor 2</label>
-					<textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
-					<label for="dropdown2">Wählen Sie eine Funktion:</label>
-					<select name="dropdown2" id="dropdown2">
-					  <option value="linear2">Linear</option>
-					  <option value="binär2">Binär</option>
-					  <option value="harfe2">Harfe</option>
+					<label for="textfeld4">Sensor 4</label>
+					<textarea cols="20" rows="5" id="textfeld4" readonly>Werte für Sensor 4</textarea>
+					<label for="dropdown4">Wählen Sie eine Funktion:</label>
+					<select name="dropdown4" id="dropdown4">
+					  <option value="linear4">Linear</option>
+					  <option value="binär4">Binär</option>
+					  <option value="harfe4">Harfe</option>
 					</select> 
 				</div>	
 		</form>
@@ -67,13 +68,19 @@
 			document.getElementById("textfeld4").value = "";
 			var newtext1 = "";
 			var newtext2 = "";
+			var newtext4 = "";
+			var newtext3 = "";
 
 			var max_10msg1 = 0;
+			var max_10msg3 = 0;
+			var max_10msg2 = 0;
+			var max_10msg4 = 0;
 			// Create a client instance
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 			client.on('connect', function() { client.subscribe('lasers/#'); });
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
+				//--------------------linear and laserx-------------------------------------
 				if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/raw/laser0') {
 					if (max_10msg1 <= 10) {
 						newtext1 = document.getElementById("textfeld1").value;
@@ -83,10 +90,107 @@
 						newtext1 = "";
 						max_10msg1 = 0;
 					};
-					//document.getElementById("textfeld").value = msg;
-				} else if (topic == 'lasers/raw/laser1') {
-					newtext2 = document.getElementById("textfeld2").value;
-					document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+				} else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/raw/laser1') {
+					if (max_10msg2 <= 10) {
+						newtext1 = document.getElementById("textfeld2").value;
+						document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+						max_10msg2 += 1;
+					}else {
+						newtext2 = "";
+						max_10msg2 = 0;
+					};
+				} else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/raw/laser2') {
+					if (max_10msg3 <= 10) {
+						newtext1 = document.getElementById("textfeld3").value;
+						document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+						max_10msg3 += 1;
+					}else {
+						newtext3 = "";
+						max_10msg3 = 0;
+					};
+				} else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/raw/laser3') {
+					if (max_10msg4 <= 10) {
+						newtext1 = document.getElementById("textfeld4").value;
+						document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+						max_10msg4 += 1;
+					}else {
+						newtext4 = "";
+						max_10msg4 = 0;
+					};
+				//-------------------------------binary and laserx--------------------------------------------------
+					if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
+					if (max_10msg1 <= 10) {
+						newtext1 = document.getElementById("textfeld1").value;
+						document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+						max_10msg1 += 1;
+					}else {
+						newtext1 = "";
+						max_10msg1 = 0;
+					};
+				} else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
+					if (max_10msg2 <= 10) {
+						newtext1 = document.getElementById("textfeld2").value;
+						document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+						max_10msg2 += 1;
+					}else {
+						newtext2 = "";
+						max_10msg2 = 0;
+					};
+				} else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/binary/laser2') {
+					if (max_10msg3 <= 10) {
+						newtext1 = document.getElementById("textfeld3").value;
+						document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+						max_10msg3 += 1;
+					}else {
+						newtext3 = "";
+						max_10msg3 = 0;
+					};
+				} else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/binary/laser3') {
+					if (max_10msg4 <= 10) {
+						newtext1 = document.getElementById("textfeld4").value;
+						document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+						max_10msg4 += 1;
+					}else {
+						newtext4 = "";
+						max_10msg4 = 0;
+					};
+				//---------------------------------harfe and laserx----------------------------------------------------
+				if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
+					if (max_10msg1 <= 10) {
+						newtext1 = document.getElementById("textfeld1").value;
+						document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+						max_10msg1 += 1;
+					}else {
+						newtext1 = "";
+						max_10msg1 = 0;
+					};
+				} else if (document.getElementById("dropdown2").value == "harfe2" && topic == 'lasers/harfe/laser1') {
+					if (max_10msg2 <= 10) {
+						newtext1 = document.getElementById("textfeld2").value;
+						document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+						max_10msg2 += 1;
+					}else {
+						newtext2 = "";
+						max_10msg2 = 0;
+					};
+				} else if (document.getElementById("dropdown3").value == "harfe3" && topic == 'lasers/harfe/laser2') {
+					if (max_10msg3 <= 10) {
+						newtext1 = document.getElementById("textfeld3").value;
+						document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+						max_10msg3 += 1;
+					}else {
+						newtext3 = "";
+						max_10msg3 = 0;
+					};
+				} else if (document.getElementById("dropdown4").value == "harfe4" && topic == 'lasers/harfe/laser3') {
+					if (max_10msg4 <= 10) {
+						newtext1 = document.getElementById("textfeld4").value;
+						document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+						max_10msg4 += 1;
+					}else {
+						newtext4 = "";
+						max_10msg4 = 0;
+					};
 				};
 			});
 		  </script>
