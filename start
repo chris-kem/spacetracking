@@ -1,6 +1,7 @@
 #!/bin/bash
 # Kommentar
 echo „Hallo $USER!“
-python seriell-mqtt.py &
+python sensor/seriell-mqtt.py &
+python mqtt-linear.py &
 python mqtt-binary.py &
 echo "Fertig"
