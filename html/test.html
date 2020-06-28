@@ -18,7 +18,7 @@
     <body>
 		<h1>Sensordaten</h1>
 		
-		<form name="myform1">
+		<form name="myform">
 			<fieldset>
 				<textarea cols="20" rows="5" id="textfeld" readonly></textarea>
 			</fieldset>	
@@ -31,8 +31,8 @@
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
 				//window.alert(msg);
-				var newtext = document.myform1.inputtext.value;
-				document.myform1.outputtext.value += newtext;
+				var newtext = document.myform.inputtext.value;
+				document.myform.outputtext.value += newtext;
 				//document.getElementById("textfeld").value = msg;
 			});
 		  </script>
