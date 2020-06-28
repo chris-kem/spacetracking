@@ -96,7 +96,7 @@ def on_message(client, userdata, msg):
 	    mqttClient.publish("errors", value)
 	    print("error %d" + value)
 
-        print(value)
+       # print(value)
 
 mqttClient = mqtt.Client()
 mqttClient.on_connect = on_connect

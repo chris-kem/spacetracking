@@ -20,7 +20,7 @@ def on_message(client, userdata, msg):
         global count_laser0, count_laser1, value_laser0, value_laser1, count_laser2, count_laser3, value_laser2, value_laser3
 #	print(type(msg))
         parsedMsg = json.loads(str(msg.payload.decode("utf-8","ignore")))
-        print(parsedMsg)
+#        print(parsedMsg)
 #	print(type(parsedMsg))
 #	print(parsedMsg.keys())
         sensorName = str(parsedMsg.keys())
