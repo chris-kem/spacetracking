@@ -22,7 +22,7 @@
 			<fieldset>
 				<div>
 					<label for="textfeld1">Sensor 1</label>
-					<textarea cols="20" rows="5" id="textfeld1" readonly></textarea>
+					<textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
 					<label for="dropdown1">Wählen Sie eine Funktion:</label>
 					<select name="dropdown1" id="dropdown1">
 					  <option value="linear1">Linear</option>
@@ -32,7 +32,7 @@
 				</div>
 				<div>
 					<label for="textfeld2">Sensor 2</label>
-					<textarea cols="20" rows="5" id="textfeld2" readonly></textarea>
+					<textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
 					<label for="dropdown2">Wählen Sie eine Funktion:</label>
 					<select name="dropdown2" id="dropdown2">
 					  <option value="linear2">Linear</option>
@@ -46,19 +46,26 @@
 		  <script>
 			var newtext1 = "";
 			var newtext2 = "";
+
+			var max_10msg1 = 0;
 			// Create a client instance
 			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 			client.on('connect', function() { client.subscribe('lasers/#'); });
 			//what to do when receiving a mqtt message
 			client.on('message', function(topic, msg) {
-				if (topic == 'lasers/raw/laser0') {
-					newtext1 = document.getElementById("textfeld1").value;
-					document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+				if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/raw/laser0') {
+					if (max_10msg1 <= 10) {
+						newtext1 = document.getElementById("textfeld1").value;
+						document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+						max_10msg1 += 1;
+					}else {
+						max_10msg1 = 0;
+					};
 					//document.getElementById("textfeld").value = msg;
 				} else if (topic == 'lasers/raw/laser1') {
 					newtext2 = document.getElementById("textfeld2").value;
 					document.getElementById("textfeld2").value = msg + "\n" + newtext2;
-				}
+				};
 			});
 		  </script>
     </body>
