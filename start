@@ -3,5 +3,5 @@
 echo „Hallo $USER!“
 python sensor/seriell-mqtt.py &
 python mqtt-linear.py &
-python mqtt-binary.py &
+python mqtt-binary.py 
 echo "Fertig"
