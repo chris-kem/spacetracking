@@ -7,7 +7,7 @@ p3 = subprocess.call(['python', 'mqtt-binary.py'])
 
 #p1.terminate()
 #p2.terminate()
-#p3.terminate()
+p3.terminate()
 
 
 while True:  # making a loop
