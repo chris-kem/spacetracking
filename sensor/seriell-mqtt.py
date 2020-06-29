@@ -27,13 +27,13 @@ try:
             parsedMsg = json.dumps(message_out)
 #            print(parsedMsg)
 	    if i == 0:
-	    	mqttClient.publish("lasers/raw/laser0", parsedMsg)
-	    elif i == 1:
 	    	mqttClient.publish("lasers/raw/laser1", parsedMsg)
-	    elif i == 2:
+	    elif i == 1:
 	    	mqttClient.publish("lasers/raw/laser2", parsedMsg)
-	    elif i == 3:
+	    elif i == 2:
 	    	mqttClient.publish("lasers/raw/laser3", parsedMsg)
+	    elif i == 3:
+	    	mqttClient.publish("lasers/raw/laser4", parsedMsg)
 	    else:
 		mqttClient.publish("errors", "Fehler bei seriell zu mqtt")
 
