@@ -9,7 +9,7 @@ p3 = subprocess.Popen(['python', 'mqtt-binary.py'], stderr=subprocess.PIPE, stdo
 time.sleep(1)
 
 try:
-    while true:
+    while True:
         print('running')
         time.sleep(10)
 except KeyboardInterrupt:
