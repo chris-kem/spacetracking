@@ -6,7 +6,7 @@ p2 = subprocess.call(['python', 'mqtt-linear.py'])
 p3 = subprocess.call(['python', 'mqtt-binary.py'])
 
 #p1.terminate()
-#p2.terminate()
+p2.terminate()
 p3.terminate()
 
 
