@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <form>
+  <form class="links">
     <div>
       <label for="textfeld1">Sensor 1</label>
       <textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
@@ -65,8 +65,18 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <object data="Zeichnung.svg">
+  <object class="rechts" data="Zeichnung.svg">
   </object>
+
+
+  .links {
+    float:links;
+    width = 30%;
+  }
+  .rechts {
+    float:rechts;
+    width = 70%;
+  }
 
   <!-- Add your site or application content here -->
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
