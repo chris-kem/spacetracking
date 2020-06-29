@@ -1,11 +1,11 @@
 import subprocess
 import time
 
-p1 = subprocess.Popen(['sensor/seriell-mqtt.py'])
+p1 = subprocess.Popen(['python', 'sensor/seriell-mqtt.py'], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 time.sleep(1)
-p2 = subprocess.Popen(['mqtt-linear.py'])
+p2 = subprocess.Popen(['python', 'mqtt-linear.py'], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 time.sleep(1)
-p3 = subprocess.Popen(['mqtt-binary.py'])
+p3 = subprocess.Popen(['python', 'mqtt-binary.py'], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 time.sleep(1)
 
 try:
