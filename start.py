@@ -1,19 +1,18 @@
 import subprocess
-import keyboard  # using module keyboard
+import time
 
 p1 = subprocess.Popen('sensor/seriell-mqtt.py')
+time.sleep(1)
 p2 = subprocess.Popen('mqtt-linear.py')
+time.sleep(1)
 p3 = subprocess.Popen('mqtt-binary.py')
+time.sleep(1)
 
-
-while True:  # making a loop
-    try:  # used try so that if user pressed other than the given key error will not be shown
-        if keyboard.is_pressed('q'):  # if key 'q' is pressed 
-            p1.Popen.kill()
-            p2.Popen.kill()
-            p3.Popen.kill()
-            break  # finishing the loop
-        else:
-            pass
-    except:
-        break  # if user pressed a key other than the given key the loop will break
+try:
+    while true:
+        print(running)
+        time.sleep(10)
+except: KeyboardInterrupt:
+    p3.terminate()
+    p2.terminate()
+    p1.terminate()
