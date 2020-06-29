@@ -27,7 +27,11 @@ def on_message(client, userdata, msg):
 #	print(sensorName[3:10])
         value = 0
 
-        if sensorName.startswith("Sensor1",3,10):
+        if sensorName.startswith("Sensor0",3,10):
+            value = parsedMsg["Sensor0"]
+            mqttClient.publish("lasers/linear/laser0", parsedMsg)
+
+        elif sensorName.startswith("Sensor1",3,10):
             value = parsedMsg["Sensor1"]
             mqttClient.publish("lasers/linear/laser1", parsedMsg)
 
@@ -38,10 +42,6 @@ def on_message(client, userdata, msg):
         elif sensorName.startswith("Sensor3",3,10):
             value = parsedMsg["Sensor3"]
             mqttClient.publish("lasers/linear/laser3", parsedMsg)
-
-        elif sensorName.startswith("Sensor4",3,10):
-            value = parsedMsg["Sensor4"]
-            mqttClient.publish("lasers/linear/laser4", parsedMsg)
 
         else:
             mqttClient.publish("errors", value)

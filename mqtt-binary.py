@@ -27,9 +27,9 @@ def on_message(client, userdata, msg):
 #	print(sensorName)
         value = 0
 
-        if sensorName.startswith("Sensor1"):
+        if sensorName.startswith("Sensor0"):
             value = value_laser0
-            if float(parsedMsg["Sensor1"]) > .1:
+            if float(parsedMsg["Sensor0"]) > .1:
                 value = 1
                 count_laser0 = 0
             else:
@@ -39,13 +39,13 @@ def on_message(client, userdata, msg):
                     value = 0
 
             value_laser0 = value
-	    data_out = json.dumps({"Sensor1" : value})
-	    mqttClient.publish("lasers/binary/laser1", data_out)
+	    data_out = json.dumps({"Sensor0" : value})
+	    mqttClient.publish("lasers/binary/laser0", data_out)
 
-        elif sensorName.startswith("Sensor2"):
+        elif sensorName.startswith("Sensor1"):
             value = value_laser1
 
-            if float(parsedMsg["Sensor2"]) > .3:
+            if float(parsedMsg["Sensor1"]) > .3:
                 value = 1
                 count_laser1 = 0
             else:
@@ -55,14 +55,14 @@ def on_message(client, userdata, msg):
                     value = 0
 
             value_laser1 = value
-            data_out = json.dumps({"Sensor2" : value})
-            mqttClient.publish("lasers/binary/laser2", data_out)
+            data_out = json.dumps({"Sensor1" : value})
+            mqttClient.publish("lasers/binary/laser1", data_out)
 
 
-        elif sensorName.startswith("Sensor3"):
+        elif sensorName.startswith("Sensor2"):
             value = value_laser2
 
-            if float(parsedMsg["Sensor3"]) > .3:
+            if float(parsedMsg["Sensor2"]) > .3:
                 value = 1
                 count_laser2 = 0
             else:
@@ -72,13 +72,13 @@ def on_message(client, userdata, msg):
                     value = 0
 
             value_laser2 = value
-            data_out = json.dumps({"Sensor3" : value})
-            mqttClient.publish("lasers/binary/laser3", data_out)
+            data_out = json.dumps({"Sensor2" : value})
+            mqttClient.publish("lasers/binary/laser2", data_out)
 
-        elif sensorName.startswith("Sensor4"):
+        elif sensorName.startswith("Sensor3"):
             value = value_laser3
 
-            if float(parsedMsg["Sensor4"]) > .3:
+            if float(parsedMsg["Sensor3"]) > .3:
                 value = 1
                 count_laser3 = 0
             else:
@@ -88,8 +88,8 @@ def on_message(client, userdata, msg):
                     value = 0
 
             value_laser3 = value
-            data_out = json.dumps({"Sensor4" : value})
-            mqttClient.publish("lasers/binary/laser4", data_out)
+            data_out = json.dumps({"Sensor3" : value})
+            mqttClient.publish("lasers/binary/laser3", data_out)
 
 
         else:
