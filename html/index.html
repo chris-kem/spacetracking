@@ -1,4 +1,5 @@
-<!doctype html> <html class="no-js" lang="">
+<!doctype html>
+<html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
@@ -16,72 +17,68 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 <style>
-div.links {
-  position: absolute;
-  right: 150;
-}
-div.rechts {
-  position: absolute;
-  right: 0;
-}
+  div.links {
+    position: absolute;
+    right: 150;
+  }
+
+  div.rechts {
+    position: absolute;
+    right: 0;
+  }
 </style>
+
 <body>
   <div class="rechts">
     <h1>Positiontracker</h1>
     <object data="Zeichnung.svg" width="200" height="200">
     </object>
   </div>
-  <form>
-    <div class="links">
-      <h1>Sensordaten</h1>
-      <fieldset>
-        <div>
-          <h3>Sensor 1</h3>
-          <textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
-          <label for="dropdown1">Wählen Sie eine Funktion:</label>
-          <select name="dropdown1" id="dropdown1">
-            <option value="linear1">Linear</option>
-            <option value="binär1">Binär</option>
-            <option value="harfe1">Harfe</option>
-          </select> 
-        </div>
-        <div>
-          <h4 for="textfeld2">Sensor 2</h4>
-          <textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
-          <label for="dropdown2">Wählen Sie eine Funktion:</label>
-          <select name="dropdown2" id="dropdown2">
-            <option value="linear2">Linear</option>
-            <option value="binär2">Binär</option>
-            <option value="harfe2">Harfe</option>
-          </select> 
-        </div>
-      </fieldset>
-      <fieldset>
-        <div>
-          <label for="textfeld3">Sensor 3</label>
-          <textarea cols="20" rows="5" id="textfeld3" readonly>Werte für Sensor 3</textarea>
-          <label for="dropdown3">Wählen Sie eine Funktion:</label>
-          <select name="dropdown3" id="dropdown3">
-            <option value="linear3">Linear</option>
-            <option value="binär3">Binär</option>
-            <option value="harfe3">Harfe</option>
-          </select> 
-        </div>
-        <div>
-          <label for="textfeld4">Sensor 4</label>
-          <textarea cols="20" rows="5" id="textfeld4" readonly>Werte für Sensor 4</textarea>
-          <label for="dropdown4">Wählen Sie eine Funktion:</label>
-          <select name="dropdown4" id="dropdown4">
-            <option value="linear4">Linear</option>
-            <option value="binär4">Binär</option>
-            <option value="harfe4">Harfe</option>
-          </select> 
-        </div>
-      </fieldset>
+  <h1>Sensordaten</h1>
+  <fieldset>
+    <div>
+      <h3>Sensor 1</h3>
+      <textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
+      <label for="dropdown1">Wählen Sie eine Funktion:</label>
+      <select name="dropdown1" id="dropdown1">
+        <option value="linear1">Linear</option>
+        <option value="binär1">Binär</option>
+        <option value="harfe1">Harfe</option>
+      </select>
     </div>
-
-</form>
-
+    <div>
+      <h4 for="textfeld2">Sensor 2</h4>
+      <textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
+      <label for="dropdown2">Wählen Sie eine Funktion:</label>
+      <select name="dropdown2" id="dropdown2">
+        <option value="linear2">Linear</option>
+        <option value="binär2">Binär</option>
+        <option value="harfe2">Harfe</option>
+      </select>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div>
+      <label for="textfeld3">Sensor 3</label>
+      <textarea cols="20" rows="5" id="textfeld3" readonly>Werte für Sensor 3</textarea>
+      <label for="dropdown3">Wählen Sie eine Funktion:</label>
+      <select name="dropdown3" id="dropdown3">
+        <option value="linear3">Linear</option>
+        <option value="binär3">Binär</option>
+        <option value="harfe3">Harfe</option>
+      </select>
+    </div>
+    <div>
+      <label for="textfeld4">Sensor 4</label>
+      <textarea cols="20" rows="5" id="textfeld4" readonly>Werte für Sensor 4</textarea>
+      <label for="dropdown4">Wählen Sie eine Funktion:</label>
+      <select name="dropdown4" id="dropdown4">
+        <option value="linear4">Linear</option>
+        <option value="binär4">Binär</option>
+        <option value="harfe4">Harfe</option>
+      </select>
+    </div>
+  </fieldset>
 
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -91,7 +88,8 @@ div.rechts {
 
   <!-- Add your site or application content here -->
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
@@ -124,16 +122,16 @@ div.rechts {
     var max_10msg4 = 0;
     // Create a client instance
     var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
-    client.on('connect', function() { client.subscribe('lasers/#'); });
+    client.on('connect', function () { client.subscribe('lasers/#'); });
     //what to do when receiving a mqtt message
-    client.on('message', function(topic, msg) {
+    client.on('message', function (topic, msg) {
       //--------------------linear and laserx-------------------------------------
       if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/raw/laser0') {
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
           max_10msg1 += 1;
-        }else {
+        } else {
           newtext1 = "";
           max_10msg1 = 0;
         };
@@ -142,7 +140,7 @@ div.rechts {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
           max_10msg2 += 1;
-        }else {
+        } else {
           newtext2 = "";
           max_10msg2 = 0;
         };
@@ -151,7 +149,7 @@ div.rechts {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
           max_10msg3 += 1;
-        }else {
+        } else {
           newtext3 = "";
           max_10msg3 = 0;
         };
@@ -160,17 +158,17 @@ div.rechts {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
           max_10msg4 += 1;
-        }else {
+        } else {
           newtext4 = "";
           max_10msg4 = 0;
         };
-      //-------------------------------binary and laserx--------------------------------------------------
-      }else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
+        //-------------------------------binary and laserx--------------------------------------------------
+      } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
           max_10msg1 += 1;
-        }else {
+        } else {
           newtext1 = "";
           max_10msg1 = 0;
         };
@@ -179,7 +177,7 @@ div.rechts {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
           max_10msg2 += 1;
-        }else {
+        } else {
           newtext2 = "";
           max_10msg2 = 0;
         };
@@ -188,7 +186,7 @@ div.rechts {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
           max_10msg3 += 1;
-        }else {
+        } else {
           newtext3 = "";
           max_10msg3 = 0;
         };
@@ -197,17 +195,17 @@ div.rechts {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
           max_10msg4 += 1;
-        }else {
+        } else {
           newtext4 = "";
           max_10msg4 = 0;
         };
-      //---------------------------------harfe and laserx----------------------------------------------------
-      }else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
+        //---------------------------------harfe and laserx----------------------------------------------------
+      } else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
           max_10msg1 += 1;
-        }else {
+        } else {
           newtext1 = "";
           max_10msg1 = 0;
         };
@@ -216,7 +214,7 @@ div.rechts {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
           max_10msg2 += 1;
-        }else {
+        } else {
           newtext2 = "";
           max_10msg2 = 0;
         };
@@ -225,7 +223,7 @@ div.rechts {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
           max_10msg3 += 1;
-        }else {
+        } else {
           newtext3 = "";
           max_10msg3 = 0;
         };
@@ -234,13 +232,13 @@ div.rechts {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
           max_10msg4 += 1;
-        }else {
+        } else {
           newtext4 = "";
           max_10msg4 = 0;
         };
       };
     });
-  </script>  
+  </script>
 </body>
 
 </html>
