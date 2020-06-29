@@ -2,12 +2,12 @@ import subprocess
 import keyboard  # using module keyboard
 
 p1 = subprocess.call(['python', 'sensor/seriell-mqtt.py'])
-p2 = subprocess.Popen(['python', 'mqtt-linear.py'])
-p3 = subprocess.Popen(['python', 'mqtt-binary.py'])
+p2 = subprocess.call(['python', 'mqtt-linear.py'])
+p3 = subprocess.call(['python', 'mqtt-binary.py'])
 
-p1.terminate()
-p2.terminate()
-p3.terminate()
+#p1.terminate()
+#p2.terminate()
+#p3.terminate()
 
 
 while True:  # making a loop
