@@ -17,12 +17,12 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 <style>
-  div.links {
+  .links {
     position: absolute;
     right: 150;
   }
 
-  div.rechts {
+  .rechts {
     position: absolute;
     right: 0;
   }
@@ -34,8 +34,9 @@
     <object data="Zeichnung.svg" width="200" height="200">
     </object>
   </div>
+  
   <h1>Sensordaten</h1>
-  <fieldset>
+  <fieldset class="links">
     <div>
       <h3>Sensor 1</h3>
       <textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
@@ -57,7 +58,7 @@
       </select>
     </div>
   </fieldset>
-  <fieldset>
+  <fieldset dlass = "rechts">
     <div>
       <label for="textfeld3">Sensor 3</label>
       <textarea cols="20" rows="5" id="textfeld3" readonly>Werte für Sensor 3</textarea>
