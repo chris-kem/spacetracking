@@ -19,7 +19,7 @@ try:
     while True:
         response = ser.readline()
 #	print(response)
-        i = 1
+        i = 0
         for word in response.split():
             zahl = float(word)
             #print(zahl)
