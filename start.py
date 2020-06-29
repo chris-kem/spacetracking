@@ -1,9 +1,9 @@
 import subprocess
 import keyboard  # using module keyboard
 
-p1 = subprocess.Popen('python sensor/seriell-mqtt.py')
-p2 = subprocess.Popen('python mqtt-linear.py')
-p3 = subprocess.Popen('python mqtt-binary.py')
+p1 = subprocess.call(['python', 'sensor/seriell-mqtt.py'])
+p2 = subprocess.Popen(['python', 'mqtt-linear.py'])
+p3 = subprocess.Popen(['python', 'mqtt-binary.py'])
 
 p1.terminate()
 p2.terminate()
