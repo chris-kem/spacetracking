@@ -137,7 +137,7 @@
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
           //publish to mqtt topic which sends data via OSC
           client.publish('lasers/OSC/laser0', msg);
-          console.log(msg);
+          //console.log(msg);
           max_10msg1 += 1;
         } else {
           newtext1 = "";
@@ -147,6 +147,7 @@
         if (max_10msg2 <= 10) {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+          client.publish('lasers/OSC/laser1', msg);
           max_10msg2 += 1;
         } else {
           newtext2 = "";
@@ -156,6 +157,7 @@
         if (max_10msg3 <= 10) {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+          client.publish('lasers/OSC/laser2', msg);
           max_10msg3 += 1;
         } else {
           newtext3 = "";
@@ -165,6 +167,7 @@
         if (max_10msg4 <= 10) {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+          client.publish('lasers/OSC/laser3', msg);
           max_10msg4 += 1;
         } else {
           newtext4 = "";
@@ -176,7 +179,7 @@
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
           client.publish('lasers/OSC/laser0', msg);
-          console.log(msg);
+          //console.log(msg);
           max_10msg1 += 1;
         } else {
           newtext1 = "";
@@ -186,6 +189,7 @@
         if (max_10msg2 <= 10) {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+          client.publish('lasers/OSC/laser1', msg);
           max_10msg2 += 1;
         } else {
           newtext2 = "";
@@ -195,6 +199,7 @@
         if (max_10msg3 <= 10) {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+          client.publish('lasers/OSC/laser2', msg);
           max_10msg3 += 1;
         } else {
           newtext3 = "";
@@ -204,6 +209,7 @@
         if (max_10msg4 <= 10) {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+          client.publish('lasers/OSC/laser3', msg);
           max_10msg4 += 1;
         } else {
           newtext4 = "";
@@ -214,6 +220,7 @@
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+          client.publish('lasers/OSC/laser0', msg);
           max_10msg1 += 1;
         } else {
           newtext1 = "";
@@ -223,6 +230,7 @@
         if (max_10msg2 <= 10) {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+          client.publish('lasers/OSC/laser1', msg);
           max_10msg2 += 1;
         } else {
           newtext2 = "";
@@ -232,6 +240,7 @@
         if (max_10msg3 <= 10) {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+          client.publish('lasers/OSC/laser2', msg);
           max_10msg3 += 1;
         } else {
           newtext3 = "";
@@ -241,6 +250,7 @@
         if (max_10msg4 <= 10) {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+          client.publish('lasers/OSC/laser3', msg);
           max_10msg4 += 1;
         } else {
           newtext4 = "";
