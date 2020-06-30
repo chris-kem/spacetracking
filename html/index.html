@@ -135,6 +135,8 @@
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+          //publish to mqtt topic which sends data via OSC
+          client.publish('lasers/OSC/laser0', msg)
           max_10msg1 += 1;
         } else {
           newtext1 = "";
@@ -172,6 +174,7 @@
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+          client.publish('lasers/OSC/laser0', msg)
           max_10msg1 += 1;
         } else {
           newtext1 = "";
