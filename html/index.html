@@ -133,7 +133,7 @@
     //what to do when receiving a mqtt message
     client.on('message', function (topic, msg) {
       //--------------------linear and laserx-------------------------------------
-      if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/raw/laser0') {
+      if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/linear/laser0') {
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
@@ -145,7 +145,7 @@
           newtext1 = "";
           max_10msg1 = 0;
         };
-      } else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/raw/laser1') {
+      } else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/linear/laser1') {
         if (max_10msg2 <= 10) {
           newtext2 = document.getElementById("textfeld2").value;
           document.getElementById("textfeld2").value = msg + "\n" + newtext2;
@@ -155,7 +155,7 @@
           newtext2 = "";
           max_10msg2 = 0;
         };
-      } else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/raw/laser2') {
+      } else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/linear/laser2') {
         if (max_10msg3 <= 10) {
           newtext3 = document.getElementById("textfeld3").value;
           document.getElementById("textfeld3").value = msg + "\n" + newtext3;
@@ -165,7 +165,7 @@
           newtext3 = "";
           max_10msg3 = 0;
         };
-      } else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/raw/laser3') {
+      } else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/linear/laser3') {
         if (max_10msg4 <= 10) {
           newtext4 = document.getElementById("textfeld4").value;
           document.getElementById("textfeld4").value = msg + "\n" + newtext4;
