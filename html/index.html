@@ -39,6 +39,7 @@
     <h1 class="links">Sensordaten</h1>
     <fieldset class="links">
       <form>
+        <div>
           <label for="textfeld1">Sensor 1
             <textarea cols="20" rows="5" id="textfeld1" readonly>Werte für Sensor 1</textarea>
           </label>
@@ -49,7 +50,10 @@
               <option value="harfe1">Harfe</option>
             </select>
           </label>
+          <label for="groesse"><input id="groesse" type="number" min="0" max="1" step=".05" value=".2"></label>
+        </div>
     </form>
+      <div>
         <h3 for="textfeld2">Sensor 2</h3>
         <textarea cols="20" rows="5" id="textfeld2" readonly>Werte für Sensor 2</textarea>
         <label for="dropdown2">Wählen Sie eine Funktion:</label>
@@ -58,6 +62,7 @@
           <option value="binär2">Binär</option>
           <option value="harfe2">Harfe</option>
         </select>
+      </div>
     </fieldset>
     <fieldset class = "links1">
       <div>
