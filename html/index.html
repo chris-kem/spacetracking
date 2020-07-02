@@ -48,7 +48,7 @@
         <option value="harfe1">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:block"><label for="groesse">Schwellenwert:<input id="groesse" type="number"
+    <fieldset id="schwelle1" style="display:none"><label for="groesse">Schwellenwert:<input id="groesse" type="number"
           min="0" max="1" step=".05" value=".2"></label></fieldset>
     <form>
       <h3 for="textfeld2">Sensor 2</h3>
@@ -139,7 +139,7 @@
     client.on('message', function (topic, msg) {
       //--------------------linear and laserx-------------------------------------
       if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/linear/laser0') {
-        document.getElementById("schwelle1").style = "display:block"
+        document.getElementById("schwelle1").style = "display:none"
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
@@ -183,7 +183,7 @@
         };
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
-        document.getElementById("schwelle1").style = "display:none"
+        document.getElementById("schwelle1").style = "display:block"
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
