@@ -50,7 +50,8 @@
               <option value="harfe1">Harfe</option>
             </select>
           </label>
-          <label for="groesse">Schwellenwert:<input id="groesse" type="number" min="0" max="1" step=".05" value=".2" style="display:none"></label>
+          <fieldset id="schwelle1" style="display:block">
+          <label for="groesse">Schwellenwert:<input id="groesse" type="number" min="0" max="1" step=".05" value=".2"></label></fieldset>
         </div>
     </form>
       <div>
@@ -184,7 +185,7 @@
         };
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
-        document.getElementById("groesse").style = "display:block"
+        document.getElementById("schwelle1").style = "display:none"
         if (max_10msg1 <= 10) {
           newtext1 = document.getElementById("textfeld1").value;
           document.getElementById("textfeld1").value = msg + "\n" + newtext1;
