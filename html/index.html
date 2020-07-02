@@ -141,8 +141,9 @@
       if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/linear/laser0') {
         document.getElementById("schwelle1").style = "display:none"
         if (max_10msg1 <= 10) {
-          newtext1 = document.getElementById("textfeld1").value;
-          document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+          //newtext1 = document.getElementById("textfeld1").value;
+          //document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+          document.getElementById("textfeld1").value = msg;
           //publish to mqtt topic which sends data via OSC
           client.publish('lasers/OSC/laser0', msg);
           //console.log(msg);
