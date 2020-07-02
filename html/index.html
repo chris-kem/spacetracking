@@ -48,7 +48,7 @@
         <option value="harfe1">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse">Schwellenwert:<input id="groesse" type="number"
+    <fieldset id="schwelle1" style="display:none"><label for="groesse1">Schwellenwert:<input id="groesse1" type="number"
           min="0" max="1" step=".05" value=".2"></label></fieldset>
     <form>
       <h3 for="textfeld2">Sensor 2</h3>
@@ -61,7 +61,7 @@
         <option value="harfe2">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse">Schwellenwert:<input id="groesse" type="number"
+    <fieldset id="schwelle2" style="display:none"><label for="groesse2">Schwellenwert:<input id="groesse2" type="number"
           min="0" max="1" step=".05" value=".2"></label></fieldset>
   </fieldset>
 
@@ -77,7 +77,7 @@
         <option value="harfe3">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse">Schwellenwert:<input id="groesse" type="number"
+    <fieldset id="schwelle3" style="display:none"><label for="groesse3">Schwellenwert:<input id="groesse3" type="number"
           min="0" max="1" step=".05" value=".2"></label></fieldset>
     <form>
       <h3>Sensor 4</h3>
@@ -90,7 +90,7 @@
         <option value="harfe4">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse">Schwellenwert:<input id="groesse" type="number"
+    <fieldset id="schwelle4" style="display:none"><label for="groesse4">Schwellenwert:<input id="groesse4" type="number"
           min="0" max="1" step=".05" value=".2"></label></fieldset>
   </fieldset>
   <!------------------------------------Positiontracker----------------- -->
@@ -153,16 +153,19 @@
         client.publish('lasers/OSC/laser0', msg);
 
       } else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/linear/laser1') {
+        document.getElementById("schwelle2").style = "display:none"
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
         client.publish('lasers/OSC/laser1', msg);
 
       } else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/linear/laser2') {
+        document.getElementById("schwelle3").style = "display:none"
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
         client.publish('lasers/OSC/laser2', msg);
 
       } else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/linear/laser3') {
+        document.getElementById("schwelle4").style = "display:none"
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
         client.publish('lasers/OSC/laser3', msg);
@@ -175,37 +178,44 @@
         client.publish('lasers/OSC/laser0', msg);
 
       } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
+        document.getElementById("schwelle2").style = "display:block"
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
         client.publish('lasers/OSC/laser1', msg);
 
       } else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/binary/laser2') {
+        document.getElementById("schwelle3").style = "display:block"
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
         client.publish('lasers/OSC/laser2', msg);
 
       } else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/binary/laser3') {
+        document.getElementById("schwelle4").style = "display:block"
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
         client.publish('lasers/OSC/laser3', msg);
 
         //---------------------------------harfe and laserx----------------------------------------------------
       } else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
+        document.getElementById("schwelle1").style = "display:none"
         newtext1 = document.getElementById("textfeld1").value;
         document.getElementById("textfeld1").value = msg;
         client.publish('lasers/OSC/laser0', msg);
 
       } else if (document.getElementById("dropdown2").value == "harfe2" && topic == 'lasers/harfe/laser1') {
+        document.getElementById("schwelle2").style = "display:none"
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
         client.publish('lasers/OSC/laser1', msg);
 
       } else if (document.getElementById("dropdown3").value == "harfe3" && topic == 'lasers/harfe/laser2') {
+        document.getElementById("schwelle3").style = "display:none"
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
         client.publish('lasers/OSC/laser2', msg);
 
       } else if (document.getElementById("dropdown4").value == "harfe4" && topic == 'lasers/harfe/laser3') {
+        document.getElementById("schwelle4").style = "display:none"
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
         client.publish('lasers/OSC/laser3', msg);
