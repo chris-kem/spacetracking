@@ -172,12 +172,12 @@
         if (obj["Sensor0"] > document.getElementById("groesse1").value) {
           console.log(obj["Sensor0"]);
           console.log(binary_Val1_t);
-          document.getElementById("textfeld1").value = binary_Val1_t;
+          document.getElementById("textfeld1").value = 1;
           JSON.stringify(binary_Val1_t);
           client.publish('lasers/OSC/laser0', binary_Val1_t);
           console.log(binary_Val1_t);
         } else {
-          document.getElementById("textfeld1").value = binary_Val1_f;
+          document.getElementById("textfeld1").value = 0;
           JSON.stringify(binary_Val1_f);
           client.publish('lasers/OSC/laser0', binary_Val1_f);
         }
