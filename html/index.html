@@ -170,11 +170,11 @@
         document.getElementById("schwelle1").style = "display:block"
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
-          document.getElementById("textfeld1").value = 1;
-          client.publish('lasers/OSC/laser0', 1);
+          document.getElementById("textfeld1").value = "1";
+          client.publish('lasers/OSC/laser0', "1");
         } else {
-          document.getElementById("textfeld1").value = 0;
-          client.publish('lasers/OSC/laser0', 0);
+          document.getElementById("textfeld1").value = "0";
+          client.publish('lasers/OSC/laser0', "0");
         }
 
       } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
