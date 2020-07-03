@@ -128,9 +128,13 @@
 
   <script>
     var binary_Val1_t = JSON.stringify({"Sensor0" : 1});
-    console.log(binary_Val1_t);
-    var binary_Val1_f = {"Sensor0" : 0};
-    console.log(binary_Val1_f);
+    var binary_Val1_f = JSON.stringify({"Sensor0" : 0});
+    var binary_Val2_t = JSON.stringify({"Sensor1" : 1});
+    var binary_Val2_f = JSON.stringify({"Sensor1" : 0});
+    var binary_Val3_t = JSON.stringify({"Sensor2" : 1});
+    var binary_Val3_f = JSON.stringify({"Sensor2" : 0});
+    var binary_Val4_t = JSON.stringify({"Sensor3" : 1});
+    var binary_Val4_f = JSON.stringify({"Sensor3" : 0});
 
     document.getElementById("textfeld1").value = "";
     document.getElementById("textfeld2").value = "";
@@ -173,10 +177,10 @@
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
           document.getElementById("textfeld1").value = "1";
-          client.publish('lasers/OSC/laser0', "1");
+          client.publish('lasers/OSC/laser0', binary_Val1_t);
         } else {
           document.getElementById("textfeld1").value = "0";
-          client.publish('lasers/OSC/laser0', "0");
+          client.publish('lasers/OSC/laser0', binary_Val2_f);
         }
 
       } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
