@@ -17,12 +17,15 @@ value_laser0 = 0
 value_laser2 = 0
 value_laser3 = 0
 
+<<<<<<< HEAD
 form = cgi.FieldStorage()
 #print(form)
 schwellenwert1 = form.getvalue("groesse1")
 #print(schwellenwert1)
 #print(form["groesse1"])
 
+=======
+>>>>>>> c36927bd157fba54246b7e26a9a5e94aed96daa3
 def on_message(client, userdata, msg):
         global count_laser0, count_laser1, value_laser0, value_laser1, count_laser2, count_laser3, value_laser2, value_laser3
 #	print(type(msg))
@@ -36,7 +39,6 @@ def on_message(client, userdata, msg):
 
         if sensorName.startswith("Sensor0"):
             value = value_laser0
-	    print(schwellenwert1)
             if float(parsedMsg["Sensor0"]) > schwellenwert1:
                 value = 1
                 count_laser0 = 0
