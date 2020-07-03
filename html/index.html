@@ -176,30 +176,45 @@
         document.getElementById("schwelle1").style = "display:block"
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
-          document.getElementById("textfeld1").value = binary_Val1_t;
+          document.getElementById("textfeld1").value = "1";
           client.publish('lasers/OSC/laser0', binary_Val1_t);
         } else {
           document.getElementById("textfeld1").value = "0";
-          client.publish('lasers/OSC/laser0', binary_Val2_f);
+          client.publish('lasers/OSC/laser0', binary_Val1_f);
         }
 
-      } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
+      } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/linear/laser1') {
         document.getElementById("schwelle2").style = "display:block"
-        newtext2 = document.getElementById("textfeld2").value;
-        document.getElementById("textfeld2").value = msg;
-        client.publish('lasers/OSC/laser1', msg);
+        var obj = JSON.parse(msg);
+        if (obj > document.getElementById("groesse2").value) {
+          document.getElementById("textfeld2").value = "1";
+          client.publish('lasers/OSC/laser1', binary_Val2_t);
+        } else {
+          document.getElementById("textfeld2").value = "0";
+          client.publish('lasers/OSC/laser1', binary_Val2_f);
+        }
 
-      } else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/binary/laser2') {
+      } else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/limear/laser2') {
         document.getElementById("schwelle3").style = "display:block"
-        newtext3 = document.getElementById("textfeld3").value;
-        document.getElementById("textfeld3").value = msg;
-        client.publish('lasers/OSC/laser2', msg);
+        var obj = JSON.parse(msg);
+        if (obj > document.getElementById("groesse3").value) {
+          document.getElementById("textfeld3").value = "1";
+          client.publish('lasers/OSC/laser2', binary_Val3_t);
+        } else {
+          document.getElementById("textfeld3").value = "0";
+          client.publish('lasers/OSC/laser2', binary_Val3_f);
+        }
 
-      } else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/binary/laser3') {
+      } else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/linear/laser3') {
         document.getElementById("schwelle4").style = "display:block"
-        newtext4 = document.getElementById("textfeld4").value;
-        document.getElementById("textfeld4").value = msg;
-        client.publish('lasers/OSC/laser3', msg);
+        var obj = JSON.parse(msg);
+        if (obj > document.getElementById("groesse4").value) {
+          document.getElementById("textfeld4").value = "1";
+          client.publish('lasers/OSC/laser3', binary_Val4_t);
+        } else {
+          document.getElementById("textfeld4").value = "0";
+          client.publish('lasers/OSC/laser3', binary_Val4_f);
+        }
 
         //---------------------------------harfe and laserx----------------------------------------------------
       } else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
