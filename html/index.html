@@ -127,8 +127,10 @@
 
 
   <script>
-    var binary_Val1_t = {"Sensor0" : "1"};
-    var binary_Val1_f = {"Sensor0" : "0"};
+    var binary_Val1_t = JSON.stringify({"Sensor0" : 1});
+    console.log(binary_Val1_t);
+    var binary_Val1_f = {"Sensor0" : 0};
+    console.log(binary_Val1_f);
 
     document.getElementById("textfeld1").value = "";
     document.getElementById("textfeld2").value = "";
