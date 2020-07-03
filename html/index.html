@@ -176,7 +176,7 @@
         document.getElementById("schwelle1").style = "display:block"
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
-          document.getElementById("textfeld1").value = "1";
+          document.getElementById("textfeld1").value = binary_Val1_t;
           client.publish('lasers/OSC/laser0', binary_Val1_t);
         } else {
           document.getElementById("textfeld1").value = "0";
