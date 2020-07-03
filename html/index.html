@@ -194,7 +194,7 @@
           client.publish('lasers/OSC/laser1', binary_Val2_f);
         }
 
-      } else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/limear/laser2') {
+      } else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/linear/laser2') {
         document.getElementById("schwelle3").style = "display:block"
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse3").value) {
