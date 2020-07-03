@@ -18,10 +18,10 @@ value_laser2 = 0
 value_laser3 = 0
 
 form = cgi.FieldStorage()
-print(form)
+#print(form)
 schwellenwert1 = form.getvalue("groesse1")
-print(schwellenwert1)
-print(form["groesse1"])
+#print(schwellenwert1)
+#print(form["groesse1"])
 
 def on_message(client, userdata, msg):
         global count_laser0, count_laser1, value_laser0, value_laser1, count_laser2, count_laser3, value_laser2, value_laser3
