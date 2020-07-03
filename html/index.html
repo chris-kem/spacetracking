@@ -48,9 +48,8 @@
         <option value="harfe1">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse1">Schwellenwert:<form name="suche"
-          action="/usr/lib/cgi-bin/cgi.py" method="get"><input name="groesse1" id="groesse1" type="number" min="0"
-            max="1" step=".05" value=".2"></form></label></fieldset>
+    <fieldset id="schwelle1" style="display:none"><label for="groesse1">Schwellenwert:<input id="groesse1" type="number" min="0"
+            max="1" step=".05" value=".2"></label></fieldset>
     <form>
       <h3 for="textfeld2">Sensor 2</h3>
       <input id="textfeld2" readonly>
@@ -128,6 +127,9 @@
 
 
   <script>
+    var binary_Val1_t = {"Sensor0" : "1"};
+    var binary_Val1_f = {"Sensor0" : "0"};
+
     document.getElementById("textfeld1").value = "";
     document.getElementById("textfeld2").value = "";
     document.getElementById("textfeld3").value = "";
@@ -164,11 +166,20 @@
         client.publish('lasers/OSC/laser3', msg);
 
         //-------------------------------binary and laserx--------------------------------------------------
-      } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
+      } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/linear/laser0') {
         document.getElementById("schwelle1").style = "display:block"
-        newtext1 = document.getElementById("textfeld1").value;
-        document.getElementById("textfeld1").value = msg;
-        client.publish('lasers/OSC/laser0', msg);
+        if (msg > document.getElementById("groesse1").value) {
+          console.log(msg);
+          console.log(binary_Val1_t);
+          document.getElementById("textfeld1").value = binary_Val1_t;
+          JSON.stringify(binary_Val1_t);
+          client.publish('lasers/OSC/laser0', binary_Val1_t);
+          console.log(binary_Val1_t);
+        } else {
+          document.getElementById("textfeld1").value = binary_Val1_f;
+          JSON.stringify(binary_Val1_f);
+          client.publish('lasers/OSC/laser0', binary_Val1_f);
+        }
 
       } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
         document.getElementById("schwelle2").style = "display:block"
@@ -213,7 +224,7 @@
         document.getElementById("textfeld4").value = msg;
         client.publish('lasers/OSC/laser3', msg);
 
-      };
+      }
     });
   </script>
 </body>
