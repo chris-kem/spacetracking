@@ -168,8 +168,9 @@
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/linear/laser0') {
         document.getElementById("schwelle1").style = "display:block"
-        if (msg > document.getElementById("groesse1").value) {
-          console.log(msg);
+        var obj = JSON.parse(msg);
+        if (obj["Sensor0"] > document.getElementById("groesse1").value) {
+          console.log(obj["Sensor0"]);
           console.log(binary_Val1_t);
           document.getElementById("textfeld1").value = binary_Val1_t;
           JSON.stringify(binary_Val1_t);
