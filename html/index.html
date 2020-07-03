@@ -131,15 +131,7 @@
     document.getElementById("textfeld2").value = "";
     document.getElementById("textfeld3").value = "";
     document.getElementById("textfeld4").value = "";
-    var newtext1 = "";
-    var newtext2 = "";
-    var newtext4 = "";
-    var newtext3 = "";
-
-    var max_10msg1 = 0;
-    var max_10msg3 = 0;
-    var max_10msg2 = 0;
-    var max_10msg4 = 0;
+ 
     // Create a client instance
     var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
     client.on('connect', function () { client.subscribe('lasers/#'); });
