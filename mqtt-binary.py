@@ -34,7 +34,8 @@ def on_message(client, userdata, msg):
 
         if sensorName.startswith("Sensor0"):
             value = value_laser0
-            if float(parsedMsg["Sensor0"]) > .1:
+	    print(schwellenwert1)
+            if float(parsedMsg["Sensor0"]) > schwellenwert1:
                 value = 1
                 count_laser0 = 0
             else:
