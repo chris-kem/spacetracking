@@ -101,13 +101,12 @@
   </div>
 
   <!-- Datei Upload -->
-  <form method="post" enctype="multipart/form-data">
-   <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-   <label>Wählen Sie ein Bild (*.svg) zum Hochladen aus.
-     <input name="datei" type="file" accept="image/svg"> 
-   </label>  
-   <button>Datei hochladen</button>
- </form>
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    Wählen Sie eine .svg Datei zum Hochladen:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+  </form>
+  
 
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
