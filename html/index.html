@@ -48,8 +48,8 @@
         <option value="harfe1">Harfe</option>
       </select>
     </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse1">Schwellenwert:<input id="groesse1" type="number" min="0"
-            max="1" step=".05" value=".2"></label></fieldset>
+    <fieldset id="schwelle1" style="display:none"><label for="groesse1">Schwellenwert:<input id="groesse1" type="number"
+          min="0" max="1" step=".05" value=".2"></label></fieldset>
     <form>
       <h3 for="textfeld2">Sensor 2</h3>
       <input id="textfeld2" readonly>
@@ -98,20 +98,22 @@
     <h1>Positiontracker</h1>
     <!-- define which picture as floorplan----------------- -->
     <object id="dataSVG" data="uploads/Zeichnung.svg" type="image/svg+xml"></object>
+
+
+    <!-- Datei Upload -->
+    <form action="download.php" method="post" enctype="multipart/form-data">
+      Wählen Sie eine .svg Datei zum Hochladen:
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <input type="submit" value="Hochladen" name="submit">
+    </form>
+
+
+    <form>
+      <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input name="whichFile"
+        id="whichFile">
+      <button onclick="changeSVG()" type="button" name="submit1">Auswählen</button>
+    </form>
   </div>
-
-  <!-- Datei Upload -->
-  <form action="download.php" method="post" enctype="multipart/form-data">
-    Wählen Sie eine .svg Datei zum Hochladen:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Hochladen" name="submit">
-  </form>
-  
-
-  <form>
-    <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input name="whichFile" id="whichFile">
-    <button onclick="changeSVG()" type="button" name="submit1">Auswählen</button>
-  </form>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -139,21 +141,23 @@
 
 
   <script>
-    console.log(document.getElementById("dataSVG").data);
+    var fs = require('fs');
+    var files = fs.readdirSync('/uploads/');
+    console.log(files);
+
+
     function changeSVG() {
-      console.log("in der Funktion");
-      console.log(document.getElementById("whichFile").value);
       document.getElementById("dataSVG").data = document.getElementById("whichFile").value;
     }
 
-    var binary_Val1_t = JSON.stringify({"Sensor0" : 1});
-    var binary_Val1_f = JSON.stringify({"Sensor0" : 0});
-    var binary_Val2_t = JSON.stringify({"Sensor1" : 1});
-    var binary_Val2_f = JSON.stringify({"Sensor1" : 0});
-    var binary_Val3_t = JSON.stringify({"Sensor2" : 1});
-    var binary_Val3_f = JSON.stringify({"Sensor2" : 0});
-    var binary_Val4_t = JSON.stringify({"Sensor3" : 1});
-    var binary_Val4_f = JSON.stringify({"Sensor3" : 0});
+    var binary_Val1_t = JSON.stringify({ "Sensor0": 1 });
+    var binary_Val1_f = JSON.stringify({ "Sensor0": 0 });
+    var binary_Val2_t = JSON.stringify({ "Sensor1": 1 });
+    var binary_Val2_f = JSON.stringify({ "Sensor1": 0 });
+    var binary_Val3_t = JSON.stringify({ "Sensor2": 1 });
+    var binary_Val3_f = JSON.stringify({ "Sensor2": 0 });
+    var binary_Val4_t = JSON.stringify({ "Sensor3": 1 });
+    var binary_Val4_f = JSON.stringify({ "Sensor3": 0 });
 
     document.getElementById("textfeld1").value = "";
     document.getElementById("textfeld2").value = "";
