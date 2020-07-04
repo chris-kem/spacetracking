@@ -97,14 +97,14 @@
   <div class="rechts">
     <h1>Positiontracker</h1>
     <!-- define which picture as floorplan----------------- -->
-    <object data="uploads/Zeichnung.svg" type="image/svg+xml"></object>
+    <object id="dataSVG" data="uploads/Zeichnung.svg" type="image/svg+xml"></object>
   </div>
 
   <!-- Datei Upload -->
   <form action="download.php" method="post" enctype="multipart/form-data">
     Wählen Sie eine .svg Datei zum Hochladen:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input action="changSVG" type="submit" value="Hochladen" name="submit">
+    <input action="changeSVG()" type="submit" value="Hochladen" name="submit">
   </form>
   
 
@@ -135,6 +135,10 @@
 
 
   <script>
+    function changeSVG() {
+      document.getElementById("dataSVG").data = document.getElementById("fileToUpload").value;
+    }
+
     var binary_Val1_t = JSON.stringify({"Sensor0" : 1});
     var binary_Val1_f = JSON.stringify({"Sensor0" : 0});
     var binary_Val2_t = JSON.stringify({"Sensor1" : 1});
