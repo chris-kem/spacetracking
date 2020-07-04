@@ -107,7 +107,11 @@
     <input type="submit" value="Hochladen" name="submit">
   </form>
   
-  <form><button onclick="changeSVG()" type="button" value="Hochladen2" name="submit1"></button>
+
+  <form>
+    <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input name="whichFile" id="whichFile">
+    <button onclick="changeSVG()" type="button" name="submit1">Auswählen</button>
+  </form>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -138,8 +142,8 @@
     console.log(document.getElementById("dataSVG").data);
     function changeSVG() {
       console.log("in der Funktion");
-      console.log(document.getElementById("fileToUpload").value);
-      document.getElementById("dataSVG").data = "floorplan.svg";
+      console.log(document.getElementById("whichFile").value);
+      document.getElementById("dataSVG").data = document.getElementById("whichFile").value;
     }
 
     var binary_Val1_t = JSON.stringify({"Sensor0" : 1});
