@@ -135,7 +135,10 @@
 
 
   <script>
+    console.log(document.getElementById("dataSVG").data);
     function changeSVG() {
+      console.log("in der Funktion");
+      console.log(document.getElementById("fileToUpload").value);
       document.getElementById("dataSVG").data = document.getElementById("fileToUpload").value;
     }
 
