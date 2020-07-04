@@ -97,14 +97,14 @@
   <div class="rechts">
     <h1>Positiontracker</h1>
     <!-- define which picture as floorplan----------------- -->
-    <object data="Zeichnung.svg" type="image/svg+xml"></object>
+    <object data="uploads/Zeichnung.svg" type="image/svg+xml"></object>
   </div>
 
   <!-- Datei Upload -->
   <form action="download.php" method="post" enctype="multipart/form-data">
     Wählen Sie eine .svg Datei zum Hochladen:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input action="changSVG" type="submit" value="Hochladen" name="submit">
   </form>
   
 
