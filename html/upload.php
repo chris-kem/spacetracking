@@ -16,6 +16,9 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 //   }
 // }
 
+$config['allowed_types'] = 'svg';
+$config['allowed_types'] = 'png';
+
 // Check if file already exists
 if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
