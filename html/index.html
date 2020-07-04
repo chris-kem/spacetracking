@@ -1,137 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Positionsdaten</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Positionsdaten</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+  <style>
+    .links {
+      position: relative;
+      left: 2%;
+    }
 
-  <meta name="theme-color" content="#fafafa">
-</head>
-<style>
-  .links {
-    position: relative;
-    left: 2%;
-  }
+    .links1 {
+      position: relative;
+      left: 2%;
+    }
 
-  .links1 {
-    position: relative;
-    left: 2%;
-  }
+    .rechts {
+      position: relative;
+      left: 2%;
+    }
+  </style>
 
-  .rechts {
-    position: relative;
-    left: 2%;
-  }
-</style>
+  <body>
+    <!------------------------------------Sensordaten----------------- -->
+    <h1 class="links">Sensordaten</h1>
+    <span class="links">
+      <form>
+        <h3>Sensor 1</h3>
+        <input id="textfeld1" maxlength="4" readonly />
+      </form>
+      <label for="dropdown1"
+        >Wählen Sie eine Funktion:
+        <select name="dropdown1" id="dropdown1">
+          <option value="linear1">Linear</option>
+          <option value="binär1">Binär</option>
+          <option value="harfe1">Harfe</option>
+        </select>
+      </label>
+      <fieldset id="schwelle1" style="display: none;">
+        <label for="groesse1"
+          >Schwellenwert:<input
+            id="groesse1"
+            type="number"
+            min="0"
+            max="1"
+            step=".05"
+            value=".2"
+        /></label>
+      </fieldset>
+      <form>
+        <h3 for="textfeld2">Sensor 2</h3>
+        <input id="textfeld2" readonly />
+      </form>
+      <label for="dropdown2"
+        >Wählen Sie eine Funktion:
+        <select name="dropdown2" id="dropdown2">
+          <option value="linear2">Linear</option>
+          <option value="binär2">Binär</option>
+          <option value="harfe2">Harfe</option>
+        </select>
+      </label>
+      <fieldset id="schwelle2" style="display: none;">
+        <label for="groesse2"
+          >Schwellenwert:<input
+            id="groesse2"
+            type="number"
+            min="0"
+            max="1"
+            step=".05"
+            value=".2"
+        /></label>
+      </fieldset>
+    </span>
 
-<body>
-  <!------------------------------------Sensordaten----------------- -->
-  <h1 class="links">Sensordaten</h1>
-  <fieldset class="links">
-    <form>
-      <h3>Sensor 1</h3>
-      <input id="textfeld1" maxlength="4" readonly>
-    </form>
-    <label for="dropdown1">Wählen Sie eine Funktion:
-      <select name="dropdown1" id="dropdown1">
-        <option value="linear1">Linear</option>
-        <option value="binär1">Binär</option>
-        <option value="harfe1">Harfe</option>
-      </select>
-    </label>
-    <fieldset id="schwelle1" style="display:none"><label for="groesse1">Schwellenwert:<input id="groesse1" type="number"
-          min="0" max="1" step=".05" value=".2"></label></fieldset>
-    <form>
-      <h3 for="textfeld2">Sensor 2</h3>
-      <input id="textfeld2" readonly>
-    </form>
-    <label for="dropdown2">Wählen Sie eine Funktion:
-      <select name="dropdown2" id="dropdown2">
-        <option value="linear2">Linear</option>
-        <option value="binär2">Binär</option>
-        <option value="harfe2">Harfe</option>
-      </select>
-    </label>
-    <fieldset id="schwelle2" style="display:none"><label for="groesse2">Schwellenwert:<input id="groesse2" type="number"
-          min="0" max="1" step=".05" value=".2"></label></fieldset>
-  </fieldset>
+    <span class="links1">
+      <form>
+        <h3>Sensor 3</h3>
+        <input id="textfeld3" readonly />
+      </form>
+      <label for="dropdown3"
+        >Wählen Sie eine Funktion:
+        <select name="dropdown3" id="dropdown3">
+          <option value="linear3">Linear</option>
+          <option value="binär3">Binär</option>
+          <option value="harfe3">Harfe</option>
+        </select>
+      </label>
+      <fieldset id="schwelle3" style="display: none;">
+        <label for="groesse3"
+          >Schwellenwert:<input
+            id="groesse3"
+            type="number"
+            min="0"
+            max="1"
+            step=".05"
+            value=".2"
+        /></label>
+      </fieldset>
+      <form>
+        <h3>Sensor 4</h3>
+        <input id="textfeld4" readonly />
+      </form>
+      <label for="dropdown4"
+        >Wählen Sie eine Funktion:
+        <select name="dropdown4" id="dropdown4">
+          <option value="linear4">Linear</option>
+          <option value="binär4">Binär</option>
+          <option value="harfe4">Harfe</option>
+        </select>
+      </label>
+      <fieldset id="schwelle4" style="display: none;">
+        <label for="groesse4"
+          >Schwellenwert:<input
+            id="groesse4"
+            type="number"
+            min="0"
+            max="1"
+            step=".05"
+            value=".2"
+        /></label>
+      </fieldset>
+    </span>
+    <!------------------------------------Positiontracker----------------- -->
+    <div class="rechts">
+      <h1>Positiontracker</h1>
+      <!-- define which picture as floorplan----------------- -->
+      <object
+        id="dataSVG"
+        data="uploads/Zeichnung.svg"
+        type="image/svg+xml"
+      ></object>
 
-  <fieldset class="links1">
-    <form>
-      <h3>Sensor 3</h3>
-      <input id="textfeld3" readonly>
-    </form>
-    <label for="dropdown3">Wählen Sie eine Funktion:
-      <select name="dropdown3" id="dropdown3">
-        <option value="linear3">Linear</option>
-        <option value="binär3">Binär</option>
-        <option value="harfe3">Harfe</option>
-      </select>
-    </label>
-    <fieldset id="schwelle3" style="display:none"><label for="groesse3">Schwellenwert:<input id="groesse3" type="number"
-          min="0" max="1" step=".05" value=".2"></label></fieldset>
-    <form>
-      <h3>Sensor 4</h3>
-      <input id="textfeld4" readonly>
-    </form>
-    <label for="dropdown4">Wählen Sie eine Funktion:
-      <select name="dropdown4" id="dropdown4">
-        <option value="linear4">Linear</option>
-        <option value="binär4">Binär</option>
-        <option value="harfe4">Harfe</option>
-      </select>
-    </label>
-    <fieldset id="schwelle4" style="display:none"><label for="groesse4">Schwellenwert:<input id="groesse4" type="number"
-          min="0" max="1" step=".05" value=".2"></label></fieldset>
-  </fieldset>
-  <!------------------------------------Positiontracker----------------- -->
-  <div class="rechts">
-    <h1>Positiontracker</h1>
-    <!-- define which picture as floorplan----------------- -->
-    <object id="dataSVG" data="uploads/Zeichnung.svg" type="image/svg+xml"></object>
+      <!-- Datei Upload -->
+      <form action="download.php" method="post" enctype="multipart/form-data">
+        Wählen Sie eine .svg Datei zum Hochladen:
+        <input type="file" name="fileToUpload" id="fileToUpload" />
+        <input type="submit" value="Hochladen" name="submit" />
+      </form>
 
+      <form>
+        <label for="whichFile"
+          >Welche der hochgeladenen Dateien soll dargestellt werden?:</label
+        ><input name="whichFile" id="whichFile" />
+        <button onclick="changeSVG()" type="button" name="submit1">
+          Auswählen
+        </button>
+      </form>
+    </div>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
 
-    <!-- Datei Upload -->
-    <form action="download.php" method="post" enctype="multipart/form-data">
-      Wählen Sie eine .svg Datei zum Hochladen:
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <input type="submit" value="Hochladen" name="submit">
-    </form>
+    <!-- Add your site or application content here -->
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
+        );
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
+    <script src="js/mqtt.js"></script>
+    <script src="js/spacetracking.js"></script>
 
-    <form>
-      <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input name="whichFile"
-        id="whichFile">
-      <button onclick="changeSVG()" type="button" name="submit1">Auswählen</button>
-    </form>
-  </div>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-
-
-  <!-- Add your site or application content here -->
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <script src="js/mqtt.js"></script>
-  <script src="js/spacetracking.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
@@ -139,134 +193,163 @@
   <script src="https://www.google-analytics.com/analytics.js" async></script>
   -->
 
+    <script>
+      var fs = require("fs");
+      var files = fs.readdirSync("/uploads/");
+      console.log(files);
 
-  <script>
-    var fs = require('fs');
-    var files = fs.readdirSync('/uploads/');
-    console.log(files);
-
-
-    function changeSVG() {
-      document.getElementById("dataSVG").data = document.getElementById("whichFile").value;
-    }
-
-    var binary_Val1_t = JSON.stringify({ "Sensor0": 1 });
-    var binary_Val1_f = JSON.stringify({ "Sensor0": 0 });
-    var binary_Val2_t = JSON.stringify({ "Sensor1": 1 });
-    var binary_Val2_f = JSON.stringify({ "Sensor1": 0 });
-    var binary_Val3_t = JSON.stringify({ "Sensor2": 1 });
-    var binary_Val3_f = JSON.stringify({ "Sensor2": 0 });
-    var binary_Val4_t = JSON.stringify({ "Sensor3": 1 });
-    var binary_Val4_f = JSON.stringify({ "Sensor3": 0 });
-
-    document.getElementById("textfeld1").value = "";
-    document.getElementById("textfeld2").value = "";
-    document.getElementById("textfeld3").value = "";
-    document.getElementById("textfeld4").value = "";
-
-    // Create a client instance
-    var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
-    client.on('connect', function () { client.subscribe('lasers/#'); });
-    //what to do when receiving a mqtt message
-    client.on('message', function (topic, msg) {
-      //--------------------linear and laserx-------------------------------------
-      if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/linear/laser0') {
-        document.getElementById("schwelle1").style = "display:none"
-        document.getElementById("textfeld1").value = msg;
-        //publish to mqtt topic which sends data via OSC
-        client.publish('lasers/OSC/laser0', msg);
-
-      } else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/linear/laser1') {
-        document.getElementById("schwelle2").style = "display:none"
-        newtext2 = document.getElementById("textfeld2").value;
-        document.getElementById("textfeld2").value = msg;
-        client.publish('lasers/OSC/laser1', msg);
-
-      } else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/linear/laser2') {
-        document.getElementById("schwelle3").style = "display:none"
-        newtext3 = document.getElementById("textfeld3").value;
-        document.getElementById("textfeld3").value = msg;
-        client.publish('lasers/OSC/laser2', msg);
-
-      } else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/linear/laser3') {
-        document.getElementById("schwelle4").style = "display:none"
-        newtext4 = document.getElementById("textfeld4").value;
-        document.getElementById("textfeld4").value = msg;
-        client.publish('lasers/OSC/laser3', msg);
-
-        //-------------------------------binary and laserx--------------------------------------------------
-      } else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/linear/laser0') {
-        document.getElementById("schwelle1").style = "display:block"
-        var obj = JSON.parse(msg);
-        if (obj > document.getElementById("groesse1").value) {
-          document.getElementById("textfeld1").value = "1";
-          client.publish('lasers/OSC/laser0', binary_Val1_t);
-        } else {
-          document.getElementById("textfeld1").value = "0";
-          client.publish('lasers/OSC/laser0', binary_Val1_f);
-        }
-
-      } else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/linear/laser1') {
-        document.getElementById("schwelle2").style = "display:block"
-        var obj = JSON.parse(msg);
-        if (obj > document.getElementById("groesse2").value) {
-          document.getElementById("textfeld2").value = "1";
-          client.publish('lasers/OSC/laser1', binary_Val2_t);
-        } else {
-          document.getElementById("textfeld2").value = "0";
-          client.publish('lasers/OSC/laser1', binary_Val2_f);
-        }
-
-      } else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/linear/laser2') {
-        document.getElementById("schwelle3").style = "display:block"
-        var obj = JSON.parse(msg);
-        if (obj > document.getElementById("groesse3").value) {
-          document.getElementById("textfeld3").value = "1";
-          client.publish('lasers/OSC/laser2', binary_Val3_t);
-        } else {
-          document.getElementById("textfeld3").value = "0";
-          client.publish('lasers/OSC/laser2', binary_Val3_f);
-        }
-
-      } else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/linear/laser3') {
-        document.getElementById("schwelle4").style = "display:block"
-        var obj = JSON.parse(msg);
-        if (obj > document.getElementById("groesse4").value) {
-          document.getElementById("textfeld4").value = "1";
-          client.publish('lasers/OSC/laser3', binary_Val4_t);
-        } else {
-          document.getElementById("textfeld4").value = "0";
-          client.publish('lasers/OSC/laser3', binary_Val4_f);
-        }
-
-        //---------------------------------harfe and laserx----------------------------------------------------
-      } else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
-        document.getElementById("schwelle1").style = "display:none"
-        newtext1 = document.getElementById("textfeld1").value;
-        document.getElementById("textfeld1").value = msg;
-        client.publish('lasers/OSC/laser0', msg);
-
-      } else if (document.getElementById("dropdown2").value == "harfe2" && topic == 'lasers/harfe/laser1') {
-        document.getElementById("schwelle2").style = "display:none"
-        newtext2 = document.getElementById("textfeld2").value;
-        document.getElementById("textfeld2").value = msg;
-        client.publish('lasers/OSC/laser1', msg);
-
-      } else if (document.getElementById("dropdown3").value == "harfe3" && topic == 'lasers/harfe/laser2') {
-        document.getElementById("schwelle3").style = "display:none"
-        newtext3 = document.getElementById("textfeld3").value;
-        document.getElementById("textfeld3").value = msg;
-        client.publish('lasers/OSC/laser2', msg);
-
-      } else if (document.getElementById("dropdown4").value == "harfe4" && topic == 'lasers/harfe/laser3') {
-        document.getElementById("schwelle4").style = "display:none"
-        newtext4 = document.getElementById("textfeld4").value;
-        document.getElementById("textfeld4").value = msg;
-        client.publish('lasers/OSC/laser3', msg);
-
+      function changeSVG() {
+        document.getElementById("dataSVG").data = document.getElementById(
+          "whichFile"
+        ).value;
       }
-    });
-  </script>
-</body>
 
+      var binary_Val1_t = JSON.stringify({ Sensor0: 1 });
+      var binary_Val1_f = JSON.stringify({ Sensor0: 0 });
+      var binary_Val2_t = JSON.stringify({ Sensor1: 1 });
+      var binary_Val2_f = JSON.stringify({ Sensor1: 0 });
+      var binary_Val3_t = JSON.stringify({ Sensor2: 1 });
+      var binary_Val3_f = JSON.stringify({ Sensor2: 0 });
+      var binary_Val4_t = JSON.stringify({ Sensor3: 1 });
+      var binary_Val4_f = JSON.stringify({ Sensor3: 0 });
+
+      document.getElementById("textfeld1").value = "";
+      document.getElementById("textfeld2").value = "";
+      document.getElementById("textfeld3").value = "";
+      document.getElementById("textfeld4").value = "";
+
+      // Create a client instance
+      var client = mqtt.connect(
+        location.origin.replace(location.protocol, "ws:") + ":15675"
+      );
+      client.on("connect", function () {
+        client.subscribe("lasers/#");
+      });
+      //what to do when receiving a mqtt message
+      client.on("message", function (topic, msg) {
+        //--------------------linear and laserx-------------------------------------
+        if (
+          document.getElementById("dropdown1").value == "linear1" &&
+          topic == "lasers/linear/laser0"
+        ) {
+          document.getElementById("schwelle1").style = "display:none";
+          document.getElementById("textfeld1").value = msg;
+          //publish to mqtt topic which sends data via OSC
+          client.publish("lasers/OSC/laser0", msg);
+        } else if (
+          document.getElementById("dropdown2").value == "linear2" &&
+          topic == "lasers/linear/laser1"
+        ) {
+          document.getElementById("schwelle2").style = "display:none";
+          newtext2 = document.getElementById("textfeld2").value;
+          document.getElementById("textfeld2").value = msg;
+          client.publish("lasers/OSC/laser1", msg);
+        } else if (
+          document.getElementById("dropdown3").value == "linear3" &&
+          topic == "lasers/linear/laser2"
+        ) {
+          document.getElementById("schwelle3").style = "display:none";
+          newtext3 = document.getElementById("textfeld3").value;
+          document.getElementById("textfeld3").value = msg;
+          client.publish("lasers/OSC/laser2", msg);
+        } else if (
+          document.getElementById("dropdown4").value == "linear4" &&
+          topic == "lasers/linear/laser3"
+        ) {
+          document.getElementById("schwelle4").style = "display:none";
+          newtext4 = document.getElementById("textfeld4").value;
+          document.getElementById("textfeld4").value = msg;
+          client.publish("lasers/OSC/laser3", msg);
+
+          //-------------------------------binary and laserx--------------------------------------------------
+        } else if (
+          document.getElementById("dropdown1").value == "binär1" &&
+          topic == "lasers/linear/laser0"
+        ) {
+          document.getElementById("schwelle1").style = "display:block";
+          var obj = JSON.parse(msg);
+          if (obj > document.getElementById("groesse1").value) {
+            document.getElementById("textfeld1").value = "1";
+            client.publish("lasers/OSC/laser0", binary_Val1_t);
+          } else {
+            document.getElementById("textfeld1").value = "0";
+            client.publish("lasers/OSC/laser0", binary_Val1_f);
+          }
+        } else if (
+          document.getElementById("dropdown2").value == "binär2" &&
+          topic == "lasers/linear/laser1"
+        ) {
+          document.getElementById("schwelle2").style = "display:block";
+          var obj = JSON.parse(msg);
+          if (obj > document.getElementById("groesse2").value) {
+            document.getElementById("textfeld2").value = "1";
+            client.publish("lasers/OSC/laser1", binary_Val2_t);
+          } else {
+            document.getElementById("textfeld2").value = "0";
+            client.publish("lasers/OSC/laser1", binary_Val2_f);
+          }
+        } else if (
+          document.getElementById("dropdown3").value == "binär3" &&
+          topic == "lasers/linear/laser2"
+        ) {
+          document.getElementById("schwelle3").style = "display:block";
+          var obj = JSON.parse(msg);
+          if (obj > document.getElementById("groesse3").value) {
+            document.getElementById("textfeld3").value = "1";
+            client.publish("lasers/OSC/laser2", binary_Val3_t);
+          } else {
+            document.getElementById("textfeld3").value = "0";
+            client.publish("lasers/OSC/laser2", binary_Val3_f);
+          }
+        } else if (
+          document.getElementById("dropdown4").value == "binär4" &&
+          topic == "lasers/linear/laser3"
+        ) {
+          document.getElementById("schwelle4").style = "display:block";
+          var obj = JSON.parse(msg);
+          if (obj > document.getElementById("groesse4").value) {
+            document.getElementById("textfeld4").value = "1";
+            client.publish("lasers/OSC/laser3", binary_Val4_t);
+          } else {
+            document.getElementById("textfeld4").value = "0";
+            client.publish("lasers/OSC/laser3", binary_Val4_f);
+          }
+
+          //---------------------------------harfe and laserx----------------------------------------------------
+        } else if (
+          document.getElementById("dropdown1").value == "harfe1" &&
+          topic == "lasers/harfe/laser0"
+        ) {
+          document.getElementById("schwelle1").style = "display:none";
+          newtext1 = document.getElementById("textfeld1").value;
+          document.getElementById("textfeld1").value = msg;
+          client.publish("lasers/OSC/laser0", msg);
+        } else if (
+          document.getElementById("dropdown2").value == "harfe2" &&
+          topic == "lasers/harfe/laser1"
+        ) {
+          document.getElementById("schwelle2").style = "display:none";
+          newtext2 = document.getElementById("textfeld2").value;
+          document.getElementById("textfeld2").value = msg;
+          client.publish("lasers/OSC/laser1", msg);
+        } else if (
+          document.getElementById("dropdown3").value == "harfe3" &&
+          topic == "lasers/harfe/laser2"
+        ) {
+          document.getElementById("schwelle3").style = "display:none";
+          newtext3 = document.getElementById("textfeld3").value;
+          document.getElementById("textfeld3").value = msg;
+          client.publish("lasers/OSC/laser2", msg);
+        } else if (
+          document.getElementById("dropdown4").value == "harfe4" &&
+          topic == "lasers/harfe/laser3"
+        ) {
+          document.getElementById("schwelle4").style = "display:none";
+          newtext4 = document.getElementById("textfeld4").value;
+          document.getElementById("textfeld4").value = msg;
+          client.publish("lasers/OSC/laser3", msg);
+        }
+      });
+    </script>
+  </body>
 </html>
