@@ -42,16 +42,14 @@
         <form>
           <h3>Sensor 1</h3>
           <input id="textfeld1" maxlength="4" readonly />
-        </form>
-        <label for="dropdown1"
-          >Wählen Sie eine Funktion:
+
           <select name="dropdown1" id="dropdown1">
             <option value="linear1">Linear</option>
             <option value="binär1">Binär</option>
             <option value="harfe1">Harfe</option>
           </select>
-        </label>
-        <fieldset id="schwelle1" style="display: none;">
+        </form>
+        <div id="schwelle1" style="display: none;">
           <label for="groesse1"
             >Schwellenwert:<input
               id="groesse1"
@@ -61,7 +59,7 @@
               step=".05"
               value=".2"
           /></label>
-        </fieldset>
+        </div>
         <form>
           <h3 for="textfeld2">Sensor 2</h3>
           <input id="textfeld2" readonly />
