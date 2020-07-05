@@ -159,11 +159,12 @@
       <div class="tracking">
         <h1 class="header">Positiontracker</h1>
         <!-- define which picture as floorplan----------------- -->
-        <object
-          id="dataSVG"
-          data="uploads/Zeichnung.svg"
-          type="image/svg+xml"
-        ></object>
+        <div id="svg">
+          <object
+            id="dataSVG"
+            type="image/svg+xml"
+          ></object>
+        </div>
 
         <!-- Datei Upload -->
         <div class="upload">
@@ -176,11 +177,11 @@
             <input type="file" name="fileToUpload" id="fileToUpload" />
             <input type="submit" value="Hochladen" name="submit" />
           </form>
-
+        </br>
           <form>
             <label for="whichFile"
               >Welche der hochgeladenen Dateien soll dargestellt werden?:</label
-            ><input name="whichFile" id="whichFile" />
+            ><input name="whichFile" id="whichFile" value="uploads/Zeichnung.svg"/>
             <button onclick="changeSVG()" type="button" name="submit1">
               Auswählen
             </button>
@@ -188,6 +189,7 @@
         </div>
       </div>
     </div>
+    <!--end page>
     <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -224,6 +226,9 @@
   -->
 
     <script>
+      document.getElementById("dataSVG").data = document.getElementById(
+          "whichFile"
+        ).value;
       function changeSVG() {
         document.getElementById("dataSVG").data = document.getElementById(
           "whichFile"
