@@ -160,12 +160,11 @@
         <h1 class="header">Positiontracker</h1>
         <!-- define which picture as floorplan----------------- -->
         <div id="svg">
-          <img 
-            alt="beschreibung"
+          <object
             id="dataSVG"
-            src="uploads/Zeichnung.svg"
+            data="uploads/Zeichnung.svg"
             type="image/svg+xml"
-          >
+          ></object>
         </div>
 
         <!-- Datei Upload -->
@@ -228,11 +227,11 @@
   -->
 
     <script>
-      document.getElementById("dataSVG").src = document.getElementById(
+      document.getElementById("dataSVG").data = document.getElementById(
           "whichFile"
         ).value;
       function changeSVG() {
-        document.getElementById("dataSVG").src = document.getElementById(
+        document.getElementById("dataSVG").data = document.getElementById(
           "whichFile"
         ).value;
       }
