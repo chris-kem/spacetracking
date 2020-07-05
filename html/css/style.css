@@ -1,0 +1,43 @@
+.header {
+  position: relative;
+  left: 2%;
+}
+
+.sensorX {
+  position: relative;
+  width: 20%;
+  float: left;
+  left: 3%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.schwellenwert {
+  display: none;
+  position: relative;
+  float: left;
+}
+
+.tracking {
+  float: left;
+}
+
+.toggle {
+  position: relative;
+  float: right;
+  right: 10%;
+}
+
+.upload {
+  position: relative;
+  float: left;
+  left: 3%;
+}
+
+.dataSVG {
+  position: relative;
+  float: right;
+  right: 2%;
+}
