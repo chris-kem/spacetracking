@@ -160,10 +160,12 @@
         <h1 class="header">Positiontracker</h1>
         <!-- define which picture as floorplan----------------- -->
         <div id="svg">
-          <object
+          <img 
+            alt="beschreibung"
             id="dataSVG"
+            src="uploads/Zeichnung.svg"
             type="image/svg+xml"
-          ></object>
+          >
         </div>
 
         <!-- Datei Upload -->
@@ -181,7 +183,7 @@
           <form>
             <label for="whichFile"
               >Welche der hochgeladenen Dateien soll dargestellt werden?:</label
-            ><input name="whichFile" id="whichFile" value="uploads/Zeichnung.svg"/>
+            ><input name="whichFile" id="whichFile" />
             <button onclick="changeSVG()" type="button" name="submit1">
               Auswählen
             </button>
@@ -226,11 +228,11 @@
   -->
 
     <script>
-      document.getElementById("dataSVG").data = document.getElementById(
+      document.getElementById("dataSVG").src = document.getElementById(
           "whichFile"
         ).value;
       function changeSVG() {
-        document.getElementById("dataSVG").data = document.getElementById(
+        document.getElementById("dataSVG").src = document.getElementById(
           "whichFile"
         ).value;
       }
