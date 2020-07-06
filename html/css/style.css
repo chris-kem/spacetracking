@@ -1,26 +1,29 @@
 .header {
-  position: relative;
-  left: 2%;
+  margin-bottom: 2%;
 }
 
-.sensorX {
-  position: relative;
-  width: 23%;
-  float: left;
-  left: 3%;
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.dropdown {
+.flex > .sensorX {
+  margin-left: 2%;
   position: relative;
-}
-
-.schwellenwert {
-  display: none;
-  position: relative;
+  width: 22%;
   float: left;
 }
 
-.toggle {
+.flex > .sensorX > .dropdown {
+  position: relative;
+}
+
+.flex > .sensorX > .schwellenwert {
+  position: relative;
+  float: left;
+}
+
+.flex > .sensorX > .toggle {
   position: relative;
   float: right;
   right: 10%;
@@ -31,6 +34,10 @@
   float: left;
   left: 3%;
   width: 30%;
+}
+
+.tracking{
+  margin-top: 2%;
 }
 
 #svg {
