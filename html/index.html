@@ -19,7 +19,7 @@
     <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
   </head>
   <body>
-    <div data-role="page" data-theme="b">
+    <div id="page" data-role="page" data-theme="b">
       <!------------------------------------Sensordaten----------------- -->
       <div>
         <h1 class="header">Sensordaten</h1>
@@ -227,14 +227,35 @@
   -->
 
     <script>
-      document.getElementById("dataSVG").data = document.getElementById(
-          "whichFile"
-        ).value;
-      function changeSVG() {
-        document.getElementById("dataSVG").data = document.getElementById(
-          "whichFile"
-        ).value;
+
+      function changeTheme() {
+        if (document.getElementById("flip-1").value == "Off") {
+          //set your new theme letter
+          var theme = 'b';
+        }else {
+          var theme = "a";
+        }
+        //reset all the buttons widgets
+        $.mobile.activePage.find('.ui-btn')
+                          .removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
+                          .addClass('ui-btn-up-' + theme)
+                          .attr('data-theme', theme);
+        //reset the header/footer widgets
+        $.mobile.activePage.find('.ui-header, .ui-footer')
+                          .removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
+                          .addClass('ui-bar-' + theme)
+                          .attr('data-theme', theme);
+        //reset the page widget
+        $.mobile.activePage.removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
+                          .addClass('ui-body-' + theme)
+                          .attr('data-theme', theme);
       }
+
+            function changeSVG() {
+              document.getElementById("dataSVG").data = document.getElementById(
+                "whichFile"
+              ).value;
+            }
 
       var binary_Val1_t = JSON.stringify({ Sensor0: 1 });
       var binary_Val1_f = JSON.stringify({ Sensor0: 0 });
