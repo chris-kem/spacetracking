@@ -50,7 +50,7 @@ def on_message(client, userdata, msg):
         mqttClient.publish("errors", value)
         # print(value)
 
-    print(value)
+    print(round(value, 2))
 
 
 mqttClient = mqtt.Client()
