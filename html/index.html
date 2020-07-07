@@ -190,48 +190,6 @@
 
   <script>
 
-    function changeTheme() {
-      $('a').bind('click', function (event) {
-        event.preventDefault();
-        var theme = "b";
-        $.mobile.activePage.find('.ui-btn')
-          .removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
-          .addClass('ui-btn-up-' + theme)
-          .attr('data-theme', theme);
-        $.mobile.activePage.find('.ui-header, .ui-footer')
-          .removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
-          .addClass('ui-bar-' + theme)
-          .attr('data-theme', theme);
-        $.mobile.activePage.removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
-          .addClass('ui-body-' + theme)
-          .attr('data-theme', theme);
-      });
-
-
-      if (document.getElementById("flip-1").value == "on") {
-        document.getElementById("page").setAttribute("data-theme", "a");
-        console.log(document.getElementById("flip-1").value);
-        console.log(document.getElementById("page").getAttribute("data-theme"));
-
-        document.getElementById("page").removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
-        document.getElementById("page").addClass('ui-body-' + "a")
-        document.getElementById("page").attr('data-theme', "a");
-
-        window.location.reload();
-      } else {
-        document.getElementById("page").setAttribute("data-theme", "b");
-        console.log(document.getElementById("flip-1").value);
-        console.log(document.getElementById("page").getAttribute("data-theme"));
-
-        document.getElementById("page").removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
-        document.getElementById("page").addClass('ui-body-' + "b")
-        document.getElementById("page").attr('data-theme', "b");
-
-
-        window.location.reload();
-      }
-    }
-
     function changeSVG() {
       document.getElementById("dataSVG").data = document.getElementById(
         "whichFile"
