@@ -213,14 +213,12 @@
     });
     //what to do when receiving a mqtt message
     client.on("message", function (topic, msg) {
+      var x = JSON.parse(msg);
       //--------------------linear and laserx-------------------------------------
       if (
         document.getElementById("dropdown1").value == "linear1" &&
         topic == "lasers/linear/laser0"
       ) {
-        console.log(msg);
-        var x = JSON.parse(msg);
-        console.log(x);
         document.getElementById("textfeld1").value = x;
         //publish to mqtt topic which sends data via OSC
         var toSend = JSON.stringify({ Sensor0: x })
