@@ -221,7 +221,7 @@
       ) {
         document.getElementById("textfeld1").value = msg;
         //publish to mqtt topic which sends data via OSC
-        client.publish("lasers/OSC/laser0", obj);
+        client.publish("lasers/OSC/laser0", "hallo");
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
