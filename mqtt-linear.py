@@ -36,15 +36,15 @@ def on_message(client, userdata, msg):
 
     elif sensorName.startswith("Sensor1", 3, 10):
         value = parsedMsg["Sensor1"] / 1020
-        mqttClient.publish("lasers/linear/laser1", value)
+        mqttClient.publish("lasers/linear/laser1", round(value, 2))
 
     elif sensorName.startswith("Sensor2", 3, 10):
         value = parsedMsg["Sensor2"] / 1020
-        mqttClient.publish("lasers/linear/laser2", value)
+        mqttClient.publish("lasers/linear/laser2", round(value, 2))
 
     elif sensorName.startswith("Sensor3", 3, 10):
         value = parsedMsg["Sensor3"] / 1020
-        mqttClient.publish("lasers/linear/laser3", value)
+        mqttClient.publish("lasers/linear/laser3", round(value, 2))
 
     else:
         mqttClient.publish("errors", value)
