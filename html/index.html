@@ -213,6 +213,7 @@
     });
     //what to do when receiving a mqtt message
     client.on("message", function (topic, msg) {
+      var obj = JSON.parse(msg);
       //--------------------linear and laserx-------------------------------------
       if (
         document.getElementById("dropdown1").value == "linear1" &&
@@ -220,7 +221,7 @@
       ) {
         document.getElementById("textfeld1").value = msg;
         //publish to mqtt topic which sends data via OSC
-        client.publish("lasers/OSC/laser0", msg);
+        client.publish("lasers/OSC/laser0", obj);
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
@@ -248,7 +249,6 @@
         document.getElementById("dropdown1").value == "binär1" &&
         topic == "lasers/linear/laser0" && document.getElementById("flip-1").value == "Off"
       ) {
-        var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
           document.getElementById("textfeld1").value = "1";
           client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 1 }));
