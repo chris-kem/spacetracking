@@ -219,7 +219,7 @@
         document.getElementById("dropdown1").value == "linear1" &&
         topic == "lasers/linear/laser0"
       ) {
-        document.getElementById("textfeld1").value = msg;
+        document.getElementById("textfeld1").value = obj;
         //publish to mqtt topic which sends data via OSC
         client.publish("lasers/OSC/laser0", "hallo");
       } else if (
