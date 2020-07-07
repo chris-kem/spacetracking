@@ -45,7 +45,7 @@
         </fieldset>
         <fieldset class="toggle">
           <label for="flip-1">Wert halten:</label>
-          <select name="flip-1" id="flip-1" data-role="slider">
+          <select onchange="changeTheme()" name="flip-1" id="flip-1" data-role="slider">
             <option value="off">Off</option>
             <option value="on">On</option>
           </select>
@@ -148,7 +148,7 @@
         <form>
           <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input
             name="whichFile" id="whichFile" />
-          <button type="button" name="submit1">
+          <button onclick="changeSVG()" type="button" name="submit1">
             Auswählen
           </button>
         </form>
@@ -190,8 +190,11 @@
 
   <script>
 
-    var countLaser = [50, 50, 50, 50];
-    var TRESH = 50;
+    function changeSVG() {
+      document.getElementById("dataSVG").data = document.getElementById(
+        "whichFile"
+      ).value;
+    }
 
     var binary_Val1_t = JSON.stringify({ Sensor0: 1 });
     var binary_Val1_f = JSON.stringify({ Sensor0: 0 });
@@ -216,36 +219,35 @@
     });
     //what to do when receiving a mqtt message
     client.on("message", function (topic, msg) {
-      var obj = JSON.parse(msg);
       //--------------------linear and laserx-------------------------------------
       if (
         document.getElementById("dropdown1").value == "linear1" &&
         topic == "lasers/linear/laser0"
       ) {
-        document.getElementById("textfeld1").value = obj;
+        document.getElementById("textfeld1").value = msg;
         //publish to mqtt topic which sends data via OSC
-        client.publish("lasers/OSC/laser0", "hallo");
+        client.publish("lasers/OSC/laser0", msg);
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
       ) {
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
-        client.publish("lasers/OSC/laser1", "Sensor1:" + msg);
+        client.publish("lasers/OSC/laser1", msg);
       } else if (
         document.getElementById("dropdown3").value == "linear3" &&
         topic == "lasers/linear/laser2"
       ) {
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
-        client.publish("lasers/OSC/laser2", "Sensor2:" + msg);
+        client.publish("lasers/OSC/laser2", msg);
       } else if (
         document.getElementById("dropdown4").value == "linear4" &&
         topic == "lasers/linear/laser3"
       ) {
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
-        client.publish("lasers/OSC/laser3", "Sensor3:" + msg);
+        client.publish("lasers/OSC/laser3", msg);
 
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (
