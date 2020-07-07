@@ -64,180 +64,201 @@
 	</form>
 
 	<script>
-
-		function changeTheme() {
-			$('a').bind('click', function (event) {
-				event.preventDefault();
-				var theme = "b";
-				$.mobile.activePage.find('.ui-btn')
-					.removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
-					.addClass('ui-btn-up-' + theme)
-					.attr('data-theme', theme);
-				$.mobile.activePage.find('.ui-header, .ui-footer')
-					.removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
-					.addClass('ui-bar-' + theme)
-					.attr('data-theme', theme);
-				$.mobile.activePage.removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
-					.addClass('ui-body-' + theme)
-					.attr('data-theme', theme);
-			});
-
-
-			if (document.getElementById("flip-1").value == "on") {
-				document.getElementById("page").setAttribute("data-theme", "a");
-				console.log(document.getElementById("flip-1").value);
-				console.log(document.getElementById("page").getAttribute("data-theme"));
-
-				document.getElementById("page").removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
-				document.getElementById("page").addClass('ui-body-' + "a")
-				document.getElementById("page").attr('data-theme', "a");
-
-				window.location.reload();
+        //-------------------------------binary and laserx toggle on--------------------------------------------------
+	} else if (
+			document.getElementById("dropdown1").value == "binär1" &&
+			topic == "lasers/linear/laser0" && document.getElementById("flip-1").value == "On"
+		) {
+			var obj = JSON.parse(msg);
+			if (obj > document.getElementById("groesse1").value && countLaser[0] > TRESH) {
+				document.getElementById("textfeld1").value = !document.getElementById("textfeld1").value;
+				client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: document.getElementById("textfeld1").value }));
+				countLaser[0] = 0;
 			} else {
-				document.getElementById("page").setAttribute("data-theme", "b");
-				console.log(document.getElementById("flip-1").value);
-				console.log(document.getElementById("page").getAttribute("data-theme"));
-
-				document.getElementById("page").removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
-				document.getElementById("page").addClass('ui-body-' + "b")
-				document.getElementById("page").attr('data-theme', "b");
-
-
-				window.location.reload();
+				countLaser[0] += 1;
+				if (countLaser[0] <= TRESH) {
+					client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: document.getElementById("textfeld1").value }));
+				} else {
+					document.getElementById("textfeld1").value = "0";
+					client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
+				}
 			}
-		}
 
-		document.getElementById("textfeld1").value = "";
-		document.getElementById("textfeld2").value = "";
-		document.getElementById("textfeld3").value = "";
-		document.getElementById("textfeld4").value = "";
-		var newtext1 = "";
-		var newtext2 = "";
-		var newtext4 = "";
-		var newtext3 = "";
 
-		var max_10msg1 = 0;
-		var max_10msg3 = 0;
-		var max_10msg2 = 0;
-		var max_10msg4 = 0;
-		// Create a client instance
-		var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
-		client.on('connect', function () { client.subscribe('lasers/#'); });
-		//what to do when receiving a mqtt message
-		client.on('message', function (topic, msg) {
-			//--------------------linear and laserx-------------------------------------
-			if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/raw/laser0') {
-				if (max_10msg1 <= 10) {
-					newtext1 = document.getElementById("textfeld1").value;
-					document.getElementById("textfeld1").value = msg + "\n" + newtext1;
-					max_10msg1 += 1;
+
+			function changeTheme() {
+				$('a').bind('click', function (event) {
+					event.preventDefault();
+					var theme = "b";
+					$.mobile.activePage.find('.ui-btn')
+						.removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
+						.addClass('ui-btn-up-' + theme)
+						.attr('data-theme', theme);
+					$.mobile.activePage.find('.ui-header, .ui-footer')
+						.removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
+						.addClass('ui-bar-' + theme)
+						.attr('data-theme', theme);
+					$.mobile.activePage.removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
+						.addClass('ui-body-' + theme)
+						.attr('data-theme', theme);
+				});
+
+
+				if (document.getElementById("flip-1").value == "on") {
+					document.getElementById("page").setAttribute("data-theme", "a");
+					console.log(document.getElementById("flip-1").value);
+					console.log(document.getElementById("page").getAttribute("data-theme"));
+
+					document.getElementById("page").removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
+					document.getElementById("page").addClass('ui-body-' + "a")
+					document.getElementById("page").attr('data-theme', "a");
+
+					window.location.reload();
 				} else {
-					newtext1 = "";
-					max_10msg1 = 0;
+					document.getElementById("page").setAttribute("data-theme", "b");
+					console.log(document.getElementById("flip-1").value);
+					console.log(document.getElementById("page").getAttribute("data-theme"));
+
+					document.getElementById("page").removeClass('ui-body-a ui-body-b ui-body-c ui-body-d ui-body-e')
+					document.getElementById("page").addClass('ui-body-' + "b")
+					document.getElementById("page").attr('data-theme', "b");
+
+
+					window.location.reload();
+				}
+			}
+
+			document.getElementById("textfeld1").value = "";
+			document.getElementById("textfeld2").value = "";
+			document.getElementById("textfeld3").value = "";
+			document.getElementById("textfeld4").value = "";
+			var newtext1 = "";
+			var newtext2 = "";
+			var newtext4 = "";
+			var newtext3 = "";
+
+			var max_10msg1 = 0;
+			var max_10msg3 = 0;
+			var max_10msg2 = 0;
+			var max_10msg4 = 0;
+			// Create a client instance
+			var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
+			client.on('connect', function () { client.subscribe('lasers/#'); });
+			//what to do when receiving a mqtt message
+			client.on('message', function (topic, msg) {
+				//--------------------linear and laserx-------------------------------------
+				if (document.getElementById("dropdown1").value == "linear1" && topic == 'lasers/raw/laser0') {
+					if (max_10msg1 <= 10) {
+						newtext1 = document.getElementById("textfeld1").value;
+						document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+						max_10msg1 += 1;
+					} else {
+						newtext1 = "";
+						max_10msg1 = 0;
+					};
+				} else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/raw/laser1') {
+					if (max_10msg2 <= 10) {
+						newtext2 = document.getElementById("textfeld2").value;
+						document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+						max_10msg2 += 1;
+					} else {
+						newtext2 = "";
+						max_10msg2 = 0;
+					};
+				} else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/raw/laser2') {
+					if (max_10msg3 <= 10) {
+						newtext3 = document.getElementById("textfeld3").value;
+						document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+						max_10msg3 += 1;
+					} else {
+						newtext3 = "";
+						max_10msg3 = 0;
+					};
+				} else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/raw/laser3') {
+					if (max_10msg4 <= 10) {
+						newtext4 = document.getElementById("textfeld4").value;
+						document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+						max_10msg4 += 1;
+					} else {
+						newtext4 = "";
+						max_10msg4 = 0;
+					};
+					//-------------------------------binary and laserx--------------------------------------------------
+				} else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
+					if (max_10msg1 <= 10) {
+						newtext1 = document.getElementById("textfeld1").value;
+						document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+						max_10msg1 += 1;
+					} else {
+						newtext1 = "";
+						max_10msg1 = 0;
+					};
+				} else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
+					if (max_10msg2 <= 10) {
+						newtext2 = document.getElementById("textfeld2").value;
+						document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+						max_10msg2 += 1;
+					} else {
+						newtext2 = "";
+						max_10msg2 = 0;
+					};
+				} else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/binary/laser2') {
+					if (max_10msg3 <= 10) {
+						newtext3 = document.getElementById("textfeld3").value;
+						document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+						max_10msg3 += 1;
+					} else {
+						newtext3 = "";
+						max_10msg3 = 0;
+					};
+				} else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/binary/laser3') {
+					if (max_10msg4 <= 10) {
+						newtext4 = document.getElementById("textfeld4").value;
+						document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+						max_10msg4 += 1;
+					} else {
+						newtext4 = "";
+						max_10msg4 = 0;
+					};
+					//---------------------------------harfe and laserx----------------------------------------------------
+				} else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
+					if (max_10msg1 <= 10) {
+						newtext1 = document.getElementById("textfeld1").value;
+						document.getElementById("textfeld1").value = msg + "\n" + newtext1;
+						max_10msg1 += 1;
+					} else {
+						newtext1 = "";
+						max_10msg1 = 0;
+					};
+				} else if (document.getElementById("dropdown2").value == "harfe2" && topic == 'lasers/harfe/laser1') {
+					if (max_10msg2 <= 10) {
+						newtext2 = document.getElementById("textfeld2").value;
+						document.getElementById("textfeld2").value = msg + "\n" + newtext2;
+						max_10msg2 += 1;
+					} else {
+						newtext2 = "";
+						max_10msg2 = 0;
+					};
+				} else if (document.getElementById("dropdown3").value == "harfe3" && topic == 'lasers/harfe/laser2') {
+					if (max_10msg3 <= 10) {
+						newtext3 = document.getElementById("textfeld3").value;
+						document.getElementById("textfeld3").value = msg + "\n" + newtext3;
+						max_10msg3 += 1;
+					} else {
+						newtext3 = "";
+						max_10msg3 = 0;
+					};
+				} else if (document.getElementById("dropdown4").value == "harfe4" && topic == 'lasers/harfe/laser3') {
+					if (max_10msg4 <= 10) {
+						newtext4 = document.getElementById("textfeld4").value;
+						document.getElementById("textfeld4").value = msg + "\n" + newtext4;
+						max_10msg4 += 1;
+					} else {
+						newtext4 = "";
+						max_10msg4 = 0;
+					};
 				};
-			} else if (document.getElementById("dropdown2").value == "linear2" && topic == 'lasers/raw/laser1') {
-				if (max_10msg2 <= 10) {
-					newtext2 = document.getElementById("textfeld2").value;
-					document.getElementById("textfeld2").value = msg + "\n" + newtext2;
-					max_10msg2 += 1;
-				} else {
-					newtext2 = "";
-					max_10msg2 = 0;
-				};
-			} else if (document.getElementById("dropdown3").value == "linear3" && topic == 'lasers/raw/laser2') {
-				if (max_10msg3 <= 10) {
-					newtext3 = document.getElementById("textfeld3").value;
-					document.getElementById("textfeld3").value = msg + "\n" + newtext3;
-					max_10msg3 += 1;
-				} else {
-					newtext3 = "";
-					max_10msg3 = 0;
-				};
-			} else if (document.getElementById("dropdown4").value == "linear4" && topic == 'lasers/raw/laser3') {
-				if (max_10msg4 <= 10) {
-					newtext4 = document.getElementById("textfeld4").value;
-					document.getElementById("textfeld4").value = msg + "\n" + newtext4;
-					max_10msg4 += 1;
-				} else {
-					newtext4 = "";
-					max_10msg4 = 0;
-				};
-				//-------------------------------binary and laserx--------------------------------------------------
-			} else if (document.getElementById("dropdown1").value == "binär1" && topic == 'lasers/binary/laser0') {
-				if (max_10msg1 <= 10) {
-					newtext1 = document.getElementById("textfeld1").value;
-					document.getElementById("textfeld1").value = msg + "\n" + newtext1;
-					max_10msg1 += 1;
-				} else {
-					newtext1 = "";
-					max_10msg1 = 0;
-				};
-			} else if (document.getElementById("dropdown2").value == "binär2" && topic == 'lasers/binary/laser1') {
-				if (max_10msg2 <= 10) {
-					newtext2 = document.getElementById("textfeld2").value;
-					document.getElementById("textfeld2").value = msg + "\n" + newtext2;
-					max_10msg2 += 1;
-				} else {
-					newtext2 = "";
-					max_10msg2 = 0;
-				};
-			} else if (document.getElementById("dropdown3").value == "binär3" && topic == 'lasers/binary/laser2') {
-				if (max_10msg3 <= 10) {
-					newtext3 = document.getElementById("textfeld3").value;
-					document.getElementById("textfeld3").value = msg + "\n" + newtext3;
-					max_10msg3 += 1;
-				} else {
-					newtext3 = "";
-					max_10msg3 = 0;
-				};
-			} else if (document.getElementById("dropdown4").value == "binär4" && topic == 'lasers/binary/laser3') {
-				if (max_10msg4 <= 10) {
-					newtext4 = document.getElementById("textfeld4").value;
-					document.getElementById("textfeld4").value = msg + "\n" + newtext4;
-					max_10msg4 += 1;
-				} else {
-					newtext4 = "";
-					max_10msg4 = 0;
-				};
-				//---------------------------------harfe and laserx----------------------------------------------------
-			} else if (document.getElementById("dropdown1").value == "harfe1" && topic == 'lasers/harfe/laser0') {
-				if (max_10msg1 <= 10) {
-					newtext1 = document.getElementById("textfeld1").value;
-					document.getElementById("textfeld1").value = msg + "\n" + newtext1;
-					max_10msg1 += 1;
-				} else {
-					newtext1 = "";
-					max_10msg1 = 0;
-				};
-			} else if (document.getElementById("dropdown2").value == "harfe2" && topic == 'lasers/harfe/laser1') {
-				if (max_10msg2 <= 10) {
-					newtext2 = document.getElementById("textfeld2").value;
-					document.getElementById("textfeld2").value = msg + "\n" + newtext2;
-					max_10msg2 += 1;
-				} else {
-					newtext2 = "";
-					max_10msg2 = 0;
-				};
-			} else if (document.getElementById("dropdown3").value == "harfe3" && topic == 'lasers/harfe/laser2') {
-				if (max_10msg3 <= 10) {
-					newtext3 = document.getElementById("textfeld3").value;
-					document.getElementById("textfeld3").value = msg + "\n" + newtext3;
-					max_10msg3 += 1;
-				} else {
-					newtext3 = "";
-					max_10msg3 = 0;
-				};
-			} else if (document.getElementById("dropdown4").value == "harfe4" && topic == 'lasers/harfe/laser3') {
-				if (max_10msg4 <= 10) {
-					newtext4 = document.getElementById("textfeld4").value;
-					document.getElementById("textfeld4").value = msg + "\n" + newtext4;
-					max_10msg4 += 1;
-				} else {
-					newtext4 = "";
-					max_10msg4 = 0;
-				};
-			};
-		});
+			});
 	</script>
 </body>
 
