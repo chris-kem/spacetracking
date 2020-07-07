@@ -266,7 +266,6 @@
         document.getElementById("dropdown1").value == "linear1" &&
         topic == "lasers/linear/laser0"
       ) {
-        document.getElementById("schwelle1").style = "display:none";
         document.getElementById("textfeld1").value = msg;
         //publish to mqtt topic which sends data via OSC
         client.publish("lasers/OSC/laser0", msg);
@@ -274,7 +273,6 @@
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
       ) {
-        document.getElementById("schwelle2").style = "display:none";
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
         client.publish("lasers/OSC/laser1", msg);
@@ -282,7 +280,6 @@
         document.getElementById("dropdown3").value == "linear3" &&
         topic == "lasers/linear/laser2"
       ) {
-        document.getElementById("schwelle3").style = "display:none";
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
         client.publish("lasers/OSC/laser2", msg);
@@ -290,7 +287,6 @@
         document.getElementById("dropdown4").value == "linear4" &&
         topic == "lasers/linear/laser3"
       ) {
-        document.getElementById("schwelle4").style = "display:none";
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
         client.publish("lasers/OSC/laser3", msg);
@@ -300,7 +296,6 @@
         document.getElementById("dropdown1").value == "binär1" &&
         topic == "lasers/linear/laser0"
       ) {
-        document.getElementById("schwelle1").style = "display:block";
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
           document.getElementById("textfeld1").value = "1";
@@ -313,7 +308,6 @@
         document.getElementById("dropdown2").value == "binär2" &&
         topic == "lasers/linear/laser1"
       ) {
-        document.getElementById("schwelle2").style = "display:block";
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse2").value) {
           document.getElementById("textfeld2").value = "1";
@@ -326,7 +320,6 @@
         document.getElementById("dropdown3").value == "binär3" &&
         topic == "lasers/linear/laser2"
       ) {
-        document.getElementById("schwelle3").style = "display:block";
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse3").value) {
           document.getElementById("textfeld3").value = "1";
@@ -339,7 +332,6 @@
         document.getElementById("dropdown4").value == "binär4" &&
         topic == "lasers/linear/laser3"
       ) {
-        document.getElementById("schwelle4").style = "display:block";
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse4").value) {
           document.getElementById("textfeld4").value = "1";
@@ -354,7 +346,6 @@
         document.getElementById("dropdown1").value == "harfe1" &&
         topic == "lasers/harfe/laser0"
       ) {
-        document.getElementById("schwelle1").style = "display:none";
         newtext1 = document.getElementById("textfeld1").value;
         document.getElementById("textfeld1").value = msg;
         client.publish("lasers/OSC/laser0", msg);
@@ -362,7 +353,6 @@
         document.getElementById("dropdown2").value == "harfe2" &&
         topic == "lasers/harfe/laser1"
       ) {
-        document.getElementById("schwelle2").style = "display:none";
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
         client.publish("lasers/OSC/laser1", msg);
@@ -370,7 +360,6 @@
         document.getElementById("dropdown3").value == "harfe3" &&
         topic == "lasers/harfe/laser2"
       ) {
-        document.getElementById("schwelle3").style = "display:none";
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
         client.publish("lasers/OSC/laser2", msg);
@@ -378,7 +367,6 @@
         document.getElementById("dropdown4").value == "harfe4" &&
         topic == "lasers/harfe/laser3"
       ) {
-        document.getElementById("schwelle4").style = "display:none";
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
         client.publish("lasers/OSC/laser3", msg);
