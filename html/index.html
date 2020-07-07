@@ -218,6 +218,9 @@
         document.getElementById("dropdown1").value == "linear1" &&
         topic == "lasers/linear/laser0"
       ) {
+        cosnole.log(msg);
+        var x = JSON.parse(msg);
+        console.log(x);
         document.getElementById("textfeld1").value = msg;
         //publish to mqtt topic which sends data via OSC
         var toSend = JSON.stringify({ Sensor0: msg })
