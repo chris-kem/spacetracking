@@ -221,9 +221,9 @@
         console.log(msg);
         var x = JSON.parse(msg);
         console.log(x);
-        document.getElementById("textfeld1").value = msg;
+        document.getElementById("textfeld1").value = x;
         //publish to mqtt topic which sends data via OSC
-        var toSend = JSON.stringify({ Sensor0: msg })
+        var toSend = JSON.stringify({ Sensor0: x })
         client.publish("lasers/OSC/laser0", toSend);
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
