@@ -48,7 +48,7 @@ def on_message(client, userdata, msg):
 
     else:
         mqttClient.publish("errors", value)
-        print(value)
+        # print(value)
 
     print(value)
 
