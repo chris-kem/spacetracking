@@ -25,7 +25,7 @@ try:
             #print(zahl)
             message_out = {"Sensor%d" % (i) : zahl}
             parsedMsg = json.dumps(message_out)
-#            print(parsedMsg)
+            print(parsedMsg)
 	    if i == 0:
 	    	mqttClient.publish("lasers/raw/laser0", parsedMsg)
 	    elif i == 1:
