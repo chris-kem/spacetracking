@@ -148,7 +148,7 @@
         <form>
           <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input
             name="whichFile" id="whichFile" />
-          <button onclick="changeSVG()" type="button" name="submit1">
+          <button type="button" name="submit1">
             Auswählen
           </button>
         </form>
@@ -190,14 +190,17 @@
 
   <script>
 
-    function changeSVG() {
-      document.getElementById("dataSVG").data = document.getElementById(
-        "whichFile"
-      ).value;
-    }
-
     var countLaser = [50, 50, 50, 50];
     var TRESH = 50;
+
+    var binary_Val1_t = JSON.stringify({ Sensor0: 1 });
+    var binary_Val1_f = JSON.stringify({ Sensor0: 0 });
+    var binary_Val2_t = JSON.stringify({ Sensor1: 1 });
+    var binary_Val2_f = JSON.stringify({ Sensor1: 0 });
+    var binary_Val3_t = JSON.stringify({ Sensor2: 1 });
+    var binary_Val3_f = JSON.stringify({ Sensor2: 0 });
+    var binary_Val4_t = JSON.stringify({ Sensor3: 1 });
+    var binary_Val4_f = JSON.stringify({ Sensor3: 0 });
 
     document.getElementById("textfeld1").value = "";
     document.getElementById("textfeld2").value = "";
@@ -249,20 +252,14 @@
         document.getElementById("dropdown1").value == "binär1" &&
         topic == "lasers/linear/laser0"
       ) {
+        var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse1").value) {
           document.getElementById("textfeld1").value = "1";
-          client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 1 }));
-          countLaser[0] = 0;
+          client.publish("lasers/OSC/laser0", binary_Val1_t);
         } else {
-          countLaser[0] += 1;
-          if (countLaser[0] <= TRESH) {
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 1 }));
-          } else {
-            document.getElementById("textfeld1").value = "0";
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
-          }
+          document.getElementById("textfeld1").value = "0";
+          client.publish("lasers/OSC/laser0", binary_Val1_f);
         }
-
       } else if (
         document.getElementById("dropdown2").value == "binär2" &&
         topic == "lasers/linear/laser1"
@@ -270,10 +267,10 @@
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse2").value) {
           document.getElementById("textfeld2").value = "1";
-          client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: 1 }));
+          client.publish("lasers/OSC/laser1", binary_Val2_t);
         } else {
           document.getElementById("textfeld2").value = "0";
-          client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: 0 }));
+          client.publish("lasers/OSC/laser1", binary_Val2_f);
         }
       } else if (
         document.getElementById("dropdown3").value == "binär3" &&
@@ -282,10 +279,10 @@
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse3").value) {
           document.getElementById("textfeld3").value = "1";
-          client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: 1 }));
+          client.publish("lasers/OSC/laser2", binary_Val3_t);
         } else {
           document.getElementById("textfeld3").value = "0";
-          client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: 0 }));
+          client.publish("lasers/OSC/laser2", binary_Val3_f);
         }
       } else if (
         document.getElementById("dropdown4").value == "binär4" &&
@@ -294,10 +291,10 @@
         var obj = JSON.parse(msg);
         if (obj > document.getElementById("groesse4").value) {
           document.getElementById("textfeld4").value = "1";
-          client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: 1 }));
+          client.publish("lasers/OSC/laser3", binary_Val4_t);
         } else {
           document.getElementById("textfeld4").value = "0";
-          client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: 0 }));
+          client.publish("lasers/OSC/laser3", binary_Val4_f);
         }
 
         //---------------------------------harfe and laserx----------------------------------------------------
