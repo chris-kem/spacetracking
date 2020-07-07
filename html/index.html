@@ -247,7 +247,7 @@
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (
         document.getElementById("dropdown1").value == "binär1" &&
-        topic == "lasers/linear/laser0" && document.getElementById("flip-1").value == "Off"
+        topic == "lasers/linear/laser0"
       ) {
         if (obj > document.getElementById("groesse1").value) {
           document.getElementById("textfeld1").value = "1";
@@ -262,26 +262,6 @@
             client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
           }
         }
-        //-------------------------------binary and laserx toggle on--------------------------------------------------
-      } else if (
-        document.getElementById("dropdown1").value == "binär1" &&
-        topic == "lasers/linear/laser0" && document.getElementById("flip-1").value == "On"
-      ) {
-        var obj = JSON.parse(msg);
-        if (obj > document.getElementById("groesse1").value && countLaser[0] > TRESH) {
-          document.getElementById("textfeld1").value = !document.getElementById("textfeld1").value;
-          client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: document.getElementById("textfeld1").value }));
-          countLaser[0] = 0;
-        } else {
-          countLaser[0] += 1;
-          if (countLaser[0] <= TRESH) {
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: document.getElementById("textfeld1").value }));
-          } else {
-            document.getElementById("textfeld1").value = "0";
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
-          }
-        }
-
 
       } else if (
         document.getElementById("dropdown2").value == "binär2" &&
