@@ -9,15 +9,17 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
+//$(document).ready(
 var root = document.getElementById('dataSVG');
-if (typeof root !== 'undefined' && root !== null) {
-  var doc = root.contentDocument;
-}
-if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.activeElement;
-} if (typeof svg !== 'undefined' && svg !== null) {
-  var can = document.createElement('canvas');
-}
+//if (typeof root !== 'undefined' && root !== null) {
+var doc = root.contentDocument;
+//}
+//if (typeof doc !== 'undefined' && doc !== null) {
+var svg = doc.activeElement;
+//} if (typeof svg !== 'undefined' && svg !== null) {
+var can = document.createElement('canvas');
+//);
+//}
 
 //
 // only track the track- element
