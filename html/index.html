@@ -16,22 +16,21 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 
   <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
-  <script src="jquery/jquery.js"></script>
-  <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
 
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>
-    window.jQuery ||
-      document.write(
-        '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
-      );
-  </script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
 
-  <script src="js/mqtt.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
@@ -188,16 +187,46 @@
   <script src="https://www.google-analytics.com/analytics.js" async></script>
   -->
 
+  <script src="jquery/jquery.js"></script>
+  <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>
+    window.jQuery ||
+      document.write(
+        '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
+      );
+  </script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/mqtt.js"></script>
 
-    var binary_Val1_t = JSON.stringify({ Sensor0: 1 });
-    var binary_Val1_f = JSON.stringify({ Sensor0: 0 });
-    var binary_Val2_t = JSON.stringify({ Sensor1: 1 });
-    var binary_Val2_f = JSON.stringify({ Sensor1: 0 });
-    var binary_Val3_t = JSON.stringify({ Sensor2: 1 });
-    var binary_Val3_f = JSON.stringify({ Sensor2: 0 });
-    var binary_Val4_t = JSON.stringify({ Sensor3: 1 });
-    var binary_Val4_f = JSON.stringify({ Sensor3: 0 });
+  <script>
+    var binary_Val1_t = JSON.stringify({
+      Sensor0: 1
+    });
+    var binary_Val1_f = JSON.stringify({
+      Sensor0: 0
+    });
+    var binary_Val2_t = JSON.stringify({
+      Sensor1: 1
+    });
+    var binary_Val2_f = JSON.stringify({
+      Sensor1: 0
+    });
+    var binary_Val3_t = JSON.stringify({
+      Sensor2: 1
+    });
+    var binary_Val3_f = JSON.stringify({
+      Sensor2: 0
+    });
+    var binary_Val4_t = JSON.stringify({
+      Sensor3: 1
+    });
+    var binary_Val4_f = JSON.stringify({
+      Sensor3: 0
+    });
 
     document.getElementById("textfeld1").value = "";
     document.getElementById("textfeld2").value = "";
@@ -221,7 +250,9 @@
       ) {
         document.getElementById("textfeld1").value = x;
         //publish to mqtt topic which sends data via OSC
-        var toSend = JSON.stringify({ Sensor0: x })
+        var toSend = JSON.stringify({
+          Sensor0: x
+        })
         client.publish("lasers/OSC/laser0", toSend);
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
@@ -252,10 +283,14 @@
       ) {
         if (x > document.getElementById("groesse1").value) {
           document.getElementById("textfeld1").value = "1";
-          client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 1 }));
+          client.publish("lasers/OSC/laser0", JSON.stringify({
+            Sensor0: 1
+          }));
         } else {
           document.getElementById("textfeld1").value = "0";
-          client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
+          client.publish("lasers/OSC/laser0", JSON.stringify({
+            Sensor0: 0
+          }));
         }
       } else if (
         document.getElementById("dropdown2").value == "binär2" &&
@@ -263,10 +298,14 @@
       ) {
         if (x > document.getElementById("groesse2").value) {
           document.getElementById("textfeld2").value = "1";
-          client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: 1 }));
+          client.publish("lasers/OSC/laser1", JSON.stringify({
+            Sensor1: 1
+          }));
         } else {
           document.getElementById("textfeld2").value = "0";
-          client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: 0 }));
+          client.publish("lasers/OSC/laser1", JSON.stringify({
+            Sensor1: 0
+          }));
         }
       } else if (
         document.getElementById("dropdown3").value == "binär3" &&
@@ -274,10 +313,14 @@
       ) {
         if (x > document.getElementById("groesse3").value) {
           document.getElementById("textfeld3").value = "1";
-          client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: 1 }));
+          client.publish("lasers/OSC/laser2", JSON.stringify({
+            Sensor2: 1
+          }));
         } else {
           document.getElementById("textfeld3").value = "0";
-          client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: 0 }));
+          client.publish("lasers/OSC/laser2", JSON.stringify({
+            Sensor2: 0
+          }));
         }
       } else if (
         document.getElementById("dropdown4").value == "binär4" &&
@@ -285,10 +328,14 @@
       ) {
         if (x > document.getElementById("groesse4").value) {
           document.getElementById("textfeld4").value = "1";
-          client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: 1 }));
+          client.publish("lasers/OSC/laser3", JSON.stringify({
+            Sensor3: 1
+          }));
         } else {
           document.getElementById("textfeld4").value = "0";
-          client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: 0 }));
+          client.publish("lasers/OSC/laser3", JSON.stringify({
+            Sensor3: 0
+          }));
         }
 
         //---------------------------------harfe and laserx----------------------------------------------------
