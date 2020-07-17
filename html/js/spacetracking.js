@@ -15,7 +15,8 @@ if (typeof root !== 'undefined' && root !== null) {
 }
 if (typeof doc !== 'undefined' && doc !== null) {
   var svg = doc.activeElement,
-    can = document.createElement('canvas');
+} if (typeof svg !== 'undefined' && svg !== null) {
+  var can = document.createElement('canvas');
 }
 
 //
