@@ -9,10 +9,14 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-var root = document.getElementsByTagName('object')[0],
-    doc = root.contentDocument,
-    svg = doc.activeElement,
-    can = document.createElement('canvas');
+var root = document.getElementsByTagName('object')[0];
+if(typeof root !== 'undefined' && root !== null) {
+    var doc = root.contentDocument;
+}
+if(typeof doc !== 'undefined' && doc !== null) {
+    var svg = doc.activeElement,
+    	can = document.createElement('canvas');
+}
 
 //
 // only track the track- element
