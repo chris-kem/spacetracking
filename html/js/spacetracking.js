@@ -9,21 +9,21 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-var root = document.getElementsByTagName('object')[0];
-if(typeof root !== 'undefined' && root !== null) {
-    var doc = root.contentDocument;
+var root = document.getElementById('dataSVG');
+if (typeof root !== 'undefined' && root !== null) {
+  var doc = root.contentDocument;
 }
-if(typeof doc !== 'undefined' && doc !== null) {
-    var svg = doc.activeElement,
-    	can = document.createElement('canvas');
+if (typeof doc !== 'undefined' && doc !== null) {
+  var svg = doc.activeElement,
+    can = document.createElement('canvas');
 }
 
 //
 // only track the track- element
 //
 var t = svg.querySelectorAll('[id^="track"]'),
-    tracked = {};
-t.forEach(function(x) { tracked[x.id] = 0 } )
+  tracked = {};
+t.forEach(function (x) { tracked[x.id] = 0 })
 
 if (tracked.length == 0)
   console.log("WARN: no tracked elements, please add elements to svg with an id 'track'");
@@ -39,8 +39,8 @@ can.height = svg.height.baseVal.valueInSpecifiedUnits;
 // XXX this could get problematic for large svgs
 //
 var ctx = can.getContext('2d'),
-    img = new Image();
-img.onload = function() { ctx.drawImage(img, 0, 0, can.width, can.height); }
+  img = new Image();
+img.onload = function () { ctx.drawImage(img, 0, 0, can.width, can.height); }
 img.src = root.data; // get data from containing <object>
 
 
@@ -49,7 +49,7 @@ img.src = root.data; // get data from containing <object>
 //
 CONSTANT = 10; TAGPOS = {};
 function lowpass(cur, now) {
-  return (CONSTANT*cur + now) / (CONSTANT+1);
+  return (CONSTANT * cur + now) / (CONSTANT + 1);
 }
 
 //
@@ -59,12 +59,12 @@ function lowpass(cur, now) {
 var client = mqtt.connect(location.origin.replace(location.protocol, 'ws:') + ":15675");
 //var client = mqtt.connect("ws://spacetracker.local:15675/ws");
 
-client.on('connect', function() { client.subscribe('dwm/node/+/uplink/location'); });
-client.on('message', function(topic, msg) {
+client.on('connect', function () { client.subscribe('dwm/node/+/uplink/location'); });
+client.on('message', function (topic, msg) {
   var pos = JSON.parse(msg.toString()).position,
-      point = svg.createSVGPoint(),
-      marcer = svg.getElementById('tag'),
-      tagid = topic.split('/')[2];
+    point = svg.createSVGPoint(),
+    marcer = svg.getElementById('tag'),
+    tagid = topic.split('/')[2];
 
   //
   // convert to SVG coordinate systems, SVGs coordinate systems are bottom left,
@@ -106,7 +106,7 @@ client.on('message', function(topic, msg) {
   // for debugging and interaction
   //
   point.x = pos.x; point.y = pos.y;
-  point = point.matrixTransform( svg.getTransformToElement(marcer) );
+  point = point.matrixTransform(svg.getTransformToElement(marcer));
   if (marcer) {
     marcer.setAttribute('cx', point.x);
     marcer.setAttribute('cy', point.y);
@@ -117,7 +117,7 @@ client.on('message', function(topic, msg) {
   // otherwise it is on top.
   //
   point.x = pos.x; point.y = pos.y;
-  point = point.matrixTransform( svg.getScreenCTM() );
+  point = point.matrixTransform(svg.getScreenCTM());
 
   marcer.setAttribute('visibility', 'hidden');
   var el = doc.elementFromPoint(point.x, point.y);
@@ -133,11 +133,11 @@ client.on('message', function(topic, msg) {
     //
     point.x = pos.x; point.y = pos.y;
     //var ctx = tracked[el.id].getContext("2d");
-    var c = ctx.getImageData(point.x,point.y,1,1).data;
+    var c = ctx.getImageData(point.x, point.y, 1, 1).data;
     console.log(el.style);
     //tracked[el.id] = (c[3]/255.) - (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
     //tracked[el.id] = (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
-    tracked[el.id] = (c[3]/255.);
+    tracked[el.id] = (c[3] / 255.);
     //tracked[el.id] = 1 - 0.21*c[0] + 0.72*c[1] + 0.07*c[2];
     console.log(c[0] + ", " + c[0] + ", " + c[1] + ", " + c[2] + ", " + c[3]);
     console.log(tracked[el.id]);
