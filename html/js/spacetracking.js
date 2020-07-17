@@ -10,6 +10,7 @@
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
 $(document).ready(function () {
+  setTimeout(1000);
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
   var doc = root.contentDocument;
