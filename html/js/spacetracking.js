@@ -9,8 +9,11 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
+<script src="jquery-3.5.1.min.js"></script>
 //$(document).ready(
-var root = document.getElementById('dataSVG');
+document.addEventListener("DOMContentLoaded", function (event) {
+  var root = document.getElementById('dataSVG');
+});
 //if (typeof root !== 'undefined' && root !== null) {
 var doc = root.contentDocument;
 //}
