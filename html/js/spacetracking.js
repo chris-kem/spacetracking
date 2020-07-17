@@ -19,6 +19,12 @@ $(document).ready(function () {
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
+  //
+  // this is the size of the actual svg
+  //
+  can.width = svg.width.baseVal.valueInSpecifiedUnits;
+  can.height = svg.height.baseVal.valueInSpecifiedUnits;
+
 });
 
 //
@@ -31,11 +37,6 @@ t.forEach(function (x) { tracked[x.id] = 0 })
 if (tracked.length == 0)
   console.log("WARN: no tracked elements, please add elements to svg with an id 'track'");
 
-//
-// this is the size of the actual svg
-//
-can.width = svg.width.baseVal.valueInSpecifiedUnits;
-can.height = svg.height.baseVal.valueInSpecifiedUnits;
 
 //
 // draw the image on a canvas to retrieve color values at a position
