@@ -9,20 +9,19 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-//$(document).ready(
-document.addEventListener("DOMContentLoaded", function (event) {
+<head><script src="jquery-3.5.1.min.js"></script></head>
+$(document).ready(
+//document.addEventListener("DOMContentLoaded", function (event) {
   var root = document.getElementById('dataSVG');
-  var doc = root.contentDocument;
-  var svg = doc.activeElement;
-  var can = document.createElement('canvas');
-});
+//});
 //if (typeof root !== 'undefined' && root !== null) {
+var doc = root.contentDocument;
 //}
 //if (typeof doc !== 'undefined' && doc !== null) {
-
+var svg = doc.activeElement;
 //} if (typeof svg !== 'undefined' && svg !== null) {
-
-//);
+var can = document.createElement('canvas');
+);
 //}
 
 //
