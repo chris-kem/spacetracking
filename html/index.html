@@ -148,7 +148,7 @@
         <form>
           <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input
             name="whichFile" id="whichFile" />
-          <button type="button" name="submit1">
+          <button onclick="changeSVG()" type="button" name="submit1">
             Auswählen
           </button>
         </form>
@@ -190,6 +190,12 @@
   <script src="js/mqtt.js"></script>
 
   <script>
+            function changeSVG() {
+              document.getElementById("dataSVG").data = document.getElementById(
+                "whichFile"
+              ).value;
+            }
+
     var binary_Val1_t = JSON.stringify({
       Sensor0: 1
     });
