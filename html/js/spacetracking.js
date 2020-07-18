@@ -138,12 +138,12 @@ client.on('message', function (topic, msg) {
     point.x = pos.x; point.y = pos.y;
     //var ctx = tracked[el.id].getContext("2d");
     var c = ctx.getImageData(point.x, point.y, 1, 1).data;
-    console.log(el.style);
+    //console.log(el.style);
     //tracked[el.id] = (c[3]/255.) - (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
     //tracked[el.id] = (0.21*c[0] + 0.72*c[1] + 0.07*c[2])/255;
     tracked[el.id] = (c[3] / 255.);
     //tracked[el.id] = 1 - 0.21*c[0] + 0.72*c[1] + 0.07*c[2];
-    console.log(c[0] + ", " + c[0] + ", " + c[1] + ", " + c[2] + ", " + c[3]);
+    //console.log(c[0] + ", " + c[0] + ", " + c[1] + ", " + c[2] + ", " + c[3]);
     console.log(tracked[el.id]);
   }
 
