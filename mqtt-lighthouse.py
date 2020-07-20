@@ -9,7 +9,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
 	#print(msg)
-	parsedMsg = json.loads(str(msg.payload.decode("utf-8","ignore")))
+	parsedMsg = json.loads(msg.payload.decode("utf-8","ignore"))
 	print(parsedMsg)
 	for word in parsedMsg.split(";", 3):
 		zahl = float(word)
