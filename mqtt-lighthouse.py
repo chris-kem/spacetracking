@@ -12,9 +12,14 @@ def on_message(client, userdata, msg):
 #	print(msg.payload.decode("utf-8","ignore"))
 	parsedMsg = str(msg.payload.decode("utf-8","ignore"))
 #	print(parsedMsg)
+	zahl[3] = {0,0,0}
+	i = 0
 	for word in parsedMsg.split(";", 2):
-		zahl = float(word)
-		print(zahl)
+		zahl[i] = float(word)
+		i += 1
+	
+	print(zahl)
+#		print(zahl)
         	#else:
 	    	#	mqttClient.publish("errors", value)
 	    	#	print("error %d" + value)
