@@ -8,11 +8,11 @@ def on_connect(client, userdata, flags, rc):
 	mqttClient.subscribe("examples")
 
 def on_message(client, userdata, msg):
-	print(str(msg.payload))
-	print(msg.payload.decode("utf-8","ignore"))
-	parsedMsg = json.loads(str(msg.payload.decode("utf-8","ignore")))
-	print(parsedMsg)
-	for word in parsedMsg.split(";", 3):
+#	print(str(msg.payload))
+#	print(msg.payload.decode("utf-8","ignore"))
+	parsedMsg = str(msg.payload.decode("utf-8","ignore"))
+#	print(parsedMsg)
+	for word in parsedMsg.split(";", 2):
 		zahl = float(word)
 		print(zahl)
         	#else:
