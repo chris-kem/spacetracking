@@ -9,8 +9,9 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
 	print(msg)
-
-	for word in msg.split(";", 3):
+	parsedMsg = json.loads(str(msg.payload.decode("utf-8","ignore")))
+	print(parsedMsg)
+	for word in parsedMsg.split(";", 3):
 		zahl = float(word)
 		print(zahl)
         	#else:
