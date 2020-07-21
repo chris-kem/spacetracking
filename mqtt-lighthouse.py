@@ -17,16 +17,15 @@ def on_message(client, userdata, msg):
     zahl = ["0", "0", "0"]
     i = 0
     for word in parsedMsg.split(";", 2):
-        zahl[i] = word
+        zahl[i] = float(word)
         i += 1
 
-    print(zahl[0] + " "+zahl[1] + " "+zahl[2])
-#		print(zahl)
-    # else:
-    #	mqttClient.publish("errors", value)
-    #	print("error %d" + value)
-
-   # print(value)
+#    print(zahl[0] + " "+zahl[1] + " "+zahl[2])
+    message_out = {"x": zahl[0], "y": zahl[1], "z": zahl[2]}
+    print(message_out)
+    data_out = json.dumps(message_out)
+    print(data_out)
+    mqttClient.publish("dwm/node/ViveTracker/uplink/location", data_out)
 
 
 mqttClient = mqtt.Client()
