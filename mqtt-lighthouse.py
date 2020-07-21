@@ -20,7 +20,7 @@ def on_message(client, userdata, msg):
         zahl[i] = word
         i += 1
 
-    print(zahl[0] + " "+zahl[1] + " "+zahl[2] + " ")
+    print(zahl[0] + " "+zahl[1] + " "+zahl[2][0:5] + " ")
 #		print(zahl)
     # else:
     #	mqttClient.publish("errors", value)
