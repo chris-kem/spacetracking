@@ -16,7 +16,7 @@ def on_message(client, userdata, msg):
 #	print(parsedMsg)
     zahl = ["0", "0", "0"]
     i = 0
-    for word in parsedMsg.split(";", 2):
+    for word in parsedMsg.split(";", 3):
         zahl[i] = word
         i += 1
 
