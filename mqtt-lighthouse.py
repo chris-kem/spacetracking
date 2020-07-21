@@ -12,7 +12,7 @@ def on_message(client, userdata, msg):
 #	print(msg.payload.decode("utf-8","ignore"))
 	parsedMsg = str(msg.payload.decode("utf-8","ignore"))
 #	print(parsedMsg)
-	zahl = [0,0,0}
+	zahl = [0,0,0]
 	i = 0
 	for word in parsedMsg.split(";", 2):
 		zahl[i] = float(word)
