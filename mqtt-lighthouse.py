@@ -22,9 +22,9 @@ def on_message(client, userdata, msg):
 
 #    print(zahl[0] + " "+zahl[1] + " "+zahl[2])
     message_out = {"x": zahl[0], "y": zahl[1], "z": zahl[2]}
-    print(message_out)
+#    print(message_out)
     data_out = json.dumps(message_out)
-    print(data_out)
+#    print(data_out)
     mqttClient.publish("dwm/node/ViveTracker/uplink/location", data_out)
 
 
