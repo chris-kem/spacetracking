@@ -47,4 +47,6 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+print_r($_FILES["fileToUpload"]["name"]);
+print_r($_FILES);
 ?>
