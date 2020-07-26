@@ -1,64 +1,50 @@
+
 <?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-// Simple world floorplan & meta receiver
-// Compatible with PHP7 and PHP5
-
-$maxImagePixels = 2048; // if width or height exceeds this value, resize
-$targetPath = realpath('./img/plans');
-$imageFileName = 'floorplan.png';
-$metadataFileName = 'world.json';
-
-// receive, filter and store the metadata
-$metaData = array();
-
-foreach (array('dimX', 'dimY', 'zeroX', 'zeroY') as $metaKey) {
-    $metaData[$metaKey] = filter_var($_POST[$metaKey], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "File is not an image.";
+    $uploadOk = 0;
+  }
 }
 
-$metaJson = json_encode($metaData);
-
-file_put_contents($targetPath . '/' . $metadataFileName, $metaJson);
-
-// now deal with the floorplan image
-if (!array_key_exists('floorplan', $_FILES)) {
-    // no image uploaded, we're done
-    output('Floorplan settings saved', 0);
+// Check if file already exists
+if (file_exists($target_file)) {
+  echo "Sorry, file already exists.";
+  $uploadOk = 0;
 }
 
-$imageInfo = getimagesize($_FILES['floorplan']['tmp_name']);
-
-if ($imageInfo == false) {
-    output('Not an image or unsupported image format', 1);
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+  echo "Sorry, your file is too large.";
+  $uploadOk = 0;
 }
 
-$image = imagecreatefromstring(file_get_contents($_FILES['floorplan']['tmp_name']));
-
-$imageWidth = $imageInfo[0];
-$imageHeight = $imageInfo[1];
-
-if (($imageWidth > $maxImagePixels) || ($imageHeight > $maxImagePixels)) {
-    // resize needed
-    $aspectRatio = $imageWidth / $imageHeight;
-    if ($imageWidth > $maxImagePixels) {
-        $imageWidth = $maxImagePixels;
-        $imageHeight = $imageWidth * $aspectRatio;
-    }
-    if ($imageHeight > $maxImagePixels) {
-        $imageHeight = $maxImagePixels;
-        $imageWidth = $imageHeight / $aspectRatio;
-    }
-    $resized = imagecreatetruecolor($imageWidth, $imageHeight);
-    imagecopyresampled($resized, $image, 0, 0, 0, 0, $imageWidth, $imageHeight, $imageInfo[0], $imageInfo[1]);
-    $image = $resized;
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "svg" ) {
+  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $uploadOk = 0;
 }
 
-if (imagepng($image, $targetPath . '/' . $imageFileName)) {
-    output('Image saved', 0);
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
 } else {
-    output('Error saving image', 1);
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
 }
-
-function output($message, $code = 0) {
-    echo json_encode(array('message' => $message, 'code' => $code));
-    die;
-}
+?>
