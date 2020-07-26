@@ -9,53 +9,53 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-$(document).ready(function () {
+//$(document).ready(function () {
 
-  var root = document.getElementById('dataSVG');
-  //if (typeof root !== 'undefined' && root !== null) {
-  var doc = root.contentDocument;
-  //}
-  //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.activeElement;
-  //} if (typeof svg !== 'undefined' && svg !== null) {
-  var can = document.createElement('canvas');
-  //);
-
-
-  //
-  // only track the track- element
-  //
-  var t = svg.querySelectorAll('[id^="track"]'),
-    tracked = {};
-  t.forEach(function (x) { tracked[x.id] = 0 })
-
-  if (tracked.length == 0)
-    console.log("WARN: no tracked elements, please add elements to svg with an id 'track'");
-
-  //
-  // this is the size of the actual svg
-  //
-  can.width = svg.width.baseVal.valueInSpecifiedUnits;
-  can.height = svg.height.baseVal.valueInSpecifiedUnits;
-
-  //
-  // draw the image on a canvas to retrieve color values at a position
-  // XXX this could get problematic for large svgs
-  //
-  var ctx = can.getContext('2d'),
-    img = new Image();
-  img.onload = function () { ctx.drawImage(img, 0, 0, can.width, can.height); }
-  img.src = root.data; // get data from containing <object>
+var root = document.getElementById('dataSVG');
+//if (typeof root !== 'undefined' && root !== null) {
+var doc = root.contentDocument;
+//}
+//if (typeof doc !== 'undefined' && doc !== null) {
+var svg = doc.activeElement;
+//} if (typeof svg !== 'undefined' && svg !== null) {
+var can = document.createElement('canvas');
+//);
 
 
-  //
-  // we do lowpass-filtering according to the Decawave implementation.
-  //
-  CONSTANT = 10; TAGPOS = {};
-  function lowpass(cur, now) {
-    return (CONSTANT * cur + now) / (CONSTANT + 1);
-  }
-});
+//
+// only track the track- element
+//
+var t = svg.querySelectorAll('[id^="track"]'),
+  tracked = {};
+t.forEach(function (x) { tracked[x.id] = 0 })
+
+if (tracked.length == 0)
+  console.log("WARN: no tracked elements, please add elements to svg with an id 'track'");
+
+//
+// this is the size of the actual svg
+//
+can.width = svg.width.baseVal.valueInSpecifiedUnits;
+can.height = svg.height.baseVal.valueInSpecifiedUnits;
+
+//
+// draw the image on a canvas to retrieve color values at a position
+// XXX this could get problematic for large svgs
+//
+var ctx = can.getContext('2d'),
+  img = new Image();
+img.onload = function () { ctx.drawImage(img, 0, 0, can.width, can.height); }
+img.src = root.data; // get data from containing <object>
+
+
+//
+// we do lowpass-filtering according to the Decawave implementation.
+//
+CONSTANT = 10; TAGPOS = {};
+function lowpass(cur, now) {
+  return (CONSTANT * cur + now) / (CONSTANT + 1);
+}
+//------------------});
 //
 // connect to the MQTT broker and subscribe to all locations updates from
 // all nodes in the network.
