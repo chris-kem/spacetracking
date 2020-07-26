@@ -1,5 +1,5 @@
 <?php
-
+echo $_FILES;
 /**
  * Check to see if POST was used and that its content length is less than the value in post_max_size
  */
@@ -148,7 +148,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 //   }
 // }
 
-$config['allowed_types'] = 'svg';
+//$config['allowed_types'] = 'svg';
 //$config['allowed_types'] = 'png';
 
 // Check if file already exists
@@ -162,7 +162,7 @@ if ($_FILES["fileToUpload"]["size"] > 200000) {
   echo "Sorry, your file is too large.";
   $uploadOk = 0;
 }
-
+echo $_FILES;
 // Allow certain file formats
 if($imageFileType != "svg") {
   echo "Sorry, only SVG files are allowed.";
