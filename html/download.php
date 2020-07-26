@@ -34,7 +34,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 //   }
 // }
 
-//$config['allowed_types'] = 'svg';
+$config['allowed_types'] = 'svg';
 //$config['allowed_types'] = 'png';
 
 // Check if file already exists
@@ -67,7 +67,7 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-//header("Location: http://localhost/spacetracking");
+header("Location: http://localhost/spacetracking");
 ?>
         </div>
     </div>
