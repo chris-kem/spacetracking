@@ -6,7 +6,8 @@ echo „Hallo $USER!“
 python seriell-mqtt.py &
 python mqtt-linear.py &
 python mqtt-lighthouse.py &
-python /home/pi/libsurvive/./api_example &
+cd /home/pi/libsurvive/
+./api_example &
 #gnome-shell -e echo "test"
 echo "Fertig"
 wait
