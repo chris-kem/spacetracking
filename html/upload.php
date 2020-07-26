@@ -1,5 +1,6 @@
 
 <?php
+echo "test";
 if (isset($_POST['submit'])) {
   $file = $_FILES["fileToUpload"];
   print_r($file);
