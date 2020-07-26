@@ -1,6 +1,10 @@
 
 <?php
-$target_dir = "uploads/";
+if (isset($_POST['submit'])) {
+  $file = $_FILES["fileToUpload"];
+  print_r($file);
+  $filename = $_FILES["fileToUpload"]["name"];
+/**$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 print_r($_FILES);
 $uploadOk = 1;
@@ -36,5 +40,6 @@ if ($uploadOk == 0) {
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
+}*/
 }
 ?>
