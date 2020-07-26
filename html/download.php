@@ -1,5 +1,5 @@
 <?php
-echo $_FILES;
+print_r("test");
 /**
  * Check to see if POST was used and that its content length is less than the value in post_max_size
  */
