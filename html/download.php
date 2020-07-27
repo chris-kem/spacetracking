@@ -20,7 +20,6 @@
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-            print_r($_FILES["fileToUpload"]["name"]);
             print_r($_FILES);
             //$config['allowed_types'] = 'svg';
             //$config['allowed_types'] = 'png';
