@@ -39,6 +39,6 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-header("Location: http://localhost/spacetracking");
+header("location:javascript://history.go(-1)");
 exit;
 ?>
