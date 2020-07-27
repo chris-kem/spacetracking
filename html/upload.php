@@ -39,6 +39,6 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-header("location:javascript://history.go(-1)");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit;
 ?>
