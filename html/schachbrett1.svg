@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="350mm"
+   height="300mm"
+   viewBox="-50 -50 400 350"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="schachbrett1.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#FFFFFF"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="0"
+     inkscape:cy="0"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="0"
+     inkscape:window-height="0"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,0)">
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackA1"
+       width="50"
+       height="50"
+       x="0"
+       y="0"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackB1"
+       width="50"
+       height="50"
+       x="50"
+       y="0"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackC1"
+       width="50"
+       height="50"
+       x="100"
+       y="0"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackD1"
+       width="50"
+       height="50"
+       x="150"
+       y="0"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackE1"
+       width="50"
+       height="50"
+       x="200"
+       y="0"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackF1"
+       width="50"
+       height="50"
+       x="250"
+       y="0"
+       inkscape:label="#rect3719" />
+
+    
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackA2"
+       width="50"
+       height="50"
+       x="0"
+       y="50"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackB2"
+       width="50"
+       height="50"
+       x="50"
+       y="50"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackC2"
+       width="50"
+       height="50"
+       x="100"
+       y="50"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackD2"
+       width="50"
+       height="50"
+       x="150"
+       y="50"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackE2"
+       width="50"
+       height="50"
+       x="200"
+       y="50"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackF2"
+       width="50"
+       height="50"
+       x="250"
+       y="50"
+       inkscape:label="#rect3719" />
+
+
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackA3"
+       width="50"
+       height="50"
+       x="0"
+       y="100"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackB3"
+       width="50"
+       height="50"
+       x="50"
+       y="100"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackC3"
+       width="50"
+       height="50"
+       x="100"
+       y="100"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackD3"
+       width="50"
+       height="50"
+       x="150"
+       y="100"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackE3"
+       width="50"
+       height="50"
+       x="200"
+       y="100"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackF3"
+       width="50"
+       height="50"
+       x="250"
+       y="100"
+       inkscape:label="#rect3719" />
+
+    
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackA4"
+       width="50"
+       height="50"
+       x="0"
+       y="150"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackB4"
+       width="50"
+       height="50"
+       x="50"
+       y="150"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackC4"
+       width="50"
+       height="50"
+       x="100"
+       y="150"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackD4"
+       width="50"
+       height="50"
+       x="150"
+       y="150"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackE4"
+       width="50"
+       height="50"
+       x="200"
+       y="150"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackF4"
+       width="50"
+       height="50"
+       x="250"
+       y="150"
+       inkscape:label="#rect3719" />
+
+
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackA5"
+       width="50"
+       height="50"
+       x="0"
+       y="200"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackB5"
+       width="50"
+       height="50"
+       x="50"
+       y="200"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackC5"
+       width="50"
+       height="50"
+       x="100"
+       y="200"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackD5"
+       width="50"
+       height="50"
+       x="150"
+       y="200"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#0000FF;stroke-width:0.26458332"
+       id="trackE5"
+       width="50"
+       height="50"
+       x="200"
+       y="200"
+       inkscape:label="#rect3719" />
+    <rect
+       style="fill:#BDBDBD;stroke-width:0.26458332"
+       id="trackF5"
+       width="50"
+       height="50"
+       x="250"
+       y="200"
+       inkscape:label="#rect3719" />
+ 
+
+    <circle
+       style="opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="tag"
+       cx="0"
+       cy="0"
+       r="5"
+       inkscape:label="#path4624" />
+  </g>
+</svg>

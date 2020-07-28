@@ -6,13 +6,11 @@
 		binarySensor0 = false;
 		var lastContact = 0;
 		var delay = 3000;
-		setInterval(function () {
-			if (Date.now() - lastContact > delay) {
-				binarySensor0 = !binarySensor0;
-			}
-			console.log(binarySensor0 ? "1" : "0");
-			lastContact = Date.now();
-		}, 2000);
+		if (Date.now() - lastContact > delay) {
+			binarySensor0 = !binarySensor0;
+		}
+		console.log(binarySensor0 ? "1" : "0");
+		lastContact = Date.now();
 	</script>
 </body>
 
