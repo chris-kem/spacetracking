@@ -321,10 +321,10 @@
         document.getElementById("dropdown1").value == "harfe1" &&
         topic == "lasers/linear/laser0"
       ) {
-        console.log("drin");
+        var g1 = document.getElementById("groesse1").value;
         for (harfeStufenAnzahl1; harfeStufenAnzahl1 < 0; harfeStufenAnzahl1--) {
-          if (x >= (document.getElementById("groesse1").value * harfeStufenAnzahl1)) {
-            document.getElementById("textfeld1").value = "test";
+          if (x >= (g1 * harfeStufenAnzahl1)) {
+            document.getElementById("textfeld1").value = (g1 * harfeStufenAnzahl1);
             //client.publish("lasers/OSC/laser0", JSON.stringify({Sensor0: (document.getElementById("groesse1").value * harfeStufenAnzahl1)}));
           }
           console.log(harfeStufenAnzahl1);
