@@ -209,6 +209,11 @@
     document.getElementById("textfeld3").value = "";
     document.getElementById("textfeld4").value = "";
 
+    var harfeStufenAnzahl1 = 1 / document.getElementById("groesse1").value;
+    var harfeStufenAnzahl2 = 1 / document.getElementById("groesse2").value;
+    var harfeStufenAnzahl3 = 1 / document.getElementById("groesse3").value;
+    var harfeStufenAnzahl4 = 1 / document.getElementById("groesse4").value;
+
     // Create a client instance
     var client = mqtt.connect(
       location.origin.replace(location.protocol, "ws:") + ":15675"
@@ -319,9 +324,14 @@
         document.getElementById("dropdown1").value == "harfe1" &&
         topic == "lasers/harfe/laser0"
       ) {
-        newtext1 = document.getElementById("textfeld1").value;
-        document.getElementById("textfeld1").value = msg;
-        client.publish("lasers/OSC/laser0", msg);
+        for (harfeStufenAnzahl1; harfeStufenAnzahl1 < 0; harfeStufenAnzahl1--) {
+          if (x >= (document.getElementById("groesse1").value * harfeStufenAnzahl1)) {
+            document.getElementById("textfeld1").value = (document.getElementById("groesse1").value * harfeStufenAnzahl1);
+            client.publish("lasers/OSC/laser0", JSON.stringify({
+              Sensor0: (document.getElementById("groesse1").value * harfeStufenAnzahl1)
+            }));
+          }
+        }
       } else if (
         document.getElementById("dropdown2").value == "harfe2" &&
         topic == "lasers/harfe/laser1"
