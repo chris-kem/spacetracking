@@ -326,6 +326,7 @@
           if (x >= (g1 * (harfeStufenAnzahl1 - i))) {
             document.getElementById("textfeld1").value = (g1 * (harfeStufenAnzahl1 - i));
             client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: (g1 * (harfeStufenAnzahl1) - i) }));
+            break;
           }
         }
 
