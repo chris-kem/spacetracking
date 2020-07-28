@@ -231,10 +231,7 @@
       ) {
         document.getElementById("textfeld1").value = x;
         //publish to mqtt topic which sends data via OSC
-        var toSend = JSON.stringify({
-          Sensor0: x
-        })
-        client.publish("lasers/OSC/laser0", toSend);
+        client.publish("lasers/OSC/laser0", msg);
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
@@ -325,14 +322,13 @@
         topic == "lasers/linear/laser0"
       ) {
         console.log("drin");
-        for (var i = 0; i < harfeStufenAnzahl1; i++) {
+        for (harfeStufenAnzahl1; harfeStufenAnzahl1 < 0; harfeStufenAnzahl1--) {
           if (x >= (document.getElementById("groesse1").value * harfeStufenAnzahl1)) {
             document.getElementById("textfeld1").value = (document.getElementById("groesse1").value * harfeStufenAnzahl1);
             client.publish("lasers/OSC/laser0", JSON.stringify({
               Sensor0: (document.getElementById("groesse1").value * harfeStufenAnzahl1)
             }));
           }
-          harfeStufenAnzahl1--;
         }
         console.log(i);
         console.log(document.getElementById("groesse1").value * harfeStufenAnzahl1);
