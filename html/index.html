@@ -322,6 +322,7 @@
         topic == "lasers/linear/laser0"
       ) {
         var g1 = document.getElementById("groesse1").value;
+        console.log(x >= (g1 * harfeStufenAnzahl1));
         for (harfeStufenAnzahl1; harfeStufenAnzahl1 < 0; harfeStufenAnzahl1--) {
           if (x >= (g1 * harfeStufenAnzahl1)) {
             document.getElementById("textfeld1").value = (g1 * harfeStufenAnzahl1);
