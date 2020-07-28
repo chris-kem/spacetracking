@@ -2,22 +2,17 @@
 <html>
 
 <body>
-	<input id="textfeld1" />
 	<script>
-		let sel = document.getElementById('textfeld1');
-		sel.addEventListener("change", function () {
-			var harfeStufenAnzahl1 = 5;
-			var groesse1 = 0.25;
-			var x = document.getElementById("textfeld1").value;
-			for (harfeStufenAnzahl1; harfeStufenAnzahl1 < 0; harfeStufenAnzahl1--) {
-				if (x >= (groesse1 * harfeStufenAnzahl1)) {
-					console.log("x: " + x);
-					console.log(harfeStufenAnzahl1);
-					console.log(groesse1 * harfeStufenAnzahl1);
-				};
-			};
-
-		});
+		binarySensor0 = false;
+		var lastContact = 0;
+		var delay = 3000;
+		setInterval(function () {
+			if (Date.now() - lastContact > delay) {
+				binarySensor0 = !binarySensor0;
+			}
+			console.log(binarySensor0 ? "1" : "0");
+			lastContact = Date.now();
+		}, 2000);
 	</script>
 </body>
 
