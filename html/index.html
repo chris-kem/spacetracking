@@ -325,8 +325,9 @@
         console.log(x >= (g1 * harfeStufenAnzahl1));
         for (harfeStufenAnzahl1; harfeStufenAnzahl1 < 0; harfeStufenAnzahl1--) {
           if (x >= (g1 * harfeStufenAnzahl1)) {
-            document.getElementById("textfeld1").value = (g1 * harfeStufenAnzahl1);
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: (g1 * harfeStufenAnzahl1) }));
+            console.log("in if");
+            //document.getElementById("textfeld1").value = (g1 * harfeStufenAnzahl1);
+            //client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: (g1 * harfeStufenAnzahl1) }));
           }
           console.log(harfeStufenAnzahl1);
           console.log(g1 * harfeStufenAnzahl1);
