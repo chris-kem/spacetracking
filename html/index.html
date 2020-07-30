@@ -270,7 +270,7 @@
           }
           lastContact0 = Date.now();
           var halte_binary = (binarySensor0 ? "1" : "0");
-          console.log(hDate.now() - lastContact0);
+          console.log(Date.now() - lastContact0);
           document.getElementById("textfeld1").value = halte_binary;
         } else if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "off") {
           document.getElementById("textfeld1").value = "1";
