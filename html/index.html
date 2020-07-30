@@ -72,8 +72,8 @@
         <fieldset class="toggle">
           <label for="flip-2">Wert halten:</label>
           <select name="flip-2" id="flip-2" data-role="slider">
-            <option value="off">Off</option>
             <option value="on">On</option>
+            <option value="off">Off</option>
           </select>
         </fieldset>
       </div>
@@ -97,8 +97,8 @@
         <fieldset class="toggle">
           <label for="flip-3">Wert halten:</label>
           <select name="flip-3" id="flip-3" data-role="slider">
-            <option value="off">Off</option>
             <option value="on">On</option>
+            <option value="off">Off</option>
           </select>
         </fieldset>
       </div>
@@ -122,8 +122,8 @@
         <fieldset class="toggle">
           <label for="flip-4">Wert halten:</label>
           <select name="flip-4" id="flip-4" data-role="slider">
-            <option value="off">Off</option>
             <option value="on">On</option>
+            <option value="off">Off</option>
           </select>
         </fieldset>
       </div>
@@ -267,6 +267,7 @@
           current_time = Date.now();
           if (current_time - lastContact0 > delay) {
             binarySensor0 = !binarySensor0;
+            console.log("switch");
           }
           lastContact0 = current_time;
           document.getElementById("textfeld1").value = (binarySensor0 ? "1" : "0");
