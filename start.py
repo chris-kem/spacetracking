@@ -13,5 +13,5 @@ try:
         print('running')
         time.sleep(10)
 except KeyboardInterrupt:
-    p3.terminate()
+    p1.terminate()
     p2.terminate()
