@@ -268,7 +268,9 @@
             binarySensor0 = !binarySensor0;
           }
           lastContact0 = Date.now();
-          document.getElementById("textfeld1").value = (binarySensor0 ? "1" : "0");
+          var halte_binary = (binarySensor0 ? "1" : "0");
+          console.log(halte_binary);
+          document.getElementById("textfeld1").value = halte_binary;
         } else if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "off") {
           document.getElementById("textfeld1").value = "1";
           client.publish("lasers/OSC/laser0", JSON.stringify({
