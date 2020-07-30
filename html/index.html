@@ -264,10 +264,11 @@
         topic == "lasers/linear/laser0"
       ) {
         if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "on") {
-          if (Date.now() - lastContact0 > delay) {
+          current_time = Date.now();
+          if (current_time - lastContact0 > delay) {
             binarySensor0 = !binarySensor0;
           }
-          lastContact0 = Date.now();
+          lastContact0 = current_time;
           document.getElementById("textfeld1").value = (binarySensor0 ? "1" : "0");
         } else if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "off") {
           document.getElementById("textfeld1").value = "1";
