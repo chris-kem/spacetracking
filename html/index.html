@@ -47,8 +47,8 @@
         <fieldset class="toggle">
           <label for="flip-1">Wert halten:</label>
           <select onchange="changeTheme()" name="flip-1" id="flip-1" data-role="slider">
-            <option value="off">Off</option>
             <option value="on">On</option>
+            <option value="off">Off</option>
           </select>
         </fieldset>
       </div>
@@ -264,7 +264,6 @@
         topic == "lasers/linear/laser0"
       ) {
         if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "on") {
-          console.log(Date.now() - lastContact0);
           if (Date.now() - lastContact0 > delay) {
             console.log("länger als 3 sekunden");
             binarySensor0 = !binarySensor0;
