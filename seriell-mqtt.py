@@ -30,6 +30,7 @@ try:
 #            print(parsedMsg)
             if i == 0:
                 mqttClient.publish("lasers/raw/laser0", parsedMsg)
+#		print(parsedMsg)
             elif i == 1:
                 mqttClient.publish("lasers/raw/laser1", parsedMsg)
             elif i == 2:
