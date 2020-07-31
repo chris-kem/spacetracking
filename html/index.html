@@ -219,11 +219,6 @@
     var lastContact3 = 0;
     var delay = 3000;
 
-    var harfeStufenAnzahl1 = 1 / document.getElementById("groesse1").value;
-    var harfeStufenAnzahl2 = 1 / document.getElementById("groesse2").value;
-    var harfeStufenAnzahl3 = 1 / document.getElementById("groesse3").value;
-    var harfeStufenAnzahl4 = 1 / document.getElementById("groesse4").value;
-
     // Create a client instance
     var client = mqtt.connect(
       location.origin.replace(location.protocol, "ws:") + ":15675"
@@ -360,6 +355,7 @@
         document.getElementById("dropdown1").value == "harfe1" &&
         topic == "lasers/linear/laser0"
       ) {
+        var harfeStufenAnzahl1 = 1 / document.getElementById("groesse1").value;
         for (var i = 0; i < harfeStufenAnzahl1; i++) {
           if (x < document.getElementById("groesse1").value) {
             document.getElementById("textfeld1").value = 0;
@@ -377,6 +373,7 @@
         document.getElementById("dropdown2").value == "harfe2" &&
         topic == "lasers/linear/laser1"
       ) {
+        var harfeStufenAnzahl2 = 1 / document.getElementById("groesse2").value;
         for (var i = 0; i < harfeStufenAnzahl2; i++) {
           if (x >= (document.getElementById("groesse2").value * (harfeStufenAnzahl2 - i))) {
             var harfe2 = (document.getElementById("groesse2").value * (harfeStufenAnzahl2 - i)).toFixed(2);
@@ -389,6 +386,7 @@
         document.getElementById("dropdown3").value == "linear3" &&
         topic == "lasers/linear/laser2"
       ) {
+        var harfeStufenAnzahl3 = 1 / document.getElementById("groesse3").value;
         for (var i = 0; i < harfeStufenAnzahl3; i++) {
           if (x >= (document.getElementById("groesse3").value * (harfeStufenAnzahl3 - i))) {
             var harfe3 = (document.getElementById("groesse3").value * (harfeStufenAnzahl3 - i)).toFixed(2);
@@ -401,6 +399,7 @@
         document.getElementById("dropdown4").value == "linear4" &&
         topic == "lasers/linear/laser3"
       ) {
+        var harfeStufenAnzahl4 = 1 / document.getElementById("groesse4").value;
         for (var i = 0; i < harfeStufenAnzahl4; i++) {
           if (x >= (document.getElementById("groesse4").value * (harfeStufenAnzahl4 - i))) {
             var harfe4 = (document.getElementById("groesse4").value * (harfeStufenAnzahl4 - i)).toFixed(2);
