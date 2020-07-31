@@ -210,7 +210,13 @@
     document.getElementById("textfeld4").value = "";
 
     binarySensor0 = false;
+    binarySensor1 = false;
+    binarySensor2 = false;
+    binarySensor3 = false;
     var lastContact0 = 0;
+    var lastContact1 = 0;
+    var lastContact2 = 0;
+    var lastContact3 = 0;
     var delay = 3000;
 
     var harfeStufenAnzahl1 = 1 / document.getElementById("groesse1").value;
@@ -286,12 +292,19 @@
         document.getElementById("dropdown2").value == "binär2" &&
         topic == "lasers/linear/laser1"
       ) {
-        if (x > document.getElementById("groesse2").value) {
+        if (x > document.getElementById("groesse2").value && document.getElementById("flip-2").value == "on") {
+          current_time = Date.now();
+          if (current_time - lastContact1 > delay) {
+            binarySensor1 = !binarySensor1;
+          }
+          lastContact1 = current_time;
+          document.getElementById("textfeld2").value = (binarySensor1 ? "1" : "0");
+        } else if (x > document.getElementById("groesse2").value && document.getElementById("flip-2").value == "off") {
           document.getElementById("textfeld2").value = "1";
           client.publish("lasers/OSC/laser1", JSON.stringify({
             Sensor1: 1
           }));
-        } else {
+        } else if (x <= document.getElementById("groesse2").value && document.getElementById("flip-2").value == "off") {
           document.getElementById("textfeld2").value = "0";
           client.publish("lasers/OSC/laser1", JSON.stringify({
             Sensor1: 0
@@ -301,7 +314,14 @@
         document.getElementById("dropdown3").value == "binär3" &&
         topic == "lasers/linear/laser2"
       ) {
-        if (x > document.getElementById("groesse3").value) {
+        if (x > document.getElementById("groesse3").value && document.getElementById("flip-3").value == "on") {
+          current_time = Date.now();
+          if (current_time - lastContact2 > delay) {
+            binarySensor2 = !binarySensor2;
+          }
+          lastContact2 = current_time;
+          document.getElementById("textfeld3").value = (binarySensor2 ? "1" : "0");
+        } else if (x > document.getElementById("groesse3").value) {
           document.getElementById("textfeld3").value = "1";
           client.publish("lasers/OSC/laser2", JSON.stringify({
             Sensor2: 1
@@ -316,7 +336,14 @@
         document.getElementById("dropdown4").value == "binär4" &&
         topic == "lasers/linear/laser3"
       ) {
-        if (x > document.getElementById("groesse4").value) {
+        if (x > document.getElementById("groesse4").value && document.getElementById("flip-4").value == "on") {
+          current_time = Date.now();
+          if (current_time - lastContact3 > delay) {
+            binarySensor3 = !binarySensor3;
+          }
+          lastContact3 = current_time;
+          document.getElementById("textfeld4").value = (binarySensor3 ? "1" : "0");
+        } else if (x > document.getElementById("groesse4").value) {
           document.getElementById("textfeld4").value = "1";
           client.publish("lasers/OSC/laser3", JSON.stringify({
             Sensor3: 1
@@ -335,8 +362,9 @@
       ) {
         for (var i = 0; i < harfeStufenAnzahl1; i++) {
           if (x >= (document.getElementById("groesse1").value * (harfeStufenAnzahl1 - i))) {
-            document.getElementById("textfeld1").value = (document.getElementById("groesse1").value * (harfeStufenAnzahl1 - i));
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: (document.getElementById("groesse1").value * (harfeStufenAnzahl1 - i)) }));
+            var harfe1 = (document.getElementById("groesse1").value * (harfeStufenAnzahl1 - i)).toFixed(2);
+            document.getElementById("textfeld1").value = harfe1;
+            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: harfe1 }));
             break;
           }
         }
