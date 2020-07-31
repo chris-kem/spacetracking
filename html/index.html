@@ -361,7 +361,7 @@
         topic == "lasers/linear/laser0"
       ) {
         for (var i = 0; i < harfeStufenAnzahl1; i++) {
-          if (x <= document.getElementById("groesse1") * 0.5) {
+          if (x < document.getElementById("groesse1")) {
             document.getElementById("textfeld1").value = 0;
             client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
             break;
