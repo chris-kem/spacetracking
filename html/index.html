@@ -423,6 +423,11 @@
       ) {
         var harfeStufenAnzahl2 = 1 / document.getElementById("groesse2").value;
         for (var i = 0; i < harfeStufenAnzahl2; i++) {
+          if (x < document.getElementById("groesse2").value) {
+            document.getElementById("textfeld2").value = 0;
+            client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: 0 }));
+            break;
+          }
           if (x >= (document.getElementById("groesse2").value * (harfeStufenAnzahl2 - i))) {
             var harfe2 = (document.getElementById("groesse2").value * (harfeStufenAnzahl2 - i)).toFixed(2);
             document.getElementById("textfeld2").value = harfe2;
@@ -436,6 +441,11 @@
       ) {
         var harfeStufenAnzahl3 = 1 / document.getElementById("groesse3").value;
         for (var i = 0; i < harfeStufenAnzahl3; i++) {
+          if (x < document.getElementById("groesse3").value) {
+            document.getElementById("textfeld3").value = 0;
+            client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: 0 }));
+            break;
+          }
           if (x >= (document.getElementById("groesse3").value * (harfeStufenAnzahl3 - i))) {
             var harfe3 = (document.getElementById("groesse3").value * (harfeStufenAnzahl3 - i)).toFixed(2);
             document.getElementById("textfeld3").value = harfe3;
@@ -449,6 +459,11 @@
       ) {
         var harfeStufenAnzahl4 = 1 / document.getElementById("groesse4").value;
         for (var i = 0; i < harfeStufenAnzahl4; i++) {
+          if (x < document.getElementById("groesse4").value) {
+            document.getElementById("textfeld4").value = 0;
+            client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: 0 }));
+            break;
+          }
           if (x >= (document.getElementById("groesse4").value * (harfeStufenAnzahl4 - i))) {
             var harfe4 = (document.getElementById("groesse4").value * (harfeStufenAnzahl4 - i)).toFixed(2);
             document.getElementById("textfeld4").value = harfe4;
