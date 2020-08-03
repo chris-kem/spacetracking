@@ -22,7 +22,7 @@ elif args.port and args.localhost:
         hostname = args.localhost + ".local"
         osc_client.connect((args.localhost, args.port))
 else:
-        osc_client.connect(("192.168.178.48", 9999))
+        osc_client.connect(("192.168.178.31", 9999))
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))

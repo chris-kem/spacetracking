@@ -7,7 +7,7 @@ python seriell-mqtt.py &
 python mqtt-linear.py &
 python mqtt-lighthouse.py &
 cd /home/pi/libsurvive/;
-./api_example &
+./api_example --use-imu 0 --force-calibrate --lighthousecount 2 --use-kalman 0 --center-on-lh0 &
 #gnome-shell -e echo "test"
 echo "Fertig"
 wait
