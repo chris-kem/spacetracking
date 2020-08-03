@@ -264,7 +264,6 @@
     });
     //what to do when receiving a mqtt message
     client.on("message", function (topic, msg) {
-      console.log(msg);
       var x = JSON.parse(msg);
       //--------------------linear and laserx-------------------------------------
       if (
