@@ -144,7 +144,7 @@ $(document).ready(function () {
       tracked[el.id] = (c[3] / 255.);
       //tracked[el.id] = 1 - 0.21*c[0] + 0.72*c[1] + 0.07*c[2];
       //console.log(c[0] + ", " + c[0] + ", " + c[1] + ", " + c[2] + ", " + c[3]);
-      console.log(tracked[el.id]);
+      //console.log(tracked[el.id]);
     }
 
     var o = new Object();

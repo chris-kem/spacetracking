@@ -304,7 +304,7 @@
           current_time = Date.now();
           if (current_time - lastContact0 > delay) {
             binarySensor0 = !binarySensor0;
-            console.log("switch");
+            //console.log("switch");
           }
           lastContact0 = current_time;
           document.getElementById("textfeld1").value = (binarySensor0 ? "1" : "0");
@@ -417,6 +417,7 @@
             break;
           }
         }
+
       } else if (
         document.getElementById("dropdown2").value == "harfe2" &&
         topic == "lasers/linear/laser1"
@@ -435,6 +436,7 @@
             break;
           }
         }
+
       } else if (
         document.getElementById("dropdown3").value == "linear3" &&
         topic == "lasers/linear/laser2"
@@ -453,6 +455,7 @@
             break;
           }
         }
+
       } else if (
         document.getElementById("dropdown4").value == "linear4" &&
         topic == "lasers/linear/laser3"
