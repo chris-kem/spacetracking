@@ -308,6 +308,9 @@
           }
           lastContact0 = current_time;
           document.getElementById("textfeld1").value = (binarySensor0 ? "1" : "0");
+          client.publish("lasers/OSC/laser0", JSON.stringify({
+            Sensor0: (binarySensor0 ? "1" : "0")
+          }));
         } else if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "off") {
           document.getElementById("textfeld1").value = "1";
           client.publish("lasers/OSC/laser0", JSON.stringify({
@@ -330,6 +333,9 @@
           }
           lastContact1 = current_time;
           document.getElementById("textfeld2").value = (binarySensor1 ? "1" : "0");
+          client.publish("lasers/OSC/laser1", JSON.stringify({
+            Sensor1: (binarySensor1 ? "1" : "0")
+          }));
         } else if (x > document.getElementById("groesse2").value && document.getElementById("flip-2").value == "off") {
           document.getElementById("textfeld2").value = "1";
           client.publish("lasers/OSC/laser1", JSON.stringify({
@@ -352,6 +358,9 @@
           }
           lastContact2 = current_time;
           document.getElementById("textfeld3").value = (binarySensor2 ? "1" : "0");
+          client.publish("lasers/OSC/laser2", JSON.stringify({
+            Sensor2: (binarySensor2 ? "1" : "0")
+          }));
         } else if (x > document.getElementById("groesse3").value) {
           document.getElementById("textfeld3").value = "1";
           client.publish("lasers/OSC/laser2", JSON.stringify({
@@ -374,6 +383,9 @@
           }
           lastContact3 = current_time;
           document.getElementById("textfeld4").value = (binarySensor3 ? "1" : "0");
+          client.publish("lasers/OSC/laser3", JSON.stringify({
+            Sensor3: (binarySensor3 ? "1" : "0")
+          }));
         } else if (x > document.getElementById("groesse4").value) {
           document.getElementById("textfeld4").value = "1";
           client.publish("lasers/OSC/laser3", JSON.stringify({
