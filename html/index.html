@@ -34,17 +34,17 @@
           <input id="textfeld1" readonly />
         </form>
         <label for="dropdown1">Wählen Sie eine Funktion:
-          <select name="dropdown1" id="dropdown1" class="dropdown">
+          <select name="dropdown1" id="dropdown1" class="dropdown" onchange="hideThings()">
             <option value="linear1">Linear</option>
             <option value="binär1">Binär</option>
             <option value="harfe1">Harfe</option>
           </select>
         </label>
-        <fieldset id="schwelle1" class="schwellenwert">
+        <fieldset id="schwelle1" class="schwellenwert" style="display:none">
           <label for="groesse1">Schwellenwert:</label>
           <input id="groesse1" type="number" min="0" max="1" step=".05" value=".2" />
         </fieldset>
-        <fieldset class="toggle">
+        <fieldset class="toggle" id="toggle1" style="display:none">
           <label for="flip-1">Wert halten:</label>
           <select onchange="changeTheme()" name="flip-1" id="flip-1" data-role="slider">
             <option value="on">On</option>
@@ -59,17 +59,17 @@
           <input id="textfeld2" readonly />
         </form>
         <label for="dropdown2">Wählen Sie eine Funktion:
-          <select name="dropdown2" id="dropdown2" class="dropdown">
+          <select name="dropdown2" id="dropdown2" class="dropdown" onchange="hideThings()">
             <option value="linear2">Linear</option>
             <option value="binär2">Binär</option>
             <option value="harfe2">Harfe</option>
           </select>
         </label>
-        <fieldset id="schwelle2" class="schwellenwert">
+        <fieldset id="schwelle2" class="schwellenwert" style="display:none">
           <label for="groesse2">Schwellenwert:<input id="groesse2" type="number" min="0" max="1" step=".05"
               value=".2" /></label>
         </fieldset>
-        <fieldset class="toggle">
+        <fieldset class="toggle" id="toggle2" style="display:none">
           <label for="flip-2">Wert halten:</label>
           <select name="flip-2" id="flip-2" data-role="slider">
             <option value="on">On</option>
@@ -84,17 +84,17 @@
           <input id="textfeld3" readonly />
         </form>
         <label for="dropdown3">Wählen Sie eine Funktion:
-          <select name="dropdown3" id="dropdown3" class="dropdown">
+          <select name="dropdown3" id="dropdown3" class="dropdown" onchange="hideThings()">
             <option value="linear3">Linear</option>
             <option value="binär3">Binär</option>
             <option value="harfe3">Harfe</option>
           </select>
         </label>
-        <fieldset id="schwelle3" class="schwellenwert">
+        <fieldset id="schwelle3" class="schwellenwert" style="display:none">
           <label for="groesse3">Schwellenwert:<input id="groesse3" type="number" min="0" max="1" step=".05"
               value=".2" /></label>
         </fieldset>
-        <fieldset class="toggle">
+        <fieldset class="toggle" id="toggle3" style="display:none">
           <label for="flip-3">Wert halten:</label>
           <select name="flip-3" id="flip-3" data-role="slider">
             <option value="on">On</option>
@@ -109,17 +109,17 @@
           <input id="textfeld4" readonly />
         </form>
         <label for="dropdown4">Wählen Sie eine Funktion:
-          <select name="dropdown4" id="dropdown4" class="dropdown">
+          <select name="dropdown4" id="dropdown4" class="dropdown" onchange="hideThings()">
             <option value="linear4">Linear</option>
             <option value="binär4">Binär</option>
             <option value="harfe4">Harfe</option>
           </select>
         </label>
-        <fieldset id="schwelle4" class="schwellenwert">
+        <fieldset id="schwelle4" class="schwellenwert" style="display:none">
           <label for="groesse4">Schwellenwert:<input id="groesse4" type="number" min="0" max="1" step=".05"
               value=".2" /></label>
         </fieldset>
-        <fieldset class="toggle">
+        <fieldset class="toggle" id="toggle4" style="display:none">
           <label for="flip-4">Wert halten:</label>
           <select name="flip-4" id="flip-4" data-role="slider">
             <option value="on">On</option>
@@ -173,6 +173,42 @@
   <script src="js/mqtt.js"></script>
 
   <script>
+    function hideThings() {
+      if (document.getElementById("dropdown1").value == "linear1") {
+        document.getElementById("schwelle1").style.display = "none";
+        document.getElementById("toggle1").style.display = "none";
+      }
+      if (document.getElementById("dropdown2").value == "linear2") {
+        document.getElementById("schwelle2").style.display = "none";
+        document.getElementById("toggle2").style.display = "none";
+      }
+      if (document.getElementById("dropdown3").value == "linear3") {
+        document.getElementById("schwelle3").style.display = "none";
+        document.getElementById("toggle3").style.display = "none";
+      }
+      if (document.getElementById("dropdown4").value == "linear4") {
+        document.getElementById("schwelle4").style.display = "none";
+        document.getElementById("toggle4").style.display = "none";
+      }
+
+      if (document.getElementById("dropdown1").value == "binär1" || document.getElementById("dropdown1").value == "harfe1") {
+        document.getElementById("schwelle1").style.display = "block";
+        document.getElementById("toggle1").style.display = "block";
+      }
+      if (document.getElementById("dropdown2").value == "binär2" || document.getElementById("dropdown2").value == "harfe2") {
+        document.getElementById("schwelle2").style.display = "block";
+        document.getElementById("toggle2").style.display = "block";
+      }
+      if (document.getElementById("dropdown3").value == "binär3" || document.getElementById("dropdown3").value == "harfe3") {
+        document.getElementById("schwelle3").style.display = "block";
+        document.getElementById("toggle3").style.display = "block";
+      }
+      if (document.getElementById("dropdown4").value == "binär4" || document.getElementById("dropdown4").value == "harfe4") {
+        document.getElementById("schwelle4").style.display = "block";
+        document.getElementById("toggle4").style.display = "block";
+      }
+    }
+
     function changeSVG() {
       document.getElementById("dataSVG").data = "uploads/" + document.getElementById(
         "whichFile"
