@@ -3,9 +3,8 @@ import paho.mqtt.client as mqtt
 import json
 import time
 
-frequency = 32767  # Set Frequency To 2500 Hertz 32767
+frequency = 2500  # Set Frequency To 2500 Hertz 32767
 duration = 100  # Set Duration To 1000 ms == 1 second
-print("läuft")
 
 
 def on_connect(client, userdata, flags, rc):
@@ -14,8 +13,8 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, msg):
-    converted_msg = float(msg.payload.decode("utf-8", "ignore"))
-    value = int(frequency * converted_msg)
+    converted_msg = json.loads(msg.payload)
+    value = int(frequency * converted_msg["value"])
     print(value)
     winsound.Beep(value, duration)
 
@@ -23,5 +22,5 @@ def on_message(client, userdata, msg):
 mqttClient = mqtt.Client()
 mqttClient.on_connect = on_connect
 mqttClient.on_message = on_message
-mqttClient.connect("localhost", 1883, 60)
+mqttClient.connect("192.168.178.31", 1883, 60)
 mqttClient.loop_forever()
