@@ -136,7 +136,7 @@
       </div>
       <!-- define which picture as floorplan--------type="image/svg+xml"--------- -->
       <div id="svg">
-        <object id="dataSVG" data="uploads/garage.svg" type="image/svg+xml"></object>
+        <object id="dataSVG" type="image/svg+xml"></object>
       </div>
 
       <!-- Datei Upload -->
@@ -148,7 +148,7 @@
         </form>
         <form>
           <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input
-            name="whichFile" id="whichFile" />
+            name="whichFile" id="whichFile" value="garage.svg" />
           <button onclick="changeSVG()" type="button" name="submit1">
             Auswählen
           </button>
@@ -209,11 +209,13 @@
       }
     }
 
+    var whichObject = "uploads/garage.svg"
+    document.getElementById("dataSVG").data = whichObject;
     function changeSVG() {
-      document.getElementById("dataSVG").data = "uploads/" + document.getElementById(
+      whichObject = "uploads/" + document.getElementById(
         "whichFile"
       ).value;
-      location.reload();
+      document.getElementById("dataSVG").data = whichObject;
     }
 
     var binary_Val1_t = JSON.stringify({
