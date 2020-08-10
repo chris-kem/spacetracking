@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt
 import json
-import serial
 import time
 import OSC
 import argparse
@@ -29,7 +28,6 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("track")
 
 def on_message(client, userdata, msg):
-	bundle = OSC.OSCBundle()
 	oscmsg = OSC.OSCMessage()
 #        print(type(msg))
         parsedMsg = json.loads(msg.payload)

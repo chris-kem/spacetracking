@@ -155,6 +155,7 @@ $(document).ready(function () {
       o.value = tracked[i];
       client.publish('track', JSON.stringify(o));
     }
+    client.publish('track', "0");
   });
 });
 //

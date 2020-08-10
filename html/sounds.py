@@ -3,21 +3,21 @@ import paho.mqtt.client as mqtt
 import json
 import time
 
-frequency = 320  # Set Frequency To 2500 Hertz 32767
-duration = 5000  # Set Duration To 1000 ms == 1 second
-winsound.Beep(frequency, duration)
+frequency = 32767  # Set Frequency To 2500 Hertz 32767
+duration = 100  # Set Duration To 1000 ms == 1 second
+print("läuft")
 
 
 def on_connect(client, userdata, flags, rc):
-    print("Connected with result code "+str(rc))
+    print("Connected with result code " + str(rc))
     mqttClient.subscribe("track")
 
 
 def on_message(client, userdata, msg):
-    converted_msg = json.loads(str(msg.payload.decode("utf-8", "ignore")))
-    value = converted_msg.value()
+    converted_msg = float(msg.payload.decode("utf-8", "ignore"))
+    value = int(frequency * converted_msg)
     print(value)
-    winsound.Beep(frequency * value, duration)
+    winsound.Beep(value, duration)
 
 
 mqttClient = mqtt.Client()

@@ -22,7 +22,7 @@ def on_message(client, userdata, msg):
         parsedMsg = json.loads(str(msg.payload.decode("utf-8","ignore")))
 #	print(type(parsedMsg))
 #	print(parsedMsg.keys())
-	sensorName = str(parsedMsg.keys())
+	    sensorName = str(parsedMsg.keys())
 #	print(sensorName[3:10])
         value = 0
 
