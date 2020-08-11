@@ -268,28 +268,28 @@
       ) {
         document.getElementById("textfeld1").value = x;
         //publish to mqtt topic which sends data via OSC
-        client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: x }));
+        client.publish("lasers/OSC/laser0", JSON.stringify({ "Sensor0": x }));
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
       ) {
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
-        client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: x }));
+        client.publish("lasers/OSC/laser1", JSON.stringify({ "Sensor1": x }));
       } else if (
         document.getElementById("dropdown3").value == "linear3" &&
         topic == "lasers/linear/laser2"
       ) {
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
-        client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: x }));
+        client.publish("lasers/OSC/laser2", JSON.stringify({ "Sensor2": x }));
       } else if (
         document.getElementById("dropdown4").value == "linear4" &&
         topic == "lasers/linear/laser3"
       ) {
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
-        client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: x }));
+        client.publish("lasers/OSC/laser3", JSON.stringify({ "Sensor3": x }));
 
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (
@@ -305,17 +305,17 @@
           lastContact0 = current_time;
           document.getElementById("textfeld1").value = (binarySensor0 ? "1" : "0");
           client.publish("lasers/OSC/laser0", JSON.stringify({
-            Sensor0: (binarySensor0 ? "1" : "0")
+            "Sensor0": (binarySensor0 ? "1" : "0")
           }));
         } else if (x > document.getElementById("groesse1").value && document.getElementById("flip-1").value == "off") {
           document.getElementById("textfeld1").value = "1";
           client.publish("lasers/OSC/laser0", JSON.stringify({
-            Sensor0: 1
+            "Sensor0": 1
           }));
         } else if (x <= document.getElementById("groesse1").value && document.getElementById("flip-1").value == "off") {
           document.getElementById("textfeld1").value = "0";
           client.publish("lasers/OSC/laser0", JSON.stringify({
-            Sensor0: 0
+            "Sensor0": 0
           }));
         }
       } else if (
@@ -330,17 +330,17 @@
           lastContact1 = current_time;
           document.getElementById("textfeld2").value = (binarySensor1 ? "1" : "0");
           client.publish("lasers/OSC/laser1", JSON.stringify({
-            Sensor1: (binarySensor1 ? "1" : "0")
+            "Sensor1": (binarySensor1 ? "1" : "0")
           }));
         } else if (x > document.getElementById("groesse2").value && document.getElementById("flip-2").value == "off") {
           document.getElementById("textfeld2").value = "1";
           client.publish("lasers/OSC/laser1", JSON.stringify({
-            Sensor1: 1
+            "Sensor1": 1
           }));
         } else if (x <= document.getElementById("groesse2").value && document.getElementById("flip-2").value == "off") {
           document.getElementById("textfeld2").value = "0";
           client.publish("lasers/OSC/laser1", JSON.stringify({
-            Sensor1: 0
+            "Sensor1": 0
           }));
         }
       } else if (
@@ -355,17 +355,17 @@
           lastContact2 = current_time;
           document.getElementById("textfeld3").value = (binarySensor2 ? "1" : "0");
           client.publish("lasers/OSC/laser2", JSON.stringify({
-            Sensor2: (binarySensor2 ? "1" : "0")
+            "Sensor2": (binarySensor2 ? "1" : "0")
           }));
         } else if (x > document.getElementById("groesse3").value) {
           document.getElementById("textfeld3").value = "1";
           client.publish("lasers/OSC/laser2", JSON.stringify({
-            Sensor2: 1
+            "Sensor2": 1
           }));
         } else {
           document.getElementById("textfeld3").value = "0";
           client.publish("lasers/OSC/laser2", JSON.stringify({
-            Sensor2: 0
+            "Sensor2": 0
           }));
         }
       } else if (
@@ -380,17 +380,17 @@
           lastContact3 = current_time;
           document.getElementById("textfeld4").value = (binarySensor3 ? "1" : "0");
           client.publish("lasers/OSC/laser3", JSON.stringify({
-            Sensor3: (binarySensor3 ? "1" : "0")
+            "Sensor3": (binarySensor3 ? "1" : "0")
           }));
         } else if (x > document.getElementById("groesse4").value) {
           document.getElementById("textfeld4").value = "1";
           client.publish("lasers/OSC/laser3", JSON.stringify({
-            Sensor3: 1
+            "Sensor3": 1
           }));
         } else {
           document.getElementById("textfeld4").value = "0";
           client.publish("lasers/OSC/laser3", JSON.stringify({
-            Sensor3: 0
+            "Sensor3": 0
           }));
         }
 
@@ -403,13 +403,13 @@
         for (var i = 0; i < harfeStufenAnzahl1; i++) {
           if (x < document.getElementById("groesse1").value) {
             document.getElementById("textfeld1").value = 0;
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: 0 }));
+            client.publish("lasers/OSC/laser0", JSON.stringify({ "Sensor0": 0 }));
             break;
           }
           if (x >= (document.getElementById("groesse1").value * (harfeStufenAnzahl1 - i))) {
             var harfe1 = (document.getElementById("groesse1").value * (harfeStufenAnzahl1 - i)).toFixed(2);
             document.getElementById("textfeld1").value = harfe1;
-            client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: harfe1 }));
+            client.publish("lasers/OSC/laser0", JSON.stringify({ "Sensor0": harfe1 }));
             break;
           }
         }
@@ -422,13 +422,13 @@
         for (var i = 0; i < harfeStufenAnzahl2; i++) {
           if (x < document.getElementById("groesse2").value) {
             document.getElementById("textfeld2").value = 0;
-            client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: 0 }));
+            client.publish("lasers/OSC/laser1", JSON.stringify({ "Sensor1": 0 }));
             break;
           }
           if (x >= (document.getElementById("groesse2").value * (harfeStufenAnzahl2 - i))) {
             var harfe2 = (document.getElementById("groesse2").value * (harfeStufenAnzahl2 - i)).toFixed(2);
             document.getElementById("textfeld2").value = harfe2;
-            client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: harfe2 }));
+            client.publish("lasers/OSC/laser1", JSON.stringify({ "Sensor1": harfe2 }));
             break;
           }
         }
@@ -441,13 +441,13 @@
         for (var i = 0; i < harfeStufenAnzahl3; i++) {
           if (x < document.getElementById("groesse3").value) {
             document.getElementById("textfeld3").value = 0;
-            client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: 0 }));
+            client.publish("lasers/OSC/laser2", JSON.stringify({ "Sensor2": 0 }));
             break;
           }
           if (x >= (document.getElementById("groesse3").value * (harfeStufenAnzahl3 - i))) {
             var harfe3 = (document.getElementById("groesse3").value * (harfeStufenAnzahl3 - i)).toFixed(2);
             document.getElementById("textfeld3").value = harfe3;
-            client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: harfe3 }));
+            client.publish("lasers/OSC/laser2", JSON.stringify({ "Sensor2": harfe3 }));
             break;
           }
         }
@@ -460,13 +460,13 @@
         for (var i = 0; i < harfeStufenAnzahl4; i++) {
           if (x < document.getElementById("groesse4").value) {
             document.getElementById("textfeld4").value = 0;
-            client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: 0 }));
+            client.publish("lasers/OSC/laser3", JSON.stringify({ "Sensor3": 0 }));
             break;
           }
           if (x >= (document.getElementById("groesse4").value * (harfeStufenAnzahl4 - i))) {
             var harfe4 = (document.getElementById("groesse4").value * (harfeStufenAnzahl4 - i)).toFixed(2);
             document.getElementById("textfeld4").value = harfe4;
-            client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: harfe4 }));
+            client.publish("lasers/OSC/laser3", JSON.stringify({ "Sensor3": harfe4 }));
             break;
           }
         }
