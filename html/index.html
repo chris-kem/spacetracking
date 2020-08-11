@@ -268,28 +268,28 @@
       ) {
         document.getElementById("textfeld1").value = x;
         //publish to mqtt topic which sends data via OSC
-        client.publish("lasers/OSC/laser0", msg);
+        client.publish("lasers/OSC/laser0", JSON.stringify({ Sensor0: x }));
       } else if (
         document.getElementById("dropdown2").value == "linear2" &&
         topic == "lasers/linear/laser1"
       ) {
         newtext2 = document.getElementById("textfeld2").value;
         document.getElementById("textfeld2").value = msg;
-        client.publish("lasers/OSC/laser1", msg);
+        client.publish("lasers/OSC/laser1", JSON.stringify({ Sensor1: x }));
       } else if (
         document.getElementById("dropdown3").value == "linear3" &&
         topic == "lasers/linear/laser2"
       ) {
         newtext3 = document.getElementById("textfeld3").value;
         document.getElementById("textfeld3").value = msg;
-        client.publish("lasers/OSC/laser2", msg);
+        client.publish("lasers/OSC/laser2", JSON.stringify({ Sensor2: x }));
       } else if (
         document.getElementById("dropdown4").value == "linear4" &&
         topic == "lasers/linear/laser3"
       ) {
         newtext4 = document.getElementById("textfeld4").value;
         document.getElementById("textfeld4").value = msg;
-        client.publish("lasers/OSC/laser3", msg);
+        client.publish("lasers/OSC/laser3", JSON.stringify({ Sensor3: x }));
 
         //-------------------------------binary and laserx--------------------------------------------------
       } else if (
