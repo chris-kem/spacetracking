@@ -149,7 +149,7 @@
         <form>
           <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input
             name="whichFile" id="whichFile" value="garage.svg" />
-          <button onclick="changeSVG()" type="button" name="submit1">
+          <button onclick="changeSVG()" id="auswahlbutton" type="button" name="submit1">
             Auswählen
           </button>
         </form>
@@ -482,7 +482,16 @@
     });
   </script>
 
-  <script src="js/spacetracking.js" defer></script>
+  <script>
+    var abc = document.getElementById("auswahlbutton");
+    abc.onclick = function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "js/spacetracking.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+      return false;
+    }
+  </script>
 </body>
 
 </html>
