@@ -34,7 +34,7 @@ def on_message(client, userdata, msg):
 #        print(parsedMsg)
 #        print(parsedMsg["value"])
 #        print(parsedMsg.keys())
-	if parsedMsg["elemid"] == "track1":
+	#if parsedMsg["elemid"] == "track1":
 	    oscmsg.setAddress('{"/%s"}' % parsedMsg["elemid"])
 	    oscmsg.append(parsedMsg["value"])
 	print(oscmsg)
