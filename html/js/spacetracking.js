@@ -11,6 +11,9 @@
 //
 $(document).ready(function () {
 
+  while (document.getElementById("dataSVG") == "null") {
+    setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
+  }
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
   var doc = root.contentDocument;
@@ -20,7 +23,6 @@ $(document).ready(function () {
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
-
 
   //
   // only track the track- element
