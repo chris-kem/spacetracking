@@ -8,7 +8,6 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-l","--localhost", help="write the hostname of the used computer")
 parser.add_argument("-p","--port", type=int, help="which port to send OSC Data")
-parser.add_argument("-s","--sensor", type=int, help="which sensor to send only")
 args = parser.parse_args()
 
 osc_client = OSC.OSCClient()
