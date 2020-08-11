@@ -31,7 +31,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
 	bundle = OSC.OSCBundle()
 	oscmsg = OSC.OSCMessage()
-#        print(type(msg))
+        print(type(msg))
         parsedMsg = json.loads(msg.payload)
 #        print(parsedMsg)
 #        print(parsedMsg.values())
