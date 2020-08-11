@@ -9,11 +9,11 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-$(document).ready(function () {
+$(document).ready(changeSVG()) {
 
-  //while (document.getElementById("dataSVG").contentDocument == "null") {
-  //setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
-  //}
+  while (document.getElementById("dataSVG").value == "undefined" || "null") {
+    setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
+  }
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
   var doc = root.contentDocument;
