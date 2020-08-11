@@ -136,7 +136,7 @@
       </div>
       <!-- define which picture as floorplan--------type="image/svg+xml" data="uploads/garage.svg"--------- -->
       <div id="svg">
-        <object id="dataSVG" data="uploads/garage.svg" type="image/svg+xml"></object>
+        <object id="dataSVG" type="image/svg+xml"></object>
       </div>
 
       <!-- Datei Upload -->
@@ -173,6 +173,7 @@
   <script src="js/mqtt.js"></script>
 
   <script>
+    window.alert(domcument.getElementById("dataSVG").value);
     function hideThings() {
       if (document.getElementById("dropdown1").value == "linear1") {
         document.getElementById("schwelle1").style.display = "none";
