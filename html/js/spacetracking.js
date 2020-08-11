@@ -9,7 +9,7 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-$(document).ready(changeSVG()) {
+$(document).ready(function () {
 
   while (document.getElementById("dataSVG").value == "undefined" || "null") {
     setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
