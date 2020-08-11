@@ -149,7 +149,7 @@
         <form>
           <label for="whichFile">Welche der hochgeladenen Dateien soll dargestellt werden?:</label><input
             name="whichFile" id="whichFile" value="garage.svg" />
-          <button onclick="changeSVG()" id="auswahlbutton" type="button" name="submit1">
+          <button id="auswahlbutton" type="button" name="submit1">
             Auswählen
           </button>
         </form>
@@ -210,14 +210,6 @@
       }
     }
 
-    var whichObject = "";
-    document.getElementById("dataSVG").data = whichObject;
-    function changeSVG() {
-      whichObject = "uploads/" + document.getElementById(
-        "whichFile"
-      ).value;
-      document.getElementById("dataSVG").data = whichObject;
-    }
 
     var binary_Val1_t = JSON.stringify({
       Sensor0: 1
@@ -484,7 +476,14 @@
 
   <script>
     var abc = document.getElementById("auswahlbutton");
+    var whichObject = "";
+
     abc.onclick = function () {
+      whichObject = "uploads/" + document.getElementById(
+        "whichFile"
+      ).value;
+      document.getElementById("dataSVG").data = whichObject;
+
       var script = document.createElement("script");
       script.type = "text/javascript";
       script.src = "js/spacetracking.js";
