@@ -11,7 +11,7 @@
 //
 $(document).ready(function () {
 
-  while (document.getElementById("dataSVG") == "null") {
+  while (document.getElementById("dataSVG").contentDocument == "null") {
     setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
   }
   var root = document.getElementById('dataSVG');
