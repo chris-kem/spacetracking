@@ -33,7 +33,7 @@ def on_message(client, userdata, msg):
 	oscmsg = OSC.OSCMessage()
 #        print(msg)
         parsedMsg = json.loads(msg.payload)
-        print(parsedMsg)
+#        print(parsedMsg)
 #        print(parsedMsg.values())
         sensorName = str(parsedMsg.keys())
 	id = sensorName[9:10]
