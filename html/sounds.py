@@ -3,8 +3,8 @@ import paho.mqtt.client as mqtt
 import json
 import time
 
-frequency = 2500  # Set Frequency To 2500 Hertz 32767
-duration = 100  # Set Duration To 1000 ms == 1 second
+frequency = 5000  # Set Frequency To 2500 Hertz 32767
+duration = 20  # Set Duration To 1000 ms == 1 second
 
 
 def on_connect(client, userdata, flags, rc):
