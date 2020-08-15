@@ -20,7 +20,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     parsedMsg = str(msg.payload.decode("utf-8", "ignore"))
     print(parsedMsg)
-    datei.write("\n" + parsedMsg)
+    datei.write(parsedMsg)
 
 
 mqttClient = mqtt.Client()
