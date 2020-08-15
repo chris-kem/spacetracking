@@ -19,11 +19,16 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, msg):
-    parsedMsg = json.loads(str(msg.payload.decode("utf-8", "ignore")))
-    #print(parsedMsg)
+    parsedMsg = json.loads(msg.payload.decode("utf-8", "ignore"))
+#    print(parsedMsg)
     #datei.write("\n" + parsedMsg)
-    sensorName = str(parsedMsg["position"].keys())
-    print(sensorName)
+    zahl = [0, 0, 0]
+    zahl[0] = str(parsedMsg["position"]["y"] - 1.39)
+    zahl[1] = str(parsedMsg["position"]["x"] - 0.83)
+    zahl[2] = str(parsedMsg["position"]["z"] - 0.05)
+#    print(zahl)
+    datei.write("\n" + zahl[0] + ";" + zahl[1] + ";" + zahl[2])
+    print(zahl[0] + ";" + zahl[1] + ";" + zahl[2])
 
 mqttClient = mqtt.Client()
 mqttClient.on_connect = on_connect
