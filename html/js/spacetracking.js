@@ -80,7 +80,7 @@ $(document).ready(function () {
     pos.x = parseFloat(pos.x) * 1000;
     pos.y = can.height - parseFloat(pos.y) * 1000;
     //pos.y = parseFloat(pos.y) * 100;
-    //console.log(pos.x + ", " + pos.y);
+    console.log(pos.x + ", " + pos.y);
 
     //
     // check if we received a valid position
