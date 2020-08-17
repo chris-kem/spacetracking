@@ -1,0 +1,72 @@
+wpa_supplicant.conf
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=DE
+
+network={
+  ssid="NASAinternet"
+  psk="62354088678278962069"
+  key_mgmt=WPA-PSK
+}
+
+
+ssh-keygen
+
+cd ~/.ssh
+
+nano id_rsa.pub
+
+git clone git@github.com:chris-kem/spacetracking.git
+
+git config --global user.name "chris-kem"
+git config --global user.email "chris.kem43@gmail.com"
+
+sudo apt-get update
+pip install paho-mqtt
+pip install pyOSC
+
+cd /var/www/html/
+sudo ln -s /home/pi/spacetracking/html/ spacetracking
+
+cd /etc/dwm1001
+sudo nano dwm1001.config
+
+sudo reboot
+
+find / -name "php.ini"
+file_uploads = On
+
+cp api_example.c ../spacetracking/libsurvive/
+in libsurvive makefile ändern für paho.mqtt.c 
+
+473 tür
+483 fenster
+273 schrank
+263 garagentor
+
+anker:
+1: 0,0,1.7
+2: 2.73,0,1.7
+3: 2.73,4.79,1.7
+4: 0.12,4.79,1.7
+
+____________________________
+trap "exit" INT TERM ERR
+trap "kill 0" EXIT
+
+./someProcessA &
+./someProcessB &
+
+wait
+____________________________
+
+
+./api_example --use-imu 0 --force-calibrate --lighthousecount 2 --use-kalman 0 --center-on-lh0
+./api_example --use-imu 0 --force-calibrate --lighthousecount 2 --use-kalman 0 --center-on-wm0
+
+Sensor-Aufbau:
+Blaue Kabel müssen an Ground, also GND Kabel mit einem blauen Kabel zusammenbringen 
+Zuerst weit und dann kurz kalibrieren damit 0 nichts und 1 was drin ist 
+
+=WECHSELN(A1;".";",")*1
