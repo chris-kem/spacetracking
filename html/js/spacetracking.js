@@ -151,7 +151,7 @@ $(document).ready(function () {
       //console.log(tracked[el.id]);
     }
 
-    client.publish('decadaten', point.x + "; " + point.y);
+    client.publish('decadaten', pos.x + "; " + pos.y);
 
     var o = new Object();
     o.nodeid = pos.nodeid;
