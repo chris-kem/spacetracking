@@ -118,15 +118,17 @@ $(document).ready(function () {
       marcer.setAttribute('cx', point.x);
       marcer.setAttribute('cy', point.y);
     }
-    var xyz = point.x.toString() + point.y.toString();
-    client.publish('decadaten', xyz);
-
     //
     // hit-test on SVG element, disable the display of the tag element briefly,
     // otherwise it is on top.
     //
     point.x = pos.x; point.y = pos.y;
     point = point.matrixTransform(svg.getScreenCTM());
+
+
+    var xyz = point.x.toString() + point.y.toString();
+    client.publish('decadaten', xyz);
+
 
     marcer.setAttribute('visibility', 'hidden');
     var el = doc.elementFromPoint(point.x, point.y);
