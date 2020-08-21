@@ -35,13 +35,13 @@ while True:
             datei.write("\n" + parsedMsg)
             print(parsedMsg)
 
+        mqttClient = mqtt.Client()
+        mqttClient.on_connect = on_connect
+        mqttClient.on_message = on_message
+        mqttClient.connect("localhost", 1883, 60)
+        mqttClient.loop_forever()
+
     except KeyboardInterrupt:
         end = time.time()
         print(end - start)
         sys.exit()
-
-mqttClient = mqtt.Client()
-mqttClient.on_connect = on_connect
-mqttClient.on_message = on_message
-mqttClient.connect("localhost", 1883, 60)
-mqttClient.loop_forever()
