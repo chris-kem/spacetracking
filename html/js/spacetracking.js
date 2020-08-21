@@ -67,7 +67,7 @@ $(document).ready(function () {
 
   client.on('connect', function () { client.subscribe('dwm/node/+/uplink/location'); });
   client.on('message', function (topic, msg) {
-    console.log(topic);
+    //console.log(topic);
     var pos = JSON.parse(msg.toString()).position,
       point = svg.createSVGPoint(),
       marcer = svg.getElementById('tag'),
