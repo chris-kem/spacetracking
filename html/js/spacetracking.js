@@ -127,8 +127,6 @@ $(document).ready(function () {
 
 
     //var xyz = point.x.toString() + point.y.toString();
-    client.publish('decadaten', "test");
-    console.log("hi");
 
     marcer.setAttribute('visibility', 'hidden');
     var el = doc.elementFromPoint(point.x, point.y);
@@ -153,6 +151,9 @@ $(document).ready(function () {
       //console.log(c[0] + ", " + c[0] + ", " + c[1] + ", " + c[2] + ", " + c[3]);
       //console.log(tracked[el.id]);
     }
+
+    client.publish('decadaten', "test");
+    console.log("hi");
 
     var o = new Object();
     o.nodeid = pos.nodeid;
