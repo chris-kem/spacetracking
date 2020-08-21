@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import os
+import time
 
 #if os.path.exists("trackingdaten.txt"):
 #  os.remove("trackingdaten.txt")
@@ -16,12 +17,13 @@ def on_connect(client, userdata, flags, rc):
 #    mqttClient.subscribe("dwm/node/ViveTracker/uplink/location")
 
 
-
+start = time.time()
 def on_message(client, userdata, msg):
     parsedMsg = str(msg.payload.decode("utf-8", "ignore"))
     print(parsedMsg)
     datei.write(parsedMsg)
-
+end = time.time()
+print(end - start)
 
 mqttClient = mqtt.Client()
 mqttClient.on_connect = on_connect
