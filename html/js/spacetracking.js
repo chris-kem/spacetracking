@@ -124,7 +124,7 @@ $(document).ready(function () {
     //
     point.x = pos.x; point.y = pos.y;
     point = point.matrixTransform(svg.getScreenCTM());
-
+    console.log("test")
 
     //var xyz = point.x.toString() + point.y.toString();
 
