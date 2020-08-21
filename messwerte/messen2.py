@@ -13,7 +13,6 @@ import time
 datei = open('decadaten.txt', 'w')
 # datei.write("start")
 
-
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     mqttClient.subscribe("decadaten")
