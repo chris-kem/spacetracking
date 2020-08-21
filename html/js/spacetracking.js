@@ -124,7 +124,6 @@ $(document).ready(function () {
     //
     point.x = pos.x; point.y = pos.y;
     point = point.matrixTransform(svg.getScreenCTM());
-    console.log("test")
 
     //var xyz = point.x.toString() + point.y.toString();
 
@@ -152,8 +151,7 @@ $(document).ready(function () {
       //console.log(tracked[el.id]);
     }
 
-    client.publish('decadaten', "test");
-    console.log("hi");
+    client.publish('decadaten', point.x + "; " + point.y);
 
     var o = new Object();
     o.nodeid = pos.nodeid;
