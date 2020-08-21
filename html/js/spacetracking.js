@@ -126,9 +126,9 @@ $(document).ready(function () {
     point = point.matrixTransform(svg.getScreenCTM());
 
 
-    var xyz = point.x.toString() + point.y.toString();
-    client.publish('decadaten', xyz);
-
+    //var xyz = point.x.toString() + point.y.toString();
+    client.publish('decadaten', "test");
+    console.log("hi");
 
     marcer.setAttribute('visibility', 'hidden');
     var el = doc.elementFromPoint(point.x, point.y);
