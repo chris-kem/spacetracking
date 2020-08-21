@@ -80,7 +80,7 @@ $(document).ready(function () {
     pos.x = parseFloat(pos.x) * 1000;
     pos.y = can.height - parseFloat(pos.y) * 1000;
     //pos.y = parseFloat(pos.y) * 100;
-    console.log(pos.x + ", " + pos.y);
+    //console.log(pos.x + ", " + pos.y);
 
     //
     // check if we received a valid position
@@ -118,6 +118,8 @@ $(document).ready(function () {
       marcer.setAttribute('cx', point.x);
       marcer.setAttribute('cy', point.y);
     }
+    var xyz = point.x.toString() + point.y.toString();
+    client.publish('decadaten', xyz);
 
     //
     // hit-test on SVG element, disable the display of the tag element briefly,
