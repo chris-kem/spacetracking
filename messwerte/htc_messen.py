@@ -32,6 +32,6 @@ while true:
         mqttClient.connect("localhost", 1883, 60)
         mqttClient.loop_forever()
 
-except KeyboardInterrupt:
-    end = time.time()
-    print(end - start)
+    except KeyboardInterrupt:
+        end = time.time()
+        print(end - start)
