@@ -9,6 +9,7 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
+
 $(document).ready(function () {
 
   //while (document.getElementById("dataSVG").value == "undefined" || "null") {
@@ -20,7 +21,7 @@ $(document).ready(function () {
   var doc = root.contentDocument;
   //}
   //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.HTMLAllCollection(0);
+  var svg = doc.HTMLAllCollection[0];
   //var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
