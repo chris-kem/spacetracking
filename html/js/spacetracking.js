@@ -21,7 +21,7 @@ $(document).ready(function () {
   var doc = root.contentDocument;
   //}
   //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.HTMLAllCollection[0];
+  var svg = doc.activeElement;
   //var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
