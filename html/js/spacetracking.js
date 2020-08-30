@@ -23,7 +23,7 @@ $(document).ready(function () {
   var doc = root.contentDocument;
   //}
   //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = root.activeElement;
+  var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
