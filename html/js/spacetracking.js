@@ -19,12 +19,11 @@ $(document).ready(function () {
   });
 
   var root = document.getElementById('dataSVG');
-  document.getElementById("svg").focus();
   //if (typeof root !== 'undefined' && root !== null) {
   var doc = root.contentDocument;
   //}
   //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.activeElement;
+  var svg = root.activeElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
