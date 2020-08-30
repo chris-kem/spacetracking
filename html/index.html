@@ -474,6 +474,17 @@
     });
   </script>
 
+  <script>
+    var abc = document.getElementById("auswahlbutton");
+    var whichObject = "";
+
+    abc.onclick = function () {
+      whichObject = "uploads/" + document.getElementById(
+        "whichFile"
+      ).value;
+      document.getElementById("dataSVG").data = whichObject;
+    }
+  </script>
   <script src="js/spacetracking.js"></script>
 </body>
 
