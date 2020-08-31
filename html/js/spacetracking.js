@@ -20,15 +20,15 @@ $(document).ready(function () {
   //if (typeof root !== 'undefined' && root !== null) {
   $(document).ready(function () {
     var doc = root.contentDocument;
-  });
-  //}
-  //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.activeElement;
-  //var svg = doc.documentElement;
-  //} if (typeof svg !== 'undefined' && svg !== null) {
-  var can = document.createElement('canvas');
-  //);
 
+    //}
+    //if (typeof doc !== 'undefined' && doc !== null) {
+    var svg = doc.activeElement;
+    //var svg = doc.documentElement;
+    //} if (typeof svg !== 'undefined' && svg !== null) {
+    var can = document.createElement('canvas');
+    //);
+  });
   //
   // only track the track- element
   //
