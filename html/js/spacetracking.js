@@ -114,7 +114,7 @@ $(document).ready(function () {
     // for debugging and interaction
     //
     point.x = pos.x; point.y = pos.y;
-    point = point.matrixTransform((marcer));
+    point = point.matrixTransform(svg.marcer);
     if (marcer) {
       marcer.setAttribute('cx', point.x);
       marcer.setAttribute('cy', point.y);
