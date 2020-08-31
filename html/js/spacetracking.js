@@ -18,11 +18,9 @@ $(document).ready(function () {
   document.getElementById("dataSVG").focus();
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
-  var doc = root.contentDocument;
-
-  //}
-  //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = document.activeElement;
+  //var doc = root.contentDocument;
+  var doc = root.documentElement;
+  var svg = doc.activeElement;
   //var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
