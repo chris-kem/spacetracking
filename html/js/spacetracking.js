@@ -20,7 +20,7 @@ $(document).ready(function () {
   //if (typeof root !== 'undefined' && root !== null) {
   var doc = root.contentDocument;
   //ar svg = document.getElementById('dataSVG')
-  var svg = doc.all;
+  var svg = doc.all(0);
   //var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
