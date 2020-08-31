@@ -21,8 +21,8 @@ $(document).ready(function () {
   var doc = root.contentDocument;
   //ar svg = document.getElementById('dataSVG')
   //root.addEventListener("load", function () {
-  var svg = doc.all[0];
-  //var svg = doc.documentElement;
+  //var svg = doc.activeElement;
+  var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
