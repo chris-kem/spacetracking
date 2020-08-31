@@ -172,8 +172,12 @@
   <script src="js/mqtt.js"></script>
 
   <script type="text/javascript">
-    document.getElementById("dataSVG").focus();
-    console.log(document.getElementById("dataSVG").data);
+    $(document).ready(function () {
+      document.getElementById("dataSVG").focus();
+      var root = document.getElementById('dataSVG');
+
+      console.log(root);
+    });
     function hideThings() {
       if (document.getElementById("dropdown1").value == "linear1") {
         document.getElementById("schwelle1").style.display = "none";
