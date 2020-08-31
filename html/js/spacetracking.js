@@ -16,7 +16,7 @@ $(document).ready(function () {
   //setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
   //}
   document.getElementById("dataSVG").focus();
-  var root = document.getElementById('svg');
+  var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
   var doc = root.contentDocument;
 
