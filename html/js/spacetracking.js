@@ -18,7 +18,9 @@ $(document).ready(function () {
   document.getElementById("dataSVG").focus();
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
-  var doc = root.contentDocument;
+  $(document).ready(function () {
+    var doc = root.contentDocument;
+  });
   //}
   //if (typeof doc !== 'undefined' && doc !== null) {
   var svg = doc.activeElement;
