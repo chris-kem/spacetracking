@@ -39,9 +39,10 @@ $(document).ready(function () {
   // this is the size of the actual svg
   //
   var positionInfo = root.getBoundingClientRect();
-  can.width = positionInfo.width.baseVal.valueInSpecifiedUnits;
-  can.height = positionInfo.height.baseVal.valueInSpecifiedUnits;
-
+  //can.width = positionInfo.width.baseVal.valueInSpecifiedUnits;
+  //can.height = positionInfo.height.baseVal.valueInSpecifiedUnits;
+  can.width = positionInfo.width.valueInSpecifiedUnits;
+  can.height = positionInfo.height.valueInSpecifiedUnits;
   //
   // draw the image on a canvas to retrieve color values at a position
   // XXX this could get problematic for large svgs
