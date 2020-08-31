@@ -21,8 +21,8 @@ $(document).ready(function () {
   var doc = root.contentDocument;
   //ar svg = document.getElementById('dataSVG')
   //root.addEventListener("load", function () {
-  //var svg = doc.activeElement;
-  var svg = doc.documentElement;
+  var svg = doc.activeElement;
+  //var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
@@ -117,7 +117,7 @@ $(document).ready(function () {
     // for debugging and interaction
     //
     point.x = pos.x; point.y = pos.y;
-    point = point.matrixTransform(root.getTransformToElement(marcer));
+    point = point.matrixTransform(svg.getTransformToElement(marcer));
     if (marcer) {
       marcer.setAttribute('cx', point.x);
       marcer.setAttribute('cy', point.y);
