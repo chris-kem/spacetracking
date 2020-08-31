@@ -18,10 +18,10 @@ $(document).ready(function () {
   document.getElementById("dataSVG").focus();
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
-  var doc = root.contentDocument;
+  //var doc = root.contentDocument;
   //ar svg = document.getElementById('dataSVG')
-  //var svg = doc.all(0);
-  var svg = doc.activeElement;
+  var svg = document.activeElement;
+  //var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
@@ -38,8 +38,9 @@ $(document).ready(function () {
   //
   // this is the size of the actual svg
   //
-  can.width = svg.width.baseVal.valueInSpecifiedUnits;
-  can.height = svg.height.baseVal.valueInSpecifiedUnits;
+  var positionInfo = root.getBoundingClientRect();
+  can.width = positionInfo.width.baseVal.valueInSpecifiedUnits;
+  can.height = positionInfo.height.baseVal.valueInSpecifiedUnits;
 
   //
   // draw the image on a canvas to retrieve color values at a position
