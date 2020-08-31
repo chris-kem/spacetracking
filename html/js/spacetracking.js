@@ -21,8 +21,8 @@ $(document).ready(function () {
   var doc = root.contentDocument;
   //}
   //if (typeof doc !== 'undefined' && doc !== null) {
-  var svg = doc.activeElement;
-  //var svg = doc.documentElement;
+  //var svg = doc.activeElement;
+  var svg = doc.documentElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
@@ -116,7 +116,7 @@ $(document).ready(function () {
     // for debugging and interaction
     //
     point.x = pos.x; point.y = pos.y;
-    point = point.matrixTransform(svg.getTransformToElement(marcer));
+    point = point.matrixTransform(marcer);
     if (marcer) {
       marcer.setAttribute('cx', point.x);
       marcer.setAttribute('cy', point.y);
