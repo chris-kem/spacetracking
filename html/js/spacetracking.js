@@ -18,10 +18,10 @@ $(document).ready(function () {
   document.getElementById("dataSVG").focus();
   var root = document.getElementById('dataSVG');
   //if (typeof root !== 'undefined' && root !== null) {
-  //var doc = root.contentDocument;
-  var svg = root;
+  var doc = root.contentDocument;
+  //ar svg = document.getElementById('dataSVG')
   //var svg = doc.all(0);
-  //var svg = doc.documentElement;
+  var svg = doc.activeElement;
   //} if (typeof svg !== 'undefined' && svg !== null) {
   var can = document.createElement('canvas');
   //);
