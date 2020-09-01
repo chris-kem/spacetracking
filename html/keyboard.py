@@ -29,3 +29,10 @@ def on_message(client, userdata, msg):
         keyboard.release(Key.f5)
     else:
         print("kein feld")
+
+
+mqttClient = mqtt.Client()
+mqttClient.on_connect = on_connect
+mqttClient.on_message = on_message
+mqttClient.connect("localhost", 1883, 60)
+mqttClient.loop_forever()
