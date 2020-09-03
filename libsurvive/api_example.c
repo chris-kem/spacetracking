@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
 			//strncat(payloadString, (char)pose.Pos[1] +";");
 			//strncat(payloadString, (char)pose.Pos[2] +";");
 			char payloadString[200];
-			sprintf(payloadString, "%.2f;%.2f;%.2f\n", pose.Pos[0], pose.Pos[1], pose.Pos[2]);
+			sprintf(payloadString, "%.2f;%.2f;%.2f\n", (pose.Pos[0]), (pose.Pos[1]), pose.Pos[2]);
 			//sprintf(payloadString, "%s", ";");
                         //sprintf(payloadString, "%.2f", pose.Pos[1]);
                         //sprintf(payloadString, "%s", ";");
