@@ -41,7 +41,7 @@ def on_message(client, userdata, msg):
     # if parsedMsg["elemid"] == "track1":
     oscmsg.setAddress('{"/%s"}' % parsedMsg["elemid"])
     oscmsg.append(parsedMsg["value"])
-    print(oscmsg)
+#    print(oscmsg)
     osc_client.send(oscmsg)
 
 
