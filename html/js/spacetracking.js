@@ -9,7 +9,7 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
-SVGSVGElement.prototype.getTransformToElement = SVGSVGElement.prototype.getTransformToElement || function (elem) { return elem.getScreenCTM().inverse().multiply(this.getScreenCTM()); };
+//SVGSVGElement.prototype.getTransformToElement = SVGSVGElement.prototype.getTransformToElement || function (elem) { return elem.getScreenCTM().inverse().multiply(this.getScreenCTM()); };
 
 $(document).ready(function () {
 
@@ -17,6 +17,7 @@ $(document).ready(function () {
   //setTimeout(console.log("kein SVG zum tracken verfügbar"), 1000);
   //}
   var root = document.getElementById('dataSVG');
+  root.contentDocument.documentElement.__proto__.getTransformToElement = function (elem) { return elem.getScreenCTM().inverse().multiply(this.getScreenCTM()); };
   root.addEventListener("load", function () {
     document.getElementById("dataSVG").focus();
     //if (typeof root !== 'undefined' && root !== null) {
