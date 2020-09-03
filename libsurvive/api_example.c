@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <unistd.h>
 #include <survive_api.h>
 #include <os_generic.h>
 #include "MQTTClient.h"
@@ -11,6 +12,15 @@
 #define QOS         1
 
 static volatile int keepRunning = 1;
+double xNew = 1.0;
+double yNew = 1.0;
+double xVal;
+double yVal;
+double xSpeicher = 100;
+double ySpeicher = 100;
+double rad;
+double radSpeicher;
+int nureinmal = 0;
 
 #ifdef __linux__
 
@@ -71,6 +81,36 @@ int main(int argc, char **argv) {
 			 it = survive_simple_get_next_updated(actx)) {
 			SurvivePose pose;
 			uint32_t timecode = survive_simple_object_get_latest_pose(it, &pose);
+
+			usleep(100000);
+			if (nureinmal == 0)
+			{
+				for (int i = 0; i <= 90; i++)
+				{
+					rad = (i * M_PI) / 180;
+					xVal = pose.Pos[0] * cos(rad) + pose.Pos[1] * sin(rad);
+					yVal = -pose.Pos[0] * sin(rad) + pose.Pos[1] * cos(rad);
+					printf("x %f\n", pose.Pos[0]);
+					printf("y %f\n", pose.Pos[1]);
+                                        printf("rad %f\n", rad);
+                                        printf("xVal %f\n", xVal);
+
+					if (abs(xNew - xVal) <= 0.1 && abs(yNew - yVal) <= 0.1)
+					{
+						if (xSpeicher > xVal || ySpeicher > yVal)
+						{
+							xSpeicher = xVal;
+							ySpeicher = yVal;
+							radSpeicher = rad;
+						};
+						//printf("%f\n", radSpeicher);
+						//printf("%f\n", xSpeicher);
+						//printf("%f\n", ySpeicher);
+					};
+				};
+				nureinmal = 1;
+			};
+
 			//printf("%s %s (%u): %f %f %f %f %f %f %f\n", survive_simple_object_name(it),
 			//	   survive_simple_serial_number(it), timecode, pose.Pos[0], pose.Pos[1], pose.Pos[2], pose.Rot[0],
 			//	   pose.Rot[1], pose.Rot[2], pose.Rot[3]);
@@ -82,7 +122,8 @@ int main(int argc, char **argv) {
 			//strncat(payloadString, (char)pose.Pos[1] +";");
 			//strncat(payloadString, (char)pose.Pos[2] +";");
 			char payloadString[200];
-			sprintf(payloadString, "%.2f;%.2f;%.2f\n", (pose.Pos[0]), (pose.Pos[1]), pose.Pos[2]);
+			//sprintf(payloadString, "%.2f;%.2f;%.2f\n", (pose.Pos[0]), (pose.Pos[1]), pose.Pos[2]);
+			sprintf(payloadString, "%.2f;%.2f\n", (xSpeicher), (ySpeicher));
 			//sprintf(payloadString, "%s", ";");
                         //sprintf(payloadString, "%.2f", pose.Pos[1]);
                         //sprintf(payloadString, "%s", ";");
