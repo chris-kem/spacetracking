@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include <survive_api.h>
 #include <os_generic.h>
 #include "MQTTClient.h"
