@@ -9,6 +9,7 @@
 //
 // get the SVG for hit-testing, and render on a canvas for color retrieval
 //
+SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformToElement || function (elem) { return elem.getScreenCTM().inverse().multiply(this.getScreenCTM()); };
 
 $(document).ready(function () {
 
