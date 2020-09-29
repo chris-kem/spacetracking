@@ -20,16 +20,16 @@ value_laser0 = 0
 value_laser2 = 0
 value_laser3 = 0
 
+# empfängt über mqtt die Sensorwerte und wandelt diese in Binäre Werte.
+# Wird in der aktuellen Version nicht genutzt, da die binären Einstellungen
+# in der index.html eingestellt werden
+
 
 def on_message(client, userdata, msg):
     global count_laser0, count_laser1, value_laser0, value_laser1, count_laser2, count_laser3, value_laser2, value_laser3
-#	print(type(msg))
     parsedMsg = json.loads(str(msg.payload.decode("utf-8", "ignore")))
-#	print(parsedMsg["Sensor2"])
-#	print(parsedMsg.keys())
     key_name = str(parsedMsg.keys())
     sensorName = key_name[3:10]
-#	print(sensorName)
     value = 0
 
     if sensorName.startswith("Sensor0"):

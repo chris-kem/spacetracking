@@ -4,6 +4,8 @@ import json
 import time
 
 
+# empfängt über mqtt die SPositionsdaten des HTC Vive
+# und leitet diese an die webseite weiter über mqtt
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     mqttClient.subscribe("examples")
@@ -21,7 +23,8 @@ def on_message(client, userdata, msg):
         i += 1
 
 #    print(zahl[0] + " "+zahl[1] + " "+zahl[2])
-    message_out = {"position": {"x": (zahl[0]), "y": (zahl[1]), "z": (zahl[2])}}
+    message_out = {"position": {
+        "x": (zahl[0]), "y": (zahl[1]), "z": (zahl[2])}}
 #    print(message_out)
     data_out = json.dumps(message_out)
 #    print(data_out)

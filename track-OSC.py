@@ -30,6 +30,8 @@ def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     client.subscribe("track")
 
+# empfängt die positionsdaten des HTC Vive und versendet diese als OSC message
+
 
 def on_message(client, userdata, msg):
     oscmsg = OSC.OSCMessage()

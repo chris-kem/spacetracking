@@ -4,12 +4,6 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=DE
 
-network={
-  ssid="NASAinternet"
-  psk="62354088678278962069"
-  key_mgmt=WPA-PSK
-}
-
 
 ssh-keygen
 
@@ -38,9 +32,9 @@ find / -name "php.ini"
 file_uploads = On
 
 cp api_example.c ../spacetracking/libsurvive/
-in libsurvive makefile ändern für paho.mqtt.c 
+in libsurvive makefile ï¿½ndern fï¿½r paho.mqtt.c 
 
-473 tür
+473 tï¿½r
 483 fenster
 273 schrank
 263 garagentor
@@ -66,7 +60,7 @@ ____________________________
 ./api_example --use-imu 0 --force-calibrate --lighthousecount 2 --use-kalman 0 --center-on-wm0
 
 Sensor-Aufbau:
-Blaue Kabel müssen an Ground, also GND Kabel mit einem blauen Kabel zusammenbringen 
+Blaue Kabel mï¿½ssen an Ground, also GND Kabel mit einem blauen Kabel zusammenbringen 
 Zuerst weit und dann kurz kalibrieren damit 0 nichts und 1 was drin ist 
 
 =WECHSELN(A1;".";",")*1

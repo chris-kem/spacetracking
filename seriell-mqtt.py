@@ -3,6 +3,9 @@ import serial
 import time
 import json
 
+# liest die sensorwerte über die serielle Schnittstelle aus
+# und leitet die daten per mqtt weiter
+
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))

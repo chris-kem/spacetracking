@@ -3,6 +3,8 @@ import paho.mqtt.client as mqtt
 import json
 import time
 
+# erzeugt töne für demo zwecke
+
 frequency = 32767  # Set Frequency To 2500 Hertz 32767
 duration = 100  # Set Duration To 1000 ms == 1 second
 print("läuft")
