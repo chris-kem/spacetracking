@@ -90,9 +90,9 @@
     <circle
        style="opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="tag"
-       cx="962.42188"
-       cy="-933.31268"
-       r="69.453125"
+       cx="0"
+       cy="0"
+       r="20"
        inkscape:label="#path4624" />
   </g>
 </svg>
