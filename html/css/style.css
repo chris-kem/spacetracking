@@ -44,5 +44,7 @@
   position: relative;
   float: right;
   right: 5%;
+  height: 500px;
+  width: 500px;
   /*transform: scale(0.5, 0.5);*/
 }
