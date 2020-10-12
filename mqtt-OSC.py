@@ -24,7 +24,7 @@ elif args.port and args.localhost:
     osc_client.connect((args.localhost, args.port))
 else:
     osc_client.connect(("192.168.178.21", 9999))
-# empfängt über mqtt die daten der website und leitet diese per OSC message
+# empfangt uber mqtt die daten der website und leitet diese per OSC message
 # weiter damit diese in musik gewandelt wird
 
 

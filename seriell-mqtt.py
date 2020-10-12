@@ -3,7 +3,7 @@ import serial
 import time
 import json
 
-# liest die sensorwerte über die serielle Schnittstelle aus
+# liest die sensorwerte uber die serielle Schnittstelle aus
 # und leitet die daten per mqtt weiter
 
 
