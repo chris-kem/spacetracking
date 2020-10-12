@@ -31,7 +31,7 @@
 
 .upload {
   float: left;
-  left: 5%;
+  left: 2%;
   width: 30%;
 }
 
@@ -40,6 +40,8 @@
 }
 
 .upload:last-child {
+  float : right;
+  right : 2%;
   width: 60%;
 }
 
