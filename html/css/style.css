@@ -39,16 +39,9 @@
   margin-top: 2%;
 }
 
-.upload:last-child {
-  float : right;
-  right : 2%;
-  width: 60%;
-}
-
-/*#svg {
-  position: relative;
+.svg {
   float: right;
   right: 5%;
   width: 60%;
-  /*transform: scale(0.5, 0.5);
-}*/
+  /*transform: scale(0.5, 0.5);*/
+}
