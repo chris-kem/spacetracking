@@ -18,7 +18,7 @@ value_laser0 = 0
 value_laser2 = 0
 value_laser3 = 0
 
-# empfängt über mqtt die Sensorwerte und leitet diese als lineare werte weiter.
+# empfangt uber mqtt die Sensorwerte und leitet diese als lineare werte weiter.
 # per mqtt
 
 
